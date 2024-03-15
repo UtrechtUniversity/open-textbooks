@@ -1,0 +1,60 @@
+# Quarto settings
+
+## Basic settings
+
+Open the `_quarto.yml` file. Make sure it at least contains something like this:
+
+::: callout-caution
+This yaml is not complete nor validated. WIP!
+:::
+
+``` yaml
+project:
+  type: book
+  output-dir: ../docs           # When rendering, the html files will be 
+                                # placed in the docs folder. The folder needs
+                                # to be named docs in order for GitHub pages to work!
+
+book:                           # Some general information about your book
+  title: "[YOUR BOOK'S TITLE]"
+  authors:                      # Book authors: add a new row for each new author
+  - "NAME AUTHOR 1"
+  - "NAME AUTHOR 2"
+  
+  date: "YYYY/MM/DD"            # Date of the book, you can also use 
+                                # last-modified, or today (without quotes)
+  
+  chapters:                     # Table of contents
+    - index.qmd                 # This is your landing page / homepage
+    - YOUR-CHAPTER-1.qmd        # Make sure each chapter has its own .qmd file
+    - part: NAME-PART           # Use part: if you want to add subchapters
+      chapters:
+        - YOUR-CHAPTER2.qmd
+        - YOUR-CHAPTER3.qmd
+    - YOUR-CHAPTER-4.qmd
+    # etc.
+    
+    repo-url: https://github.com/YOUR-ORGANIZATION/YOUR-REPO-NAME
+    repo-actions: [edit]            # TODO
+    
+    sidebar:                                    # TODO
+        logo: path/to/your/logo.png
+
+bibliography: references.bib    # If you use a reference manager, you can export
+                                # a .bib file and include automatically formatted 
+                                # references. Include the path to the .bib file here.
+bibliostyle: apalike            # Citation style of bibliography
+nocite: |                       # This means: even if you don't actively use all 
+  @*                            # references in your book text, all entries in the 
+                                # .bib file will be included in the bibliography.
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreport
+  epub:
+    cover-image: cover.png
+
+callout-appearance: simple
+```

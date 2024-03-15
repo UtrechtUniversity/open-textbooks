@@ -1,0 +1,13 @@
+# Prerequisites
+
+## Installation
+1. Download and install R and Rstudio (UU: R Suite via Software center)
+2. Download and install Quarto
+3. Download and install git
+4. Create a GitHub account
+
+## Preparation
+
+1. Watch the video about GitHub: https://www.youtube.com/watch?v=qXfbnz2id8A
+2. Do the markdown tutorial: https://www.markdowntutorial.com/
+3. Look through the slides from last time: https://github.com/nehamoopen/lets-git-started/blob/main/20240125_GitHub_for_EducationSupport_UB.pdf

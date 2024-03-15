@@ -1,0 +1,9 @@
+# Adding multimedia
+
+How to:
+
+-   Add an image
+
+-   Add a video (from different sources)
+
+-   Add an audio file

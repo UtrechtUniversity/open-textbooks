@@ -1,0 +1,155 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Open textbooks with Quarto on GitHub Pages",
+    "section": "",
+    "text": "Welcome!\nIn this open textbook, we highlight some tips and tricks to set up and maintain an open textbook that is:\n\ncreated with Quarto in Rstudio,\ntracked by git, and\npublished on GitHub Pages\n\nThis book is explicitly not meant to be complete. We include how to get started, and collect useful ways to customize a Quarto book to your liking.\n\n\n\n\n\n\nImportant\n\n\n\nThis website also contains LOADs of tips for Quarto: https://www.productive-r-workflow.com/quarto-tricks",
+    "crumbs": [
+      "Welcome!"
+    ]
+  },
+  {
+    "objectID": "prerequisites.html",
+    "href": "prerequisites.html",
+    "title": "1  Prerequisites",
+    "section": "",
+    "text": "1.1 Installation",
+    "crumbs": [
+      "Setting up",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Prerequisites</span>"
+    ]
+  },
+  {
+    "objectID": "prerequisites.html#installation",
+    "href": "prerequisites.html#installation",
+    "title": "1  Prerequisites",
+    "section": "",
+    "text": "Download and install R and Rstudio (UU: R Suite via Software center)\nDownload and install Quarto\nDownload and install git\nCreate a GitHub account",
+    "crumbs": [
+      "Setting up",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Prerequisites</span>"
+    ]
+  },
+  {
+    "objectID": "prerequisites.html#preparation",
+    "href": "prerequisites.html#preparation",
+    "title": "1  Prerequisites",
+    "section": "1.2 Preparation",
+    "text": "1.2 Preparation\n\nWatch the video about GitHub: https://www.youtube.com/watch?v=qXfbnz2id8A\nDo the markdown tutorial: https://www.markdowntutorial.com/\nLook through the slides from last time: https://github.com/nehamoopen/lets-git-started/blob/main/20240125_GitHub_for_EducationSupport_UB.pdf",
+    "crumbs": [
+      "Setting up",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Prerequisites</span>"
+    ]
+  },
+  {
+    "objectID": "get-started.html",
+    "href": "get-started.html",
+    "title": "2  Getting started with a Quarto book",
+    "section": "",
+    "text": "2.1 Create a Quarto book\nFollow the Quickstart intstructions for Rstudio from the Quarto documentation to create an empty Quarto book.",
+    "crumbs": [
+      "Setting up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Getting started with a Quarto book</span>"
+    ]
+  },
+  {
+    "objectID": "get-started.html#basic-settings",
+    "href": "get-started.html#basic-settings",
+    "title": "2  Getting started with a Quarto book",
+    "section": "2.2 Basic settings",
+    "text": "2.2 Basic settings\nOpen the _quarto.yml file. Make sure it at least contains something like this:\n\n\n\n\n\n\nNote\n\n\n\nThis yaml should be validated, I don’t think the indentation is correct at the moment\n\n\nproject:\n  type: book\n  output-dir: ../docs           # When rendering, the html files will be \n                                # placed in the docs folder. The folder needs\n                                # to be named docs in order for GitHub pages to work!\n\nbook:                           # Some general information about your book\n  title: \"[YOUR BOOK'S TITLE]\"\n  authors:                      # Book authors: add a new row for each new author\n  - \"NAME AUTHOR 1\"\n  - \"NAME AUTHOR 2\"\n  \n  date: \"YYYY/MM/DD\"            # Date of the book, you can also use \n                                # last-modified, or today (without quotes)\n  \n  chapters:                     # Table of contents\n    - index.qmd                 # This is your landing page / homepage\n    - YOUR-CHAPTER-1.qmd        # Make sure each chapter has its own .qmd file\n    - part: NAME-PART           # Use part: if you want to add subchapters\n      chapters:\n        - YOUR-CHAPTER2.qmd\n        - YOUR-CHAPTER3.qmd\n    - YOUR-CHAPTER-4.qmd\n    # etc.\n\nformat:\n  html:\n    theme: cosmo\n  pdf:\n    documentclass: scrreport\nSee the quarto-settings chapter for more customization.",
+    "crumbs": [
+      "Setting up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Getting started with a Quarto book</span>"
+    ]
+  },
+  {
+    "objectID": "quarto-settings.html",
+    "href": "quarto-settings.html",
+    "title": "3  Nice Quarto settings",
+    "section": "",
+    "text": "3.1 Basic settings\nOpen the _quarto.yml file. Make sure it at least contains something like this:",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Nice Quarto settings</span>"
+    ]
+  },
+  {
+    "objectID": "quarto-settings.html#basic-settings",
+    "href": "quarto-settings.html#basic-settings",
+    "title": "3  Nice Quarto settings",
+    "section": "",
+    "text": "Caution\n\n\n\nThis yaml is not complete nor validated. WIP!\n\n\nproject:\n  type: book\n  output-dir: ../docs           # When rendering, the html files will be \n                                # placed in the docs folder. The folder needs\n                                # to be named docs in order for GitHub pages to work!\n\nbook:                           # Some general information about your book\n  title: \"[YOUR BOOK'S TITLE]\"\n  authors:                      # Book authors: add a new row for each new author\n  - \"NAME AUTHOR 1\"\n  - \"NAME AUTHOR 2\"\n  \n  date: \"YYYY/MM/DD\"            # Date of the book, you can also use \n                                # last-modified, or today (without quotes)\n  \n  chapters:                     # Table of contents\n    - index.qmd                 # This is your landing page / homepage\n    - YOUR-CHAPTER-1.qmd        # Make sure each chapter has its own .qmd file\n    - part: NAME-PART           # Use part: if you want to add subchapters\n      chapters:\n        - YOUR-CHAPTER2.qmd\n        - YOUR-CHAPTER3.qmd\n    - YOUR-CHAPTER-4.qmd\n    # etc.\n    \n    repo-url: https://github.com/YOUR-ORGANIZATION/YOUR-REPO-NAME\n    repo-actions: [edit]            # TODO\n    \n    sidebar:                                    # TODO\n        logo: path/to/your/logo.png\n\nbibliography: references.bib    # If you use a reference manager, you can export\n                                # a .bib file and include automatically formatted \n                                # references. Include the path to the .bib file here.\nbibliostyle: apalike            # Citation style of bibliography\nnocite: |                       # This means: even if you don't actively use all \n  @*                            # references in your book text, all entries in the \n                                # .bib file will be included in the bibliography.\n\nformat:\n  html:\n    theme: cosmo\n  pdf:\n    documentclass: scrreport\n  epub:\n    cover-image: cover.png\n\ncallout-appearance: simple",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Nice Quarto settings</span>"
+    ]
+  },
+  {
+    "objectID": "multimedia.html",
+    "href": "multimedia.html",
+    "title": "4  Adding multimedia",
+    "section": "",
+    "text": "How to:\n\nAdd an image\nAdd a video (from different sources)\nAdd an audio file",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Adding multimedia</span>"
+    ]
+  },
+  {
+    "objectID": "interactivity.html",
+    "href": "interactivity.html",
+    "title": "5  Interactivity",
+    "section": "",
+    "text": "How to:\n\nAdd exercises (webexercises package)\nDiscussions: giscus, utterances\nExecutable code",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Interactivity</span>"
+    ]
+  },
+  {
+    "objectID": "styling.html",
+    "href": "styling.html",
+    "title": "6  Styling",
+    "section": "",
+    "text": "This should contain something like:\n\nWhat is a css file (scss?) and how to include custom styling in a Quarto book\nTemplate for css/scss to include, perhaps there is already something out there?\nLogo, footer, header, front image, etc.",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Styling</span>"
+    ]
+  },
+  {
+    "objectID": "styling.html#basic-settings",
+    "href": "styling.html#basic-settings",
+    "title": "6  Nice Quarto settings",
+    "section": "",
+    "text": "project:\n  type: book\n  output-dir: ../docs           # When rendering, the html files will be \n                                # placed in the docs folder. The folder needs\n                                # to be named docs in order for GitHub pages to work!\n\nbook:                           # Some general information about your book\n  title: \"[YOUR BOOK'S TITLE]\"\n  authors:                      # Book authors: add a new row for each new author\n  - \"NAME AUTHOR 1\"\n  - \"NAME AUTHOR 2\"\n  \n  date: \"YYYY/MM/DD\"            # Date of the book, you can also use \n                                # last-modified, or today (without quotes)\n  \n  chapters:                     # Table of contents\n    - index.qmd                 # This is your landing page / homepage\n    - YOUR-CHAPTER-1.qmd        # Make sure each chapter has its own .qmd file\n    - part: NAME-PART           # Use part: if you want to add subchapters\n      chapters:\n        - YOUR-CHAPTER2.qmd\n        - YOUR-CHAPTER3.qmd\n    - YOUR-CHAPTER-4.qmd\n    # etc.\n    \n    repo-url: https://github.com/YOUR-ORGANIZATION/YOUR-REPO-NAME\n    repo-actions: [edit]            # TODO\n    \n    sidebar:                                    # TODO\n        logo: path/to/your/logo.png\n\nbibliography: references.bib    # If you use a reference manager, you can export\n                                # a .bib file and include automatically formatted \n                                # references. Include the path to the .bib file here.\nbibliostyle: apalike            # Citation style of bibliography\nnocite: |                       # This means: even if you don't actively use all \n  @*                            # references in your book text, all entries in the \n                                # .bib file will be included in the bibliography.\n\nformat:\n  html:\n    theme: cosmo\n  pdf:\n    documentclass: scrreport\n  epub:\n    cover-image: cover.png\n\ncallout-appearance: simple",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Nice Quarto settings</span>"
+    ]
+  },
+  {
+    "objectID": "rendering.html",
+    "href": "rendering.html",
+    "title": "7  Rendering",
+    "section": "",
+    "text": "Rendering to - html - pdf - epub - word??\nMostly links to existing documentation, perhaps some tips and tricks",
+    "crumbs": [
+      "Publishing",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Rendering</span>"
+    ]
+  },
+  {
+    "objectID": "archiving.html",
+    "href": "archiving.html",
+    "title": "8  Archiving",
+    "section": "",
+    "text": "Why archiving?\nConnecting with Zenodo for DOIs\nRegistering in Edusources for increased findability of the OER",
+    "crumbs": [
+      "Publishing",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Archiving</span>"
+    ]
+  }
+]

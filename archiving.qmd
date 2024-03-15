@@ -1,0 +1,5 @@
+# Archiving
+
+-   Why archiving?
+-   Connecting with Zenodo for DOIs (or use the Zenodo sandbox)
+-   Registering in Edusources for increased findability of the OER

@@ -1,0 +1,11 @@
+# Interactivity
+
+Content
+
+-   Exercises (webexercises package)
+
+-   Discussions: [giscus](https://github.com/apps/giscus), [utterances](https://utteranc.es/)
+
+-   Executable code (code blocks)
+
+-   Dropdowns and other html elements

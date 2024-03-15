@@ -1,0 +1,32 @@
+project:
+  type: book
+
+book:
+  title: "Open textbooks with Quarto on GitHub Pages"
+  author: "Research Data Management Support"
+  date: last-modified
+  chapters:
+  - index.qmd
+  - part: "Setting up"
+    chapters: 
+      - prerequisites.qmd
+      - get-started.qmd
+  - part: "Customization"
+    chapters:
+      - quarto-settings.qmd
+      - multimedia.qmd
+      - interactivity.qmd
+      - styling.qmd
+  - part: "Publishing"
+    chapters:
+      - rendering.qmd
+      - archiving.qmd
+  - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt

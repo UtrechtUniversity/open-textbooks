@@ -1,0 +1,9 @@
+# Styling
+
+This should contain something like:
+
+-   What is a css file (scss?) and how to include custom styling in a Quarto book
+
+-   Template for css/scss to include, perhaps there is already something out there?
+
+-   Logo, footer, header, front image, etc.

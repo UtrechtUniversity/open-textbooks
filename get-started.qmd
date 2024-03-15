@@ -1,0 +1,60 @@
+# Getting started with a Quarto book
+
+## Create a Quarto book
+
+Follow the [Quickstart intstructions for Rstudio](https://quarto.org/docs/books/#quick-start) from the Quarto documentation to create an empty Quarto book.
+
+## Basic settings
+
+Open the `_quarto.yml` file. Make sure it at least contains something like this:
+
+::: callout-note
+This yaml should be validated, I don't think the indentation is correct at the moment
+:::
+
+``` yaml
+project:
+  type: book
+  output-dir: ../docs           # When rendering, the html files will be 
+                                # placed in the docs folder. The folder needs
+                                # to be named docs in order for GitHub pages to work!
+
+book:                           # Some general information about your book
+  title: "[YOUR BOOK'S TITLE]"
+  authors:                      # Book authors: add a new row for each new author
+  - "NAME AUTHOR 1"
+  - "NAME AUTHOR 2"
+  
+  date: "YYYY/MM/DD"            # Date of the book, you can also use 
+                                # last-modified, or today (without quotes)
+  
+  chapters:                     # Table of contents
+    - index.qmd                 # This is your landing page / homepage
+    - YOUR-CHAPTER-1.qmd        # Make sure each chapter has its own .qmd file
+    - part: NAME-PART           # Use part: if you want to add subchapters
+      chapters:
+        - YOUR-CHAPTER2.qmd
+        - YOUR-CHAPTER3.qmd
+    - YOUR-CHAPTER-4.qmd
+    # etc.
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreport
+```
+
+See the [quarto-settings](#quarto-settings) chapter for more customization.
+
+## Make your project a git repository
+
+1.  git init in terminal
+2.  commit all
+3.  In GitHub, create an empty repository
+4.  Copy code from GitHub into the RStudio terminal
+5.  Practice the git workflow git add - git commit - git push and see the changes occur in the GitHub repo
+
+## Host on GitHub pages
+
+Turn on GitHub pages \> docs folder

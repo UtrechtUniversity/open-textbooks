@@ -1,0 +1,15 @@
+# Welcome! {.unnumbered}
+
+In this open textbook, we highlight some tips and tricks to set up and maintain an open textbook that is:
+
+-   created with Quarto in Rstudio,
+
+-   tracked by git, and
+
+-   published on GitHub Pages
+
+This book is explicitly **not** meant to be complete. We include how to get started, and collect useful ways to customize a Quarto book to your liking.
+
+::: callout-important
+This website also contains LOADs of tips for Quarto: https://www.productive-r-workflow.com/quarto-tricks
+:::

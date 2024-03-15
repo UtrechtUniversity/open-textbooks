@@ -1,0 +1,9 @@
+# Rendering
+
+Rendering to 
+- html
+- pdf
+- epub
+- word??
+
+Mostly links to existing documentation, perhaps some tips and tricks
