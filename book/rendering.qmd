@@ -7,3 +7,5 @@ Rendering to
 - word??
 
 Mostly links to existing documentation, perhaps some tips and tricks
+
+Also automated rendering in GitHub pages.

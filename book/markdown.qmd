@@ -1,0 +1,4 @@
+# Using markdown
+
+Markdown instructions tips and tricks
+Also: markdown is easiest but for html output you can also use raw html (but that then not used in pdf and epub output)

@@ -1,0 +1,3 @@
+# Citation
+
+Working with Zotero and other reference managers to include citations.

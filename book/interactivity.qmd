@@ -2,7 +2,7 @@
 
 Content
 
--   Exercises (webexercises package)
+-   Exercises (webexercises package, learnr)
 
 -   Discussions: [giscus](https://github.com/apps/giscus), [utterances](https://utteranc.es/)
 

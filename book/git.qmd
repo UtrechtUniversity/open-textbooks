@@ -1,0 +1,3 @@
+# Working with git
+
+The git workflow a bit better explained. Preferably with references to other cool resources.

@@ -4,56 +4,64 @@
 
 Follow the [Quickstart intstructions for Rstudio](https://quarto.org/docs/books/#quick-start) from the Quarto documentation to create an empty Quarto book.
 
-## Basic settings
+## Check the basic settings
 
 Open the `_quarto.yml` file. Make sure it at least contains something like this:
-
-::: callout-note
-This yaml should be validated, I don't think the indentation is correct at the moment
-:::
 
 ``` yaml
 project:
   type: book
-  output-dir: ../docs           # When rendering, the html files will be 
+  output-dir: docs              # When rendering, the html files will be 
                                 # placed in the docs folder. The folder needs
                                 # to be named docs in order for GitHub pages to work!
 
-book:                           # Some general information about your book
-  title: "[YOUR BOOK'S TITLE]"
-  authors:                      # Book authors: add a new row for each new author
-  - "NAME AUTHOR 1"
-  - "NAME AUTHOR 2"
-  
+book:
+  title: "YOUR BOOK TITLE"
+  author: "YOUR NAME"           # Book authors: add a new row for each new author
   date: "YYYY/MM/DD"            # Date of the book, you can also use 
                                 # last-modified, or today (without quotes)
-  
   chapters:                     # Table of contents
-    - index.qmd                 # This is your landing page / homepage
-    - YOUR-CHAPTER-1.qmd        # Make sure each chapter has its own .qmd file
-    - part: NAME-PART           # Use part: if you want to add subchapters
-      chapters:
-        - YOUR-CHAPTER2.qmd
-        - YOUR-CHAPTER3.qmd
-    - YOUR-CHAPTER-4.qmd
-    # etc.
+  - index.qmd                   # Home page, should always be index.qmd
+  - YOUR-CHAPTER-1.qmd          # Each chapter has its own .qmd file
+  - part: "Title of this part"  # You can also introduce sections with subsections with "part"
+    chapters: 
+      - YOUR-CHAPTER-2.qmd
+      - YOUR-CHAPTER-3.qmd
+  - YOUR-CHAPTER-4.qmd
 
-format:
-  html:
-    theme: cosmo
-  pdf:
-    documentclass: scrreport
+bibliography: references.bib  # If you want to use a reference manager, we'll come back to this later
+
+format:                       # For open textbooks on the web, we only need html
+  html:                       # It's also possible to add pdf, epub and docx if you want
+    theme: cosmo              # Default styling, there are many others!
 ```
 
-See the [quarto-settings](#quarto-settings) chapter for more customization.
+See the [quarto-settings](#quarto-settings) chapter for more customization options.
 
 ## Make your project a git repository
 
-1.  git init in terminal
-2.  commit all
-3.  In GitHub, create an empty repository
-4.  Copy code from GitHub into the RStudio terminal
-5.  Practice the git workflow git add - git commit - git push and see the changes occur in the GitHub repo
+1. In RStudio, go to the Terminal (next to Console) and type `git init`. This will turn your project folder into a git repository.
+2. In the terminal, type `git status`. This will give you all uncommited changes you've made. 
+To commit all these changes at once, type:
+```bash
+git add -A .
+git commit -m "Initialize github textbook"
+```
+3.  In GitHub, create a new, empty repository
+![](https://docs.github.com/assets/cb-34248/mw-1440/images/help/repository/repo-create-global-nav-update.webp)
+    a. For owner: choose where you want to create the repository (e.g., under your name or possibly under a GitHub
+  organization).
+    b. For Repository Name, it's best to use the same name as you named your local Quarto book folder.
+    c. Leave all other options empty for now.
+    d. Click Create repository
+4. A new empty repository will now be created on GitHub. Now we want to connect this GitHub repository with the repository that you have already made on your local PC. To do so, copy the code that GitHub conveniently already gives you under `or push an existing repository from the command line`. For me this looks like this: 
+![](img/gh_push_from_commandline.png)
+Copy this code in the Terminal in Rstudio, and run it.
+5. **TODO**: Practice the git workflow git add - git commit - git push and see the changes occur in the GitHub repo
+
+::: callout-warning
+We will need to dedicate a chapter to how git works and refer to that here.
+:::
 
 ## Host on GitHub pages
 
