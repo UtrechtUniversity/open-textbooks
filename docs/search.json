@@ -1,0 +1,221 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Open textbooks with Quarto on GitHub Pages",
+    "section": "",
+    "text": "Welcome!\nIn this open textbook, we highlight some tips and tricks to set up and maintain an open textbook that is:\n\ncreated with Quarto in Rstudio,\ntracked by git, and\npublished on GitHub Pages\n\nThis book is explicitly not meant to be complete. We include how to get started, and collect useful ways to customize a Quarto book to your liking.\n\n\n\n\n\n\nImportant\n\n\n\nThis website also contains LOADs of tips for Quarto: https://www.productive-r-workflow.com/quarto-tricks",
+    "crumbs": [
+      "Welcome!"
+    ]
+  },
+  {
+    "objectID": "prerequisites.html",
+    "href": "prerequisites.html",
+    "title": "1  Installation",
+    "section": "",
+    "text": "1.1 R and Rstudio",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation</span>"
+    ]
+  },
+  {
+    "objectID": "prerequisites.html#r-and-rstudio",
+    "href": "prerequisites.html#r-and-rstudio",
+    "title": "1  Installation",
+    "section": "",
+    "text": "Important\n\n\n\nIf you already have an R and/or Rstudio installation, make sure they are updated. The RStudio installation should have at least v2023. You can check this via Help &gt; About RStudio.\n\n\n\nUtrecht University laptopPersonal laptop\n\n\n\nOpen Software Center\nInstall R for Windows Suite\n\nInstalling R packages on a Utrecht University laptop can be hard. This is because R packages are installed on a so-called ‘mounted’ drive. This causes problems with the performance. Check the installation as follows:\n\nOpen RStudio\nWrite the following line of code in your console: .libPaths(), and press enter to execute.\nIf the response starts with // or \\\\, you are installing on a mounted drive. This can cause various errors, and even if everything goes right, installing tidyverse takes ages.\n\nSolution 1: see the solution on the intranet.\nSolution 2:\n\n\nCreate a folder R-packages on a local drive.\nCopy the location to that drive. For example: C:/Users/User/R-packages.\nRun the following line of code: file.edit(file.path(\"~\", \".Rprofile\"))\nPaste .libPaths(\"C:/Users/User/R-packages\") in the editor and save the file.\nRestart your R session\nClick on Packages&gt;Install. Is Install to library pointing to C:/Users/User/R-packages?\nIf not: check if the path is correctly spelled. Try inverting the slashes (\\ instead of /). You may need to use double slashes (\\\\ or //).\nTick ‘source on save’, click save, and check Packages&gt;Install again.\n\n\n\n\nI.e. a laptop with administrator rights.\n\nDownload and install R from https://cran.rstudio.com/\nDownload and install Rstudio from https://posit.co/download/rstudio-desktop/#download",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation</span>"
+    ]
+  },
+  {
+    "objectID": "prerequisites.html#quarto",
+    "href": "prerequisites.html#quarto",
+    "title": "1  Installation",
+    "section": "1.2 Quarto",
+    "text": "1.2 Quarto\n\nIn the RStudio console, run the following (use the copy button to copy the code!):\n\n\n# Install the necessary packages\ninstall.packages(\"rmarkdown\")\ninstall.packages(\"quarto\")\n\n# Load the necessary packages\nlibrary(rmarkdown)\nlibrary(quarto)\n\n\nRestart RStudio.\nCheck whether Quarto is detected:\n\nGo to the Terminal (next to the Console), type quarto --version and press Enter. A version number should appear.\nAlternatively, go to File &gt; New project &gt; New directory and check whether the Quarto outputs are presented as options (Quarto project, Quarto website, Quarto blog, Quarto book)",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation</span>"
+    ]
+  },
+  {
+    "objectID": "prerequisites.html#github-account",
+    "href": "prerequisites.html#github-account",
+    "title": "1  Installation",
+    "section": "1.3 GitHub account",
+    "text": "1.3 GitHub account\nIf you do not have a GitHub account, make one! Follow the steps here.\n\n\n\n\n\n\nTip\n\n\n\nPreferably do not use your work e-mail address. Why? Because then you won’t be able to use your GitHub account anymore in case you leave your current job!",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation</span>"
+    ]
+  },
+  {
+    "objectID": "prerequisites.html#git",
+    "href": "prerequisites.html#git",
+    "title": "1  Installation",
+    "section": "1.4 git",
+    "text": "1.4 git\nInstalling git correctly may take a bit more time. This is because we need to:\n\nInstall git at a good location, and\nLink the local git installation to your GitHub account\n\nEspecially the latter part is sometimes difficult, but it will pay off! If the installation went correctly, you will be able to “download” information from, or “upload” information to, GitHub to your local PC without having to open a web browser!\nPlease follow all the steps laid out on this page.",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation</span>"
+    ]
+  },
+  {
+    "objectID": "get-started.html",
+    "href": "get-started.html",
+    "title": "2  Getting started with a Quarto book",
+    "section": "",
+    "text": "2.1 Create a Quarto book\nFollow the Quickstart intstructions for Rstudio from the Quarto documentation to create an empty Quarto book.",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Getting started with a Quarto book</span>"
+    ]
+  },
+  {
+    "objectID": "get-started.html#check-the-basic-settings",
+    "href": "get-started.html#check-the-basic-settings",
+    "title": "2  Getting started with a Quarto book",
+    "section": "2.2 Check the basic settings",
+    "text": "2.2 Check the basic settings\nOpen the _quarto.yml file. Make sure it at least contains something like this:\nproject:\n  type: book\n  output-dir: docs              # When rendering, the html files will be \n                                # placed in the docs folder. The folder needs\n                                # to be named docs in order for GitHub pages to work!\n\nbook:\n  title: \"YOUR BOOK TITLE\"\n  author: \"YOUR NAME\"           # Book authors: add a new row for each new author\n  date: \"YYYY/MM/DD\"            # Date of the book, you can also use \n                                # last-modified, or today (without quotes)\n  chapters:                     # Table of contents\n  - index.qmd                   # Home page, should always be index.qmd\n  - YOUR-CHAPTER-1.qmd          # Each chapter has its own .qmd file\n  - part: \"Title of this part\"  # You can also introduce sections with subsections with \"part\"\n    chapters: \n      - YOUR-CHAPTER-2.qmd\n      - YOUR-CHAPTER-3.qmd\n  - YOUR-CHAPTER-4.qmd\n\nbibliography: references.bib  # If you want to use a reference manager, we'll come back to this later\n\nformat:                       # For open textbooks on the web, we only need html\n  html:                       # It's also possible to add pdf, epub and docx if you want\n    theme: cosmo              # Default styling, there are many others!\nSee the quarto-settings chapter for more customization options.",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Getting started with a Quarto book</span>"
+    ]
+  },
+  {
+    "objectID": "get-started.html#make-your-project-a-git-repository",
+    "href": "get-started.html#make-your-project-a-git-repository",
+    "title": "2  Getting started with a Quarto book",
+    "section": "2.3 Make your project a git repository",
+    "text": "2.3 Make your project a git repository\n\nIn RStudio, go to the Terminal (next to Console) and type git init. This will turn your project folder into a git repository.\nIn the terminal, type git status. This will give you all uncommited changes you’ve made. To commit all these changes at once, type:\n\ngit add -A .\ngit commit -m \"Initialize github textbook\"\n\nIn GitHub, create a new, empty repository \n\nFor owner: choose where you want to create the repository (e.g., under your name or possibly under a GitHub organization).\nFor Repository Name, it’s best to use the same name as you named your local Quarto book folder.\nLeave all other options empty for now.\nClick Create repository\n\nA new empty repository will now be created on GitHub. Now we want to connect this GitHub repository with the repository that you have already made on your local PC. To do so, copy the code that GitHub conveniently already gives you under or push an existing repository from the command line. For me this looks like this:  Copy this code in the Terminal in Rstudio, and run it.\nTODO: Practice the git workflow git add - git commit - git push and see the changes occur in the GitHub repo\n\n\n\n\n\n\n\nWarning\n\n\n\nWe will need to dedicate a chapter to how git works and refer to that here.",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Getting started with a Quarto book</span>"
+    ]
+  },
+  {
+    "objectID": "get-started.html#host-on-github-pages",
+    "href": "get-started.html#host-on-github-pages",
+    "title": "2  Getting started with a Quarto book",
+    "section": "2.4 Host on GitHub pages",
+    "text": "2.4 Host on GitHub pages\nTurn on GitHub pages &gt; docs folder",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Getting started with a Quarto book</span>"
+    ]
+  },
+  {
+    "objectID": "markdown.html",
+    "href": "markdown.html",
+    "title": "3  Using markdown",
+    "section": "",
+    "text": "Markdown instructions tips and tricks Also: markdown is easiest but for html output you can also use raw html (but that then not used in pdf and epub output)",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using markdown</span>"
+    ]
+  },
+  {
+    "objectID": "git.html",
+    "href": "git.html",
+    "title": "4  Working with git",
+    "section": "",
+    "text": "The git workflow a bit better explained. Preferably with references to other cool resources.",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with git</span>"
+    ]
+  },
+  {
+    "objectID": "quarto-settings.html",
+    "href": "quarto-settings.html",
+    "title": "5  Quarto settings",
+    "section": "",
+    "text": "5.1 Basic settings\nOpen the _quarto.yml file. Make sure it at least contains something like this:",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Quarto settings</span>"
+    ]
+  },
+  {
+    "objectID": "quarto-settings.html#basic-settings",
+    "href": "quarto-settings.html#basic-settings",
+    "title": "5  Quarto settings",
+    "section": "",
+    "text": "Caution\n\n\n\nThis yaml is not complete nor validated. WIP!\n\n\nproject:\n  type: book\n  output-dir: ../docs           # When rendering, the html files will be \n                                # placed in the docs folder. The folder needs\n                                # to be named docs in order for GitHub pages to work!\n\nbook:                           # Some general information about your book\n  title: \"[YOUR BOOK'S TITLE]\"\n  authors:                      # Book authors: add a new row for each new author\n  - \"NAME AUTHOR 1\"\n  - \"NAME AUTHOR 2\"\n  \n  date: \"YYYY/MM/DD\"            # Date of the book, you can also use \n                                # last-modified, or today (without quotes)\n  \n  chapters:                     # Table of contents\n    - index.qmd                 # This is your landing page / homepage\n    - YOUR-CHAPTER-1.qmd        # Make sure each chapter has its own .qmd file\n    - part: NAME-PART           # Use part: if you want to add subchapters\n      chapters:\n        - YOUR-CHAPTER2.qmd\n        - YOUR-CHAPTER3.qmd\n    - YOUR-CHAPTER-4.qmd\n    # etc.\n    \n    repo-url: https://github.com/YOUR-ORGANIZATION/YOUR-REPO-NAME\n    repo-actions: [edit]            # TODO\n    \n    sidebar:                                    # TODO\n        logo: path/to/your/logo.png\n\nbibliography: references.bib    # If you use a reference manager, you can export\n                                # a .bib file and include automatically formatted \n                                # references. Include the path to the .bib file here.\nbibliostyle: apalike            # Citation style of bibliography\nnocite: |                       # This means: even if you don't actively use all \n  @*                            # references in your book text, all entries in the \n                                # .bib file will be included in the bibliography.\n\nformat:\n  html:\n    theme: cosmo\n  pdf:\n    documentclass: scrreport\n  epub:\n    cover-image: cover.png\n\ncallout-appearance: simple",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Quarto settings</span>"
+    ]
+  },
+  {
+    "objectID": "multimedia.html",
+    "href": "multimedia.html",
+    "title": "6  Adding multimedia",
+    "section": "",
+    "text": "How to:\n\nAdd an image\nAdd a video (from different sources)\nAdd an audio file",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Adding multimedia</span>"
+    ]
+  },
+  {
+    "objectID": "interactivity.html",
+    "href": "interactivity.html",
+    "title": "7  Interactivity",
+    "section": "",
+    "text": "Content\n\nExercises (webexercises package, learnr)\nDiscussions: giscus, utterances\nExecutable code (code blocks)\nDropdowns and other html elements",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Interactivity</span>"
+    ]
+  },
+  {
+    "objectID": "styling.html",
+    "href": "styling.html",
+    "title": "8  Styling",
+    "section": "",
+    "text": "This should contain something like:\n\nWhat is a css file (scss?) and how to include custom styling in a Quarto book\nTemplate for css/scss to include, perhaps there is already something out there?\nLogo, footer, header, front image, etc.",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Styling</span>"
+    ]
+  },
+  {
+    "objectID": "citation.html",
+    "href": "citation.html",
+    "title": "9  Citation",
+    "section": "",
+    "text": "Working with Zotero and other reference managers to include citations.",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Citation</span>"
+    ]
+  },
+  {
+    "objectID": "rendering.html",
+    "href": "rendering.html",
+    "title": "10  Rendering",
+    "section": "",
+    "text": "Rendering to - html - pdf - epub - word??\nMostly links to existing documentation, perhaps some tips and tricks\nAlso automated rendering in GitHub pages.",
+    "crumbs": [
+      "Publishing",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Rendering</span>"
+    ]
+  },
+  {
+    "objectID": "archiving.html",
+    "href": "archiving.html",
+    "title": "11  Archiving",
+    "section": "",
+    "text": "Why archiving?\nConnecting with Zenodo for DOIs (or use the Zenodo sandbox)\nRegistering in Edusources for increased findability of the OER",
+    "crumbs": [
+      "Publishing",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Archiving</span>"
+    ]
+  }
+]
