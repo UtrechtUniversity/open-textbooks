@@ -12,12 +12,15 @@ book:
     chapters: 
       - prerequisites.qmd
       - get-started.qmd
+      - markdown.qmd
+      - git.qmd
   - part: "Customization"
     chapters:
       - quarto-settings.qmd
       - multimedia.qmd
       - interactivity.qmd
       - styling.qmd
+      - citation.qmd
   - part: "Publishing"
     chapters:
       - rendering.qmd
