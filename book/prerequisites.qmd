@@ -1,0 +1,93 @@
+# Installation
+
+## R and Rstudio 
+
+::: callout-important
+If you already have an R and/or Rstudio installation, make sure they are updated. 
+The RStudio installation should have at least v2023. 
+You can check this via Help > About RStudio.
+:::
+
+::: {.panel-tabset}
+
+### Utrecht University laptop
+
+1. Open **Software Center**
+2. Install **R for Windows Suite**
+
+Installing R packages on a Utrecht University laptop can be hard. This is 
+because R packages are installed on a so-called 'mounted' drive. This causes 
+problems with the performance. Check the installation as follows:
+
+3. Open **RStudio**
+4. Write the following line of code in your console: `.libPaths()`, and press 
+enter to execute.
+5. If the response starts with `//` or `\\`, you are installing on a mounted 
+drive. This can cause various errors, and even if everything goes right, installing 
+tidyverse takes ages.
+    a. Solution 1: see the solution on the [intranet](https://intranet.uu.nl/en/current-affairs/announcements/would-you-make-your-solis-laptop-work-more-efficiently).
+    b. Solution 2:
+      - Create a folder `R-packages` on a local drive. 
+      - Copy the location to that drive. For example: `C:/Users/User/R-packages`.
+      - Run the following line of code: `file.edit(file.path("~", ".Rprofile"))`
+      - Paste `.libPaths("C:/Users/User/R-packages")` in the editor and save the file.
+      - Restart your R session
+      - Click on `Packages`>`Install`. Is `Install to library` pointing to `C:/Users/User/R-packages`?
+      - If not: check if the path is correctly spelled. Try inverting the slashes (`\` instead of `/`). You may need to use double slashes (`\\` or `//`).
+      - Tick 'source on save', click save, and check `Packages`>`Install` again. 
+
+### Personal laptop
+
+I.e. a laptop *with* administrator rights.
+
+1. Download and install R from <https://cran.rstudio.com/>
+2. Download and install Rstudio from <https://posit.co/download/rstudio-desktop/#download>
+
+:::
+
+
+## Quarto
+
+1. In the RStudio console, run the following (use the copy button to copy the code!):
+
+```{r}
+#| echo: true
+#| eval: false
+
+# Install the necessary packages
+install.packages("rmarkdown")
+install.packages("quarto")
+
+# Load the necessary packages
+library(rmarkdown)
+library(quarto)
+```
+
+2. Restart RStudio.
+3. Check whether Quarto is detected: 
+   a. Go to the Terminal (next to the Console), type `quarto --version` and press Enter.
+   A version number should appear.
+   b. Alternatively, go to File > New project > New directory and check whether the Quarto outputs are presented as options (Quarto project, Quarto website, Quarto blog, Quarto book)
+
+## GitHub account
+
+If you do not have a GitHub account, make one! [Follow the steps here](https://github.com/signup).
+
+::: callout-tip
+Preferably do not use your work e-mail address. Why?
+Because then you won't be able to use your GitHub account anymore in case you leave your current job!
+:::
+
+## git
+
+Installing git correctly may take a bit more time. This is because we need to:
+
+1. Install git at a good location, and
+2. Link the local git installation to your GitHub account
+
+Especially the latter part is sometimes difficult, but it will pay off! 
+If the installation went correctly, you will be able to "download" information from,
+or "upload" information to, GitHub to your local PC without having to open a web browser!
+
+Please follow all the steps laid out [on this page](https://utrechtuniversity.github.io/workshop-computational-reproducibility/git-and-github.html). 
+

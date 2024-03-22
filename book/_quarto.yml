@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: ../docs
 
 book:
   title: "Open textbooks with Quarto on GitHub Pages"
@@ -7,7 +8,7 @@ book:
   date: last-modified
   chapters:
   - index.qmd
-  - part: "Setting up"
+  - part: "Basic set-up"
     chapters: 
       - prerequisites.qmd
       - get-started.qmd
@@ -28,5 +29,5 @@ bibliography: references.bib
 format:
   html:
     theme: cosmo
-  pdf:
-    documentclass: scrreprt
+  #pdf:
+  #  documentclass: scrreprt
