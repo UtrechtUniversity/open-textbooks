@@ -157,7 +157,40 @@
     "href": "multimedia.html",
     "title": "6  Adding multimedia",
     "section": "",
-    "text": "How to:\n\nAdd an image\nAdd a video (from different sources)\nAdd an audio file",
+    "text": "6.1 Image\nThe basic markdown syntax for adding an image is as follows:\nThe image can be located locally (in that case the link is the full path to the image file), or online (in that case the link is a URL to that picture).\nFor image positioning, styling, and more options, please check out Quarto’s documentation about figures.",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Adding multimedia</span>"
+    ]
+  },
+  {
+    "objectID": "multimedia.html#image",
+    "href": "multimedia.html#image",
+    "title": "6  Adding multimedia",
+    "section": "",
+    "text": "![Image title](link/to/the/image.png)",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Adding multimedia</span>"
+    ]
+  },
+  {
+    "objectID": "multimedia.html#video",
+    "href": "multimedia.html#video",
+    "title": "6  Adding multimedia",
+    "section": "6.2 Video",
+    "text": "6.2 Video\nIn Quarto, the basic syntax for embedding a video is as follows:\n\nThe video can be located locally (in that case the link is the full path to the video file), or online (in that case the link is a URL to the video).\nFor video options such as height, width, start time, etc. please check out Quarto’s documentation about videos.",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Adding multimedia</span>"
+    ]
+  },
+  {
+    "objectID": "multimedia.html#audio",
+    "href": "multimedia.html#audio",
+    "title": "6  Adding multimedia",
+    "section": "6.3 Audio",
+    "text": "6.3 Audio\nTo be figured out. Audio players do not seem to be supported, this guy found some sort of workaround: https://forum.posit.co/t/embed-sound-player-in-quarto-book/164739/7",
     "crumbs": [
       "Customization",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Adding multimedia</span>"
@@ -168,7 +201,51 @@
     "href": "interactivity.html",
     "title": "7  Interactivity",
     "section": "",
-    "text": "Content\n\nExercises (webexercises package, learnr)\nDiscussions: giscus, utterances\nExecutable code (code blocks)\nDropdowns and other html elements",
+    "text": "7.1 Exercises\nInteractive exercises are not part of core Quarto functionality. Luckily, there are smart people who have developed software packages to still include these. Here we go into two R packages: webexercises and learnr",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Interactivity</span>"
+    ]
+  },
+  {
+    "objectID": "interactivity.html#exercises",
+    "href": "interactivity.html#exercises",
+    "title": "7  Interactivity",
+    "section": "",
+    "text": "7.1.1 Webexercises\nAccording to the webexercises documentation:\n\nwebexercises creates standalone HTML files that require only a JavaScript-enabled browser. It is also extremely simple to use.\n\nTo get started, take the following steps:\n\nInstall and load the package\n\ninstall.packages(\"webexercises\")\nlibrary(webexercises)\n\n\n\n\nAdd the necessary files and setup to include webexercises in the Quarto project\n\nadd_to_quarto()\n\n\n\n\nStart using the exercises!\n\nFill-in-the-blanks:\nFill in any vowel: &lt;input class='webex-solveme nospaces ignorecase' size='1' data-answer='[\"A\",\"E\",\"I\",\"O\",\"U\"]'/&gt;\nFill in any vowel: \nMultiple choice:\nWhich package helps you load data? &lt;select class='webex-select'&gt;&lt;option value='blank'&gt;&lt;/option&gt;&lt;option value=''&gt;tidyr&lt;/option&gt;&lt;option value=''&gt;dplyr&lt;/option&gt;&lt;option value='answer'&gt;readr&lt;/option&gt;&lt;option value=''&gt;ggplot2&lt;/option&gt;&lt;/select&gt;\nWhich package helps you load data? tidyrdplyrreadrggplot2\nSee the webexercises documentation for other options:\n\nTrue or false questions\nLong multiple choice questions\nChecked sections with feedback that can be hidden and unhidden\nHidden solutions and hints\n\n\n\n\n\n7.1.2 learnr\nlearnr is a package that can turn markdown documents into interactive tutorials, including:\n\n\nNarrative, figures, illustrations, and equations.\nCode exercises (R code chunks that users can edit and execute directly).\nQuiz questions.\nVideos (supported services include YouTube and Vimeo).\nInteractive Shiny components.\n\nSource: learnr documentation\n\nlearnr in essence creates a Shiny application which must be hosted on a shiny server or run locally. The learnr documentation includes detailed instructions on how to create a tutorial.\n\n\n\n\n\n\nWarning\n\n\n\nCreating a tutorial with learnr requires you to host your tutorial on a shinyapp server. It is therefore not necessarily a core part of your Quarto book.",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Interactivity</span>"
+    ]
+  },
+  {
+    "objectID": "interactivity.html#discussions-for-book-chapters",
+    "href": "interactivity.html#discussions-for-book-chapters",
+    "title": "7  Interactivity",
+    "section": "7.2 Discussions for book chapters",
+    "text": "7.2 Discussions for book chapters\nTODO: giscus, utterances",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Interactivity</span>"
+    ]
+  },
+  {
+    "objectID": "interactivity.html#executable-code",
+    "href": "interactivity.html#executable-code",
+    "title": "7  Interactivity",
+    "section": "7.3 Executable code",
+    "text": "7.3 Executable code\nCode blocks? Requires server?",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Interactivity</span>"
+    ]
+  },
+  {
+    "objectID": "interactivity.html#html-elements",
+    "href": "interactivity.html#html-elements",
+    "title": "7  Interactivity",
+    "section": "7.4 HTML elements",
+    "text": "7.4 HTML elements\nDropdowns, which others?",
     "crumbs": [
       "Customization",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Interactivity</span>"
