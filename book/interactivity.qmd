@@ -1,11 +1,90 @@
 # Interactivity
 
-Content
+## Exercises
 
--   Exercises (webexercises package, learnr)
+Interactive exercises are not part of core Quarto functionality. Luckily, there are smart people who have developed software packages to still include these. Here we go into two R packages: `webexercises` and `learnr`
 
--   Discussions: [giscus](https://github.com/apps/giscus), [utterances](https://utteranc.es/)
+### Webexercises
 
--   Executable code (code blocks)
+According to the [webexercises documentation](https://psyteachr.github.io/webexercises/):
 
--   Dropdowns and other html elements
+> webexercises creates standalone HTML files that require only a JavaScript-enabled browser. It is also extremely simple to use.
+
+To get started, take the following steps:
+
+1.  Install and load the package
+
+    ```{r}
+    #| eval: false
+    install.packages("webexercises")
+    library(webexercises)
+    ```
+
+```{=html}
+<!-- -->
+```
+2.  Add the necessary files and setup to include webexercises in the Quarto project
+
+    ```{r}
+    #| eval: false
+    add_to_quarto()
+    ```
+
+```{=html}
+<!-- -->
+```
+3.  Start using the exercises!
+
+    a.  **Fill-in-the-blanks**:
+
+        ```md
+        Fill in any vowel: `r fitb(c("A", "E", "I", "O" , "U"), ignore_case = TRUE)`
+        ```
+
+        Fill in any vowel: `r fitb(c("A", "E", "I", "O" , "U"), ignore_case = TRUE)`
+
+    b.  **Multiple choice**:
+    
+        ```md
+        Which package helps you load data? `r mcq(c("tidyr", "dplyr", answer = "readr", "ggplot2"))`
+        ```
+
+        Which package helps you load data? `r mcq(c("tidyr", "dplyr", answer = "readr", "ggplot2"))`
+
+    c. See the [webexercises documentation](https://psyteachr.github.io/webexercises/articles/webexercises.html){target="_blank"} for other options: 
+        - True or false questions
+        - Long multiple choice questions
+        - Checked sections with feedback that can be hidden and unhidden
+        - Hidden solutions and hints
+
+### learnr
+
+`learnr` is a package that can turn markdown documents into interactive tutorials, including:
+
+> - Narrative, figures, illustrations, and equations.
+> - Code exercises (R code chunks that users can edit and execute directly).
+> - Quiz questions.
+> - Videos (supported services include YouTube and Vimeo).
+> - Interactive Shiny components.
+>
+> Source: [learnr documentation](https://rstudio.github.io/learnr/)
+
+learnr in essence creates a Shiny application which must be hosted on a shiny server or run locally.
+The [learnr documentation](https://rstudio.github.io/learnr/){target="_blank"} includes detailed instructions on how to create a tutorial.
+
+:::{.callout-warning}
+Creating a tutorial with `learnr` requires you to *host* your tutorial on a shinyapp server.
+It is therefore not necessarily a core part of your Quarto book.
+:::
+
+## Discussions for book chapters
+
+TODO: [giscus](https://github.com/apps/giscus), [utterances](https://utteranc.es/)
+
+## Executable code
+
+Code blocks? Requires server?
+
+## HTML elements
+
+Dropdowns, which others?
