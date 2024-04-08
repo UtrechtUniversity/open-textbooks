@@ -2,3 +2,7 @@
 
 Markdown instructions tips and tricks
 Also: markdown is easiest but for html output you can also use raw html (but that then not used in pdf and epub output)
+
+```{=html}
+<iframe width="650" height="500" src="https://utrechtuniversity.github.io/workshop-reproducible-manuscripts/slides/writing.html#/writing?slide=3"></iframe>
+```
