@@ -1,36 +1,33 @@
 project:
   type: book
   output-dir: ../docs
-
 book:
-  title: "Open textbooks with Quarto on GitHub Pages"
-  author: "Research Data Management Support"
+  title: Open textbooks with Quarto on GitHub Pages
+  author: Research Data Management Support
   date: last-modified
   chapters:
   - index.qmd
-  - part: "Basic set-up"
-    chapters: 
-      - prerequisites.qmd
-      - get-started.qmd
-      - markdown.qmd
-      - git.qmd
-  - part: "Customization"
+  - part: Basic set-up
     chapters:
-      - quarto-settings.qmd
-      - multimedia.qmd
-      - interactivity.qmd
-      - styling.qmd
-      - citation.qmd
-  - part: "Publishing"
+    - prerequisites.qmd
+    - get-started.qmd
+    - markdown.qmd
+    - git.qmd
+  - part: Customization
     chapters:
-      - rendering.qmd
-      - archiving.qmd
+    - quarto-settings.qmd
+    - multimedia.qmd
+    - interactivity.qmd
+    - styling.qmd
+    - citation.qmd
+  - part: Publishing
+    chapters:
+    - rendering.qmd
+    - archiving.qmd
   - references.qmd
-
 bibliography: references.bib
-
 format:
   html:
     theme: cosmo
-  #pdf:
-  #  documentclass: scrreprt
+    css: include/webex.css
+    include-after-body: include/webex.js
