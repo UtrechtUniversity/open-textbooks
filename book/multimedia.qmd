@@ -1,9 +1,29 @@
 # Adding multimedia
 
-How to:
+## Image
 
--   Add an image
+The basic markdown syntax for adding an image is as follows:
 
--   Add a video (from different sources)
+```md
+![Image title](link/to/the/image.png)
+```
 
--   Add an audio file
+The image can be located locally (in that case the link is the full path to the image file), or online (in that case the link is a URL to that picture).
+
+For image positioning, styling, and more options, please check out [Quarto's documentation about figures](https://quarto.org/docs/authoring/figures.html){target="_blank"}.
+
+## Video
+
+In Quarto, the basic syntax for embedding a video is as follows:
+
+```md
+{{< video link/to/video >}}
+```
+
+The video can be located locally (in that case the link is the full path to the video file), or online (in that case the link is a URL to the video).
+
+For video options such as height, width, start time, etc. please check out [Quarto's documentation about videos](https://quarto.org/docs/authoring/videos.html){target="_blank"}.
+
+## Audio
+
+To be figured out. Audio players do not seem to be supported, this guy found some sort of workaround: <https://forum.posit.co/t/embed-sound-player-in-quarto-book/164739/7>
