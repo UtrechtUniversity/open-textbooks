@@ -24,6 +24,10 @@ The video can be located locally (in that case the link is the full path to the 
 
 For video options such as height, width, start time, etc. please check out [Quarto's documentation about videos](https://quarto.org/docs/authoring/videos.html){target="_blank"}.
 
+## Diagram
+
+It's possible to create diagrams with markdown through the use of `mermaid` and other packages that are in-built in Quarto. See the [Quarto documentation](https://quarto.org/docs/authoring/diagrams.html){target="_blank"} and the [mermaid website](http://mermaid.js.org/intro/){target="_blank"} for how to make this work.
+
 ## Audio
 
 To be figured out. Audio players do not seem to be supported, this guy found some sort of workaround: <https://forum.posit.co/t/embed-sound-player-in-quarto-book/164739/7>
