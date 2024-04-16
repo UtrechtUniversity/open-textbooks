@@ -57,12 +57,19 @@ git commit -m "Initialize github textbook"
 4. A new empty repository will now be created on GitHub. Now we want to connect this GitHub repository with the repository that you have already made on your local PC. To do so, copy the code that GitHub conveniently already gives you under `or push an existing repository from the command line`. For me this looks like this: 
 ![](img/gh_push_from_commandline.png)
 Copy this code in the Terminal in Rstudio, and run it.
-5. **TODO**: Practice the git workflow git add - git commit - git push and see the changes occur in the GitHub repo
-
-::: callout-warning
-We will need to dedicate a chapter to how git works and refer to that here.
-:::
+5. Practice the git workflow of adding content, comitting the changes, and pushing the changes to GitHub. The basic steps are laid out in the [Working with git chapter](#git.qmd).
 
 ## Host on GitHub pages
 
-Turn on GitHub pages \> docs folder
+Now that you've pushed your basic book to GitHub, you need to tell GitHub to host the html files online.
+
+1. Navigate to your repository on GitHub (`https://github.com/yourusername/yourrepositoryname`).
+2. Go to the repository's Settings
+   ![Printscreen of repository page with Settings menu item highlighted](https://pages.github.com/images/repo-settings@2x.png)
+3. Under "Code and automation" in the menu on the left, click "Pages".
+4. Under " Build and deployment", select:
+    a. Source: Deploy from a branch
+    b. Branch: main
+    c. Select folder: /docs
+5. Wait a few minutes while your website is being built.
+6. After a while, GitHub will tell you "Your site is live at `yourusername.github.io/yourrepositoryname`"!
