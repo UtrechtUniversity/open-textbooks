@@ -342,25 +342,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Click Create repository</li>
 </ol></li>
 <li>A new empty repository will now be created on GitHub. Now we want to connect this GitHub repository with the repository that you have already made on your local PC. To do so, copy the code that GitHub conveniently already gives you under <code>or push an existing repository from the command line</code>. For me this looks like this: <img src="img/gh_push_from_commandline.png" class="img-fluid"> Copy this code in the Terminal in Rstudio, and run it.</li>
-<li><strong>TODO</strong>: Practice the git workflow git add - git commit - git push and see the changes occur in the GitHub repo</li>
+<li>Practice the git workflow of adding content, comitting the changes, and pushing the changes to GitHub. The basic steps are laid out in the <a href="#git.qmd">Working with git chapter</a>.</li>
 </ol>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Warning
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>We will need to dedicate a chapter to how git works and refer to that here.</p>
-</div>
-</div>
 </section>
 <section id="host-on-github-pages" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="host-on-github-pages"><span class="header-section-number">2.4</span> Host on GitHub pages</h2>
-<p>Turn on GitHub pages &gt; docs folder</p>
+<p>Now that you’ve pushed your basic book to GitHub, you need to tell GitHub to host the html files online.</p>
+<ol type="1">
+<li>Navigate to your repository on GitHub (<code>https://github.com/yourusername/yourrepositoryname</code>).</li>
+<li>Go to the repository’s Settings <img src="https://pages.github.com/images/repo-settings@2x.png" class="img-fluid" alt="Printscreen of repository page with Settings menu item highlighted"></li>
+<li>Under “Code and automation” in the menu on the left, click “Pages”.</li>
+<li>Under ” Build and deployment”, select:
+<ol type="a">
+<li>Source: Deploy from a branch</li>
+<li>Branch: main</li>
+<li>Select folder: /docs</li>
+</ol></li>
+<li>Wait a few minutes while your website is being built.</li>
+<li>After a while, GitHub will tell you “Your site is live at <code>yourusername.github.io/yourrepositoryname</code>”!</li>
+</ol>
 
 
 </section>

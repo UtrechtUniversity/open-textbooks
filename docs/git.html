@@ -68,6 +68,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="include/webex.css">
@@ -248,7 +251,37 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>The git workflow a bit better explained. Preferably with references to other cool resources.</p>
+<p>The basic git workflow looks as follows:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+   a[make change] --&gt; b[git add] --&gt; c[git commit] --&gt; d[git push]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<ol type="1">
+<li>Make an edit. For example in one of your chapters. Save the edit (<code>CNTR + S</code>)</li>
+<li>Take a look whether git has recorded that you have made a change:
+<ol type="a">
+<li>Terminal:
+<ol type="i">
+<li><code>git status</code> will list all the files which have been edited, but not committed.</li>
+<li><code>git diff YOURFILENAME</code> will display what content of your file has been changed.</li>
+</ol></li>
+<li>RStudio:
+<ol type="i">
+<li>Click the Git tab on the top right of your screen. There, you will see which files have been edited, but not committed.</li>
+<li>Select a file from the list in the Git tab, and click Diff to see what content of the file has been changed.</li>
+</ol></li>
+</ol></li>
+<li>Commit the change [WIP]</li>
+</ol>
 
 
 

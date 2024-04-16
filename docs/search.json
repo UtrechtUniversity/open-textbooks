@@ -91,7 +91,7 @@
     "href": "get-started.html#make-your-project-a-git-repository",
     "title": "2  Getting started with a Quarto book",
     "section": "2.3 Make your project a git repository",
-    "text": "2.3 Make your project a git repository\n\nIn RStudio, go to the Terminal (next to Console) and type git init. This will turn your project folder into a git repository.\nIn the terminal, type git status. This will give you all uncommited changes you’ve made. To commit all these changes at once, type:\n\ngit add -A .\ngit commit -m \"Initialize github textbook\"\n\nIn GitHub, create a new, empty repository \n\nFor owner: choose where you want to create the repository (e.g., under your name or possibly under a GitHub organization).\nFor Repository Name, it’s best to use the same name as you named your local Quarto book folder.\nLeave all other options empty for now.\nClick Create repository\n\nA new empty repository will now be created on GitHub. Now we want to connect this GitHub repository with the repository that you have already made on your local PC. To do so, copy the code that GitHub conveniently already gives you under or push an existing repository from the command line. For me this looks like this:  Copy this code in the Terminal in Rstudio, and run it.\nTODO: Practice the git workflow git add - git commit - git push and see the changes occur in the GitHub repo\n\n\n\n\n\n\n\nWarning\n\n\n\nWe will need to dedicate a chapter to how git works and refer to that here.",
+    "text": "2.3 Make your project a git repository\n\nIn RStudio, go to the Terminal (next to Console) and type git init. This will turn your project folder into a git repository.\nIn the terminal, type git status. This will give you all uncommited changes you’ve made. To commit all these changes at once, type:\n\ngit add -A .\ngit commit -m \"Initialize github textbook\"\n\nIn GitHub, create a new, empty repository \n\nFor owner: choose where you want to create the repository (e.g., under your name or possibly under a GitHub organization).\nFor Repository Name, it’s best to use the same name as you named your local Quarto book folder.\nLeave all other options empty for now.\nClick Create repository\n\nA new empty repository will now be created on GitHub. Now we want to connect this GitHub repository with the repository that you have already made on your local PC. To do so, copy the code that GitHub conveniently already gives you under or push an existing repository from the command line. For me this looks like this:  Copy this code in the Terminal in Rstudio, and run it.\nPractice the git workflow of adding content, comitting the changes, and pushing the changes to GitHub. The basic steps are laid out in the Working with git chapter.",
     "crumbs": [
       "Basic set-up",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Getting started with a Quarto book</span>"
@@ -102,7 +102,7 @@
     "href": "get-started.html#host-on-github-pages",
     "title": "2  Getting started with a Quarto book",
     "section": "2.4 Host on GitHub pages",
-    "text": "2.4 Host on GitHub pages\nTurn on GitHub pages &gt; docs folder",
+    "text": "2.4 Host on GitHub pages\nNow that you’ve pushed your basic book to GitHub, you need to tell GitHub to host the html files online.\n\nNavigate to your repository on GitHub (https://github.com/yourusername/yourrepositoryname).\nGo to the repository’s Settings \nUnder “Code and automation” in the menu on the left, click “Pages”.\nUnder ” Build and deployment”, select:\n\nSource: Deploy from a branch\nBranch: main\nSelect folder: /docs\n\nWait a few minutes while your website is being built.\nAfter a while, GitHub will tell you “Your site is live at yourusername.github.io/yourrepositoryname”!",
     "crumbs": [
       "Basic set-up",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Getting started with a Quarto book</span>"
@@ -113,7 +113,51 @@
     "href": "markdown.html",
     "title": "3  Using markdown",
     "section": "",
-    "text": "Markdown instructions tips and tricks Also: markdown is easiest but for html output you can also use raw html (but that then not used in pdf and epub output)",
+    "text": "3.1 Basic syntax",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using markdown</span>"
+    ]
+  },
+  {
+    "objectID": "markdown.html#basic-syntax",
+    "href": "markdown.html#basic-syntax",
+    "title": "3  Using markdown",
+    "section": "Header 2",
+    "text": "Markdown Syntax\nOutput\n\n\n\n\n*italics* and **bold**\nitalics and bold\n\n\nsuperscript^2^ / subscript~2~\nsuperscript2 / subscript2\n\n\n~~strikethrough~~\nstrikethrough\n\n\n`verbatim code`\nverbatim code\n\n\n# Header 1\nHeader 1\n\n\n## Header 2\nHeader 2\n\n\n### Header 3\nHeader 3",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using markdown</span>"
+    ]
+  },
+  {
+    "objectID": "markdown.html#lists",
+    "href": "markdown.html#lists",
+    "title": "3  Using markdown",
+    "section": "3.2 Lists",
+    "text": "3.2 Lists\n\n\n* unordered list\n  + sub-item 1\n    - sub-sub-item 1\n  + sub-item 2\n\n\n\nunordered list\n\nsub-item 1\n\nsub-sub-item 1\n\nsub-item 2\n\n\n\n\n\n\n1. ordered list\n2. item 2\n   i. sub-item 1\n      A.  sub-sub-item 1\n\n\n\nordered list\nitem 2\n\nsub-item 1\n\nsub-sub-item 1\n\n\n\n\n\n\n\n*   item 2\n    \n    Continued (indent 4 spaces)\n\n\n\nitem 2\nContinued (indent 4 spaces)\n\n\n\n\n\nterm\n: definition\n\n\n\nterm\n\ndefinition",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using markdown</span>"
+    ]
+  },
+  {
+    "objectID": "markdown.html#links",
+    "href": "markdown.html#links",
+    "title": "3  Using markdown",
+    "section": "3.3 Links",
+    "text": "3.3 Links\n\n\n[named hyperlink](https://quarto.org/)\n\n named hyperlink\n\n\n\n\nDirect url: &lt;https://quarto.org/&gt;\n\n Direct url: https://quarto.org/\n\n\n\n\nLink to [other places](#lists) \nin the document.\n\n Link to other places in the document.\n\n\n\n\nEmbed an image: \n![penguins](https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png)\n\n Embed an image:",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using markdown</span>"
+    ]
+  },
+  {
+    "objectID": "markdown.html#tables",
+    "href": "markdown.html#tables",
+    "title": "3  Using markdown",
+    "section": "3.4 Tables",
+    "text": "3.4 Tables\n\n\n    | Right | Left | Default | Center |\n    |------:|:-----|---------|:------:|\n    |   12  |  12  |    12   |    12  |\n    |  123  |  123 |   123   |   123  |\n    |    1  |    1 |     1   |     1  |\n\n\n\n\nRight\nLeft\nDefault\nCenter\n\n\n\n\n12\n12\n12\n12\n\n\n123\n123\n123\n123\n\n\n1\n1\n1\n1\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nIt is possible to use raw html elements in a quarto document. But try to limit this because:\n\nNot everyone knows how html works, so it’s less accessible for others to work with your content.\nRaw html elements will only correctly be displayed in html output. If you have pdf output, for example, the html elements are not rendered correctly.",
     "crumbs": [
       "Basic set-up",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Using markdown</span>"
@@ -124,7 +168,7 @@
     "href": "git.html",
     "title": "4  Working with git",
     "section": "",
-    "text": "The git workflow a bit better explained. Preferably with references to other cool resources.",
+    "text": "The basic git workflow looks as follows:\n\n\n\n\n\nflowchart LR\n   a[make change] --&gt; b[git add] --&gt; c[git commit] --&gt; d[git push]\n\n\n\n\n\n\n\nMake an edit. For example in one of your chapters. Save the edit (CNTR + S)\nTake a look whether git has recorded that you have made a change:\n\nTerminal:\n\ngit status will list all the files which have been edited, but not committed.\ngit diff YOURFILENAME will display what content of your file has been changed.\n\nRStudio:\n\nClick the Git tab on the top right of your screen. There, you will see which files have been edited, but not committed.\nSelect a file from the list in the Git tab, and click Diff to see what content of the file has been changed.\n\n\nCommit the change [WIP]",
     "crumbs": [
       "Basic set-up",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with git</span>"
@@ -186,11 +230,22 @@
     ]
   },
   {
+    "objectID": "multimedia.html#diagram",
+    "href": "multimedia.html#diagram",
+    "title": "6  Adding multimedia",
+    "section": "6.3 Diagram",
+    "text": "6.3 Diagram\nIt’s possible to create diagrams with markdown through the use of mermaid and other packages that are in-built in Quarto. See the Quarto documentation and the mermaid website for how to make this work.",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Adding multimedia</span>"
+    ]
+  },
+  {
     "objectID": "multimedia.html#audio",
     "href": "multimedia.html#audio",
     "title": "6  Adding multimedia",
-    "section": "6.3 Audio",
-    "text": "6.3 Audio\nTo be figured out. Audio players do not seem to be supported, this guy found some sort of workaround: https://forum.posit.co/t/embed-sound-player-in-quarto-book/164739/7",
+    "section": "6.4 Audio",
+    "text": "6.4 Audio\nTo be figured out. Audio players do not seem to be supported, this guy found some sort of workaround: https://forum.posit.co/t/embed-sound-player-in-quarto-book/164739/7",
     "crumbs": [
       "Customization",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Adding multimedia</span>"
