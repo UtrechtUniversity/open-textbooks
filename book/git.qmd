@@ -1,3 +1,20 @@
 # Working with git
 
-The git workflow a bit better explained. Preferably with references to other cool resources.
+The basic git workflow looks as follows:
+
+```{mermaid}
+flowchart LR
+   a[make change] --> b[git add] --> c[git commit] --> d[git push]
+```
+
+1. Make an edit. For example in one of your chapters. Save the edit (`CNTR + S`)
+2. Take a look whether git has recorded that you have made a change:
+   a. Terminal:
+         i. `git status` will list all the files which have been edited, but not committed.
+         ii. `git diff YOURFILENAME` will display what content of your file has been changed.
+   b. RStudio: 
+      i. Click the Git tab on the top right of your screen. There, you will see which files have been edited, but not committed.
+      ii. Select a file from the list in the Git tab, and click Diff to see what content of the file has been changed.
+3. Commit the change
+[WIP]
+
