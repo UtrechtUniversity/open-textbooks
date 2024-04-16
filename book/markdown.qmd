@@ -1,8 +1,197 @@
 # Using markdown
 
-Markdown instructions tips and tricks
-Also: markdown is easiest but for html output you can also use raw html (but that then not used in pdf and epub output)
+> Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. - [Markdown Guide](https://www.markdownguide.org/getting-started/)
 
-```{=html}
-<iframe width="650" height="500" src="https://utrechtuniversity.github.io/workshop-reproducible-manuscripts/slides/writing.html#/writing?slide=3"></iframe>
+Quarto documents contain content that is formatted with markdown. 
+Where in text editors, you press buttons to make text **bold**, [create a hyperlink](https://www.markdownguide.org/basic-syntax/#links){target="_blank"}, or create headers, in markdown you explicitly write these elements out in the raw text. 
+This raw markdown can then be converted to other formats, such as HTML, pdf, epub or even Word. 
+In a Quarto book, this is done automatically when you *render* the book.
+
+:::{.callout-tip}
+Some useful resources:
+
+- Learn markdown interactively with the [Markdown tutorial](https://www.markdowntutorial.com/){target="_blank"}.
+- For a longer list of markdown syntax, please refer to the [Markdown Guide Cheatsheet](https://www.markdownguide.org/cheat-sheet/){target="_blank"} and [this GitHub repository with more extensive markdown options](https://github.com/lifeparticle/Markdown-Cheatsheet){target="_blank"}.
+:::
+
+## Basic syntax
+
++-----------------------------------+-------------------------------+
+| Markdown Syntax                   | Output                        |
++===================================+===============================+
+|     *italics* and **bold**        | *italics* and **bold**        |
++-----------------------------------+-------------------------------+
+|     superscript^2^ / subscript~2~ | superscript^2^ / subscript~2~ |
++-----------------------------------+-------------------------------+
+|     ~~strikethrough~~             | ~~strikethrough~~             |
++-----------------------------------+-------------------------------+
+|     `verbatim code`               | `verbatim code`               |
++-----------------------------------+-------------------------------+
+|     # Header 1                    | # Header 1 {.unnumbered}      |
++-----------------------------------+-------------------------------+
+|     ## Header 2                   | ## Header 2 {.unnumbered}     |
++-----------------------------------+-------------------------------+
+|     ### Header 3                  | ### Header 3 {.unnumbered}    |
++-----------------------------------+-------------------------------+
+
+
+## Lists
+
+::: columns
+::: {.column width="50%"}
+
+```markdown
+* unordered list
+  + sub-item 1
+    - sub-sub-item 1
+  + sub-item 2
 ```
+:::
+::: {.column width="50%"}
+<br>
+
+* unordered list
+  + sub-item 1
+    - sub-sub-item 1
+  + sub-item 2
+:::
+:::
+
+::: columns
+::: {.column width="50%"}
+```markdown
+1. ordered list
+2. item 2
+   i. sub-item 1
+      A.  sub-sub-item 1
+```
+:::
+::: {.column width="50%"}
+<br>
+
+1. ordered list
+2. item 2
+   i. sub-item 1
+      A.  sub-sub-item 1
+:::
+:::
+
+::: columns
+::: {.column width="50%"}
+```markdown
+*   item 2
+    
+    Continued (indent 4 spaces)
+```
+:::
+::: {.column width="50%"}
+<br>
+
+*   item 2
+    
+    Continued (indent 4 spaces)
+:::
+:::
+
+::: columns
+::: {.column width="50%"}
+```markdown
+term
+: definition
+```
+:::
+::: {.column width="50%"}
+<br>
+
+term
+: definition
+:::
+:::
+
+## Links
+
+::: columns
+::: {.column width="50%"}
+```markdown
+[named hyperlink](https://quarto.org/)
+
+```
+:::
+::: {.column width="50%"}
+<br>
+[named hyperlink](https://quarto.org/)
+:::
+:::
+
+::: columns
+::: {.column width="50%"}
+```markdown
+Direct url: <https://quarto.org/>
+
+```
+:::
+::: {.column width="50%"}
+<br>
+Direct url: <https://quarto.org/>
+:::
+:::
+
+::: columns
+::: {.column width="50%"}
+```markdown
+Link to [other places](#lists) 
+in the document.
+```
+:::
+::: {.column width="50%"}
+<br>
+Link to [other places](#lists) 
+in the document.
+:::
+:::
+
+::: columns
+::: {.column width="50%"}
+```markdown
+Embed an image: 
+![penguins](https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png)
+
+```
+:::
+::: {.column width="50%"}
+<br>
+Embed an image: <br>
+![penguins](https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png)
+
+:::
+:::
+
+## Tables
+
+::: columns
+::: {.column width="50%"}
+```markdown
+    | Right | Left | Default | Center |
+    |------:|:-----|---------|:------:|
+    |   12  |  12  |    12   |    12  |
+    |  123  |  123 |   123   |   123  |
+    |    1  |    1 |     1   |     1  |
+```
+:::
+
+::: {.column width="50%" .fragment}
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|    12 | 12   | 12      |   12   |
+|   123 | 123  | 123     |  123   |
+|     1 | 1    | 1       |   1    |
+:::
+:::
+
+
+:::{.callout-note}
+It is possible to use raw html elements in a quarto document. But try to limit this because:
+
+- Not everyone knows how html works, so it's less accessible for others to work with your content.
+- Raw html elements will only correctly be displayed in html output. If you have pdf output, for example, the html elements are not rendered correctly.
+:::
