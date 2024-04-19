@@ -5,6 +5,13 @@ book:
   title: Open textbooks with Quarto on GitHub Pages
   author: Research Data Management Support
   date: last-modified
+  favicon: img/favicon.ico
+  search: true
+  repo-url: https://github.com/UtrechtUniversity/quarto-github-textbooks/
+  repo-actions: [edit, issue]
+  back-to-top-navigation: true
+  page-footer: 
+    center: "Created by Research Data Management Support, Utrecht University, The Netherlands"
   chapters:
   - index.qmd
   - part: Basic set-up
@@ -26,8 +33,18 @@ book:
     - archiving.qmd
   - references.qmd
 bibliography: references.bib
+engine: knitr
 format:
   html:
     theme: cosmo
     css: include/webex.css
     include-after-body: include/webex.js
+    link-external-icon: true
+    link-external-newwindow: true
+    other-links:
+      - text: "Research Data Management Support (Utrecht University)"
+        icon: info
+        href: https://uu.nl/rdm/
+        target: "_blank"
+    code-links:
+      - repo: "https://github.com/UtrechtUniversity/quarto-github-textbooks/"
