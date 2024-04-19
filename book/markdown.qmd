@@ -3,15 +3,15 @@
 > Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. - [Markdown Guide](https://www.markdownguide.org/getting-started/)
 
 Quarto documents contain content that is formatted with markdown. 
-Where in text editors, you press buttons to make text **bold**, [create a hyperlink](https://www.markdownguide.org/basic-syntax/#links){target="_blank"}, or create headers, in markdown you explicitly write these elements out in the raw text. 
+Where in text editors, you press buttons to make text **bold**, [create a hyperlink](https://www.markdownguide.org/basic-syntax/#links), or create headers, in markdown you explicitly write these elements out in the raw text. 
 This raw markdown can then be converted to other formats, such as HTML, pdf, epub or even Word. 
 In a Quarto book, this is done automatically when you *render* the book.
 
 :::{.callout-tip}
 Some useful resources:
 
-- Learn markdown interactively with the [Markdown tutorial](https://www.markdowntutorial.com/){target="_blank"}.
-- For a longer list of markdown syntax, please refer to the [Markdown Guide Cheatsheet](https://www.markdownguide.org/cheat-sheet/){target="_blank"} and [this GitHub repository with more extensive markdown options](https://github.com/lifeparticle/Markdown-Cheatsheet){target="_blank"}.
+- Learn markdown interactively with the [Markdown tutorial](https://www.markdowntutorial.com/).
+- For a longer list of markdown syntax, please refer to the [Markdown Guide Cheatsheet](https://www.markdownguide.org/cheat-sheet/) and [this GitHub repository with more extensive markdown options](https://github.com/lifeparticle/Markdown-Cheatsheet).
 :::
 
 ## Basic syntax
