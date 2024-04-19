@@ -66,6 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="./">
 <link href="./styling.html" rel="next">
 <link href="./multimedia.html" rel="prev">
+<link href="./img/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -132,6 +133,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Open textbooks with Quarto on GitHub Pages</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -262,16 +266,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link active" data-scroll-target="#exercises"><span class="header-section-number">7.1</span> Exercises</a>
-  <ul class="collapse">
-  <li><a href="#webexercises" id="toc-webexercises" class="nav-link" data-scroll-target="#webexercises"><span class="header-section-number">7.1.1</span> Webexercises</a></li>
-  <li><a href="#learnr" id="toc-learnr" class="nav-link" data-scroll-target="#learnr"><span class="header-section-number">7.1.2</span> learnr</a></li>
-  </ul></li>
-  <li><a href="#discussions-for-book-chapters" id="toc-discussions-for-book-chapters" class="nav-link" data-scroll-target="#discussions-for-book-chapters"><span class="header-section-number">7.2</span> Discussions for book chapters</a></li>
-  <li><a href="#executable-code" id="toc-executable-code" class="nav-link" data-scroll-target="#executable-code"><span class="header-section-number">7.3</span> Executable code</a></li>
-  <li><a href="#html-elements" id="toc-html-elements" class="nav-link" data-scroll-target="#html-elements"><span class="header-section-number">7.4</span> HTML elements</a></li>
+  <li><a href="#exercises" id="toc-exercises" class="nav-link active" data-scroll-target="#exercises"><span class="header-section-number">7.1</span> Exercises</a></li>
+  <li><a href="#commenting-on-book-content" id="toc-commenting-on-book-content" class="nav-link" data-scroll-target="#commenting-on-book-content"><span class="header-section-number">7.2</span> Commenting on book content</a></li>
+  <li><a href="#html-elements" id="toc-html-elements" class="nav-link" data-scroll-target="#html-elements"><span class="header-section-number">7.3</span> HTML elements</a></li>
+  <li><a href="#glossary" id="toc-glossary" class="nav-link" data-scroll-target="#glossary"><span class="header-section-number">7.4</span> Glossary</a></li>
+  <li><a href="#more-advanced-interactivity" id="toc-more-advanced-interactivity" class="nav-link" data-scroll-target="#more-advanced-interactivity"><span class="header-section-number">7.5</span> More advanced interactivity</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/edit/main/interactivity.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://uu.nl/rdm/" target="_blank"><i class="bi bi-info"></i>Research Data Management Support (Utrecht University)</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="undefined"><i class="bi bi-link-45deg"></i></a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -295,11 +296,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p>Interactivity can bring your book alive! There are numerous ways to add interactivity. Below we mention a couple, but keep in mind that this list is not complete, and to only add those elements that make sense for you!</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Keep in mind that most of the interactive elements mentioned here are only suitable for HTML output, i.e.&nbsp;online books. If you export the Quarto book to pdf, not much will remain of these elements!</p>
+</div>
+</div>
 <section id="exercises" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="exercises"><span class="header-section-number">7.1</span> Exercises</h2>
 <p>Interactive exercises are not part of core Quarto functionality. Luckily, there are smart people who have developed software packages to still include these. Here we go into two R packages: <code>webexercises</code> and <code>learnr</code></p>
-<section id="webexercises" class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="webexercises"><span class="header-section-number">7.1.1</span> Webexercises</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Webexercises</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">learnr</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <p>According to the <a href="https://psyteachr.github.io/webexercises/">webexercises documentation</a>:</p>
 <blockquote class="blockquote">
 <p>webexercises creates standalone HTML files that require only a JavaScript-enabled browser. It is also extremely simple to use.</p>
@@ -307,29 +324,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>To get started, take the following steps:</p>
 <ol type="1">
 <li><p>Install and load the package</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"webexercises"</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(webexercises)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></li>
-</ol>
-<!-- -->
-<ol start="2" type="1">
-<li><p>Add the necessary files and setup to include webexercises in the Quarto project</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_to_quarto</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div></li>
-</ol>
-<!-- -->
-<ol start="3" type="1">
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">install.packages("webexercises")</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">library(webexercises)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Add the necessary files and setup to include webexercises in the Quarto project. You should only do this once so this does not need to be included in the .qmd files!</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_to_quarto</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>Start using the exercises!</p>
 <ol type="a">
 <li><p><strong>Fill-in-the-blanks</strong>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="an">Fill in any vowel:</span><span class="co"> &lt;input class='webex-solveme nospaces ignorecase' size='1' data-answer='["A","E","I","O","U"]'/&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="an">Fill in any vowel:</span><span class="co"> `r fitb(c("A", "E", "I", "O" , "U"), ignore_case = TRUE)` </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Fill in any vowel: <input class="webex-solveme nospaces ignorecase" size="1" data-answer="[&quot;A&quot;,&quot;E&quot;,&quot;I&quot;,&quot;O&quot;,&quot;U&quot;]"></p></li>
 <li><p><strong>Multiple choice</strong>:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Which package helps you load data? &lt;select class='webex-select'&gt;&lt;option value='blank'&gt;&lt;/option&gt;&lt;option value=''&gt;tidyr&lt;/option&gt;&lt;option value=''&gt;dplyr&lt;/option&gt;&lt;option value='answer'&gt;readr&lt;/option&gt;&lt;option value=''&gt;ggplot2&lt;/option&gt;&lt;/select&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Which package helps you load data? </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="in">`r mcq(c("tidyr", "dplyr", answer = "readr", "ggplot2"))`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Which package helps you load data? <select class="webex-select"><option value="blank"></option><option value="">tidyr</option><option value="">dplyr</option><option value="answer">readr</option><option value="">ggplot2</option></select></p></li>
-<li><p>See the <a href="https://psyteachr.github.io/webexercises/articles/webexercises.html" target="_blank">webexercises documentation</a> for other options:</p>
+<li><p>See the <a href="https://psyteachr.github.io/webexercises/articles/webexercises.html">webexercises documentation</a> for other options:</p>
 <ul>
 <li>True or false questions</li>
 <li>Long multiple choice questions</li>
@@ -338,9 +349,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ol></li>
 </ol>
-</section>
-<section id="learnr" class="level3" data-number="7.1.2">
-<h3 data-number="7.1.2" class="anchored" data-anchor-id="learnr"><span class="header-section-number">7.1.2</span> learnr</h3>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p><code>learnr</code> is a package that can turn markdown documents into interactive tutorials, including:</p>
 <blockquote class="blockquote">
 <ul>
@@ -352,7 +362,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>Source: <a href="https://rstudio.github.io/learnr/">learnr documentation</a></p>
 </blockquote>
-<p>learnr in essence creates a Shiny application which must be hosted on a shiny server or run locally. The <a href="https://rstudio.github.io/learnr/" target="_blank">learnr documentation</a> includes detailed instructions on how to create a tutorial.</p>
+<p>learnr in essence creates a Shiny application which must be hosted on a shiny server or run locally. The <a href="https://rstudio.github.io/learnr/">learnr documentation</a> includes detailed instructions on how to create a tutorial.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -366,19 +376,159 @@ Warning
 <p>Creating a tutorial with <code>learnr</code> requires you to <em>host</em> your tutorial on a shinyapp server. It is therefore not necessarily a core part of your Quarto book.</p>
 </div>
 </div>
+</div>
+</div>
+</div>
 </section>
+<section id="commenting-on-book-content" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="commenting-on-book-content"><span class="header-section-number">7.2</span> Commenting on book content</h2>
+<p>It’s possible to allow others to comment on your book content. The comments will then be visible publicly for everyone in the book itself:</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Hypothes.is</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Utterances</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Giscus</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>Through <a href="https://web.hypothes.is/">Hypothes.is</a>, anyone can comment on content just like in Microsoft Office solutions, by selecting text and writing a comment about that text. People will need a Hypothes.is account in order to be able to comment, and all comments will be publicly visible.</p>
+<p>Requirements: simply add the following on a new line in your <code>_quarto.yml</code> file:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">comments</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">hypothesis</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Or for further custom options, please refer to the <a href="https://quarto.org/docs/reference/projects/websites.html#comments">Quarto documentation on Hypothes.is</a>.</p>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p><a href="https://utteranc.es/">Utterances</a> enables comments to be added to the bottom of a page. Comments on a page will automatically open as an <strong>Issue</strong> in the corresponding GitHub repository. People will need a GitHub account in order to be able to comment, and all comments will be publicly visible.</p>
+<p>Requirements:</p>
+<ul>
+<li><p>Make sure the GitHub repository is public (not private or internal).</p></li>
+<li><p>Install the <a href="https://github.com/apps/utterances">utterances app</a> in the repository.</p></li>
+<li><p>Make sure the Issue feature is enabled in the repository.</p></li>
+<li><p>Add and adjust the following at the top of the chapter (.qmd file) where you want people to be able to comment:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">comments</span><span class="kw">:</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">utterances</span><span class="kw">:</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="at">                </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> yourusername/yourrepositoryname</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Underneath <code>repo</code>, you can additionally specify <code>label</code>, <code>theme</code>, and <code>issue-term</code>, see the <a href="https://quarto.org/docs/reference/projects/websites.html#utterances">Quarto documentation</a>.</p></li>
+</ul>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<p><a href="https://giscus.app/">Giscus</a> enables comments to be added to the bottom of a page. Comments on a page will automatically open as a <strong>GitHub Discussion</strong> in the corresponding GitHub repository. People will need a GitHub account in order to be able to comment, and all comments will be publicly visible.</p>
+<p>Requirements:</p>
+<ul>
+<li><p>Make sure the GitHub repository is public (not private or internal).</p></li>
+<li><p>Install the <a href="https://github.com/apps/giscus">giscus app</a> in the repository.</p></li>
+<li><p>Make sure the GitHub Discussions feature is enabled in the repository.</p></li>
+<li><p>Add and adjust the following at the top of the chapter (.qmd file) where you want people to be able to comment:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">        </span><span class="fu">comments</span><span class="kw">:</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">            </span><span class="fu">giscus</span><span class="kw">:</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">                </span><span class="fu">repo</span><span class="kw">:</span><span class="at"> yourusername/yourrepositoryname</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Underneath <code>repo</code>, you can additionally specify <code>category</code>, <code>mapping</code>, <code>theme</code>, <code>language</code>, and more settings, see the <a href="https://quarto.org/docs/reference/projects/websites.html#giscus">Quarto documentation</a>.</p></li>
+</ul>
+</div>
+</div>
+</div>
 </section>
-<section id="discussions-for-book-chapters" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="discussions-for-book-chapters"><span class="header-section-number">7.2</span> Discussions for book chapters</h2>
-<p>TODO: <a href="https://github.com/apps/giscus">giscus</a>, <a href="https://utteranc.es/">utterances</a></p>
+<section id="html-elements" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="html-elements"><span class="header-section-number">7.3</span> HTML elements</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Tabsets</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Dropdowns</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Other?</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>Tabsets are a nice way to present different options. They are used on this page as well. To create them, use the following:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>::: {.panel-tabset}</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Tab number 1</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>Some content in tab number 1</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="fu">#### Tab number 2</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>Some content in tab number 2</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You can read more about tabsets in the <a href="https://quarto.org/docs/output-formats/html-basics.html#tabsets">Quarto documentation</a>.</p>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>Dropdown elements are a nice way to hide a lot of optional text. An example:</p>
+<details>
+<summary>
+Click for more information
+</summary>
+<div>
+Here is some more information
+</div>
+</details>
+<p>Dropdowns like this are created with the HTML <code>details</code> tag. For example, the above example was created as follows:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>&lt;details&gt;&lt;summary&gt;Click for more information&lt;/summary&gt;</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>&lt;div&gt;Here is some more information&lt;/div&gt;</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>&lt;/details&gt;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Everything about this details tag can be styled. That is too much to go into here, but you can find more information about that on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">Mozilla Developer website</a>.</p>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<p>… [WIP]</p>
+</div>
+</div>
+</div>
 </section>
-<section id="executable-code" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="executable-code"><span class="header-section-number">7.3</span> Executable code</h2>
-<p>Code blocks? Requires server?</p>
+<section id="glossary" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="glossary"><span class="header-section-number">7.4</span> Glossary</h2>
+<p>In-built support for creating glossaries is currently not available, but on the <a href="https://github.com/quarto-dev/quarto-cli/issues/1697">roadmap for Quarto v1.5</a> (at the time of writing we are in Quarto v1.4). In the meantime, you can make use of the <a href="https://debruine.github.io/glossary/"><code>glossary</code> R package</a> written and maintained by Lisa DeBruine.</p>
+<ol type="1">
+<li><p>Install and load the package</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="in"># Install the package</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="in">install.packages("glossary")</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="in"># Load the package</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="in">library(glossary)</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Add a <code>glossary.yml</code> file to your repository, see the <a href="https://debruine.github.io/glossary/articles/glossary.html#definition-yaml-file">documentation</a> for an example. Also make sure the package knows where to find the <code>glossary.yml</code> file by adding:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="in"># Let the glossary package know where the glossary.yml file is</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="in">glossary_path("glossary.yml")</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Check and update the glossary settings</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="in"># Set pop-up style for in-line terms</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="in">glossary_popup("hover") # Can also be "click" or "none"</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="in"># Glossary style: adjust where necessary</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="in">glossary_style(color = "purple", </span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="in">           text_decoration = "underline",</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="in">           def_bg = "#333",</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="in">           def_color = "white")</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Use the glossary:</p>
+<ul>
+<li><p><a href="https://debruine.github.io/glossary/articles/glossary.html#in-text-terms">In-line</a>:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>Here I am typing <span class="in">`r glossary(my-glossary-term)`</span> in the plain text.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>All glossary terms in a table:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="in"># Create glossary table</span></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="in">glossary_table()</span></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul></li>
+</ol>
+<p>For more extensive information, please refer to the <a href="https://debruine.github.io/glossary/index.html">full package documentation</a>.</p>
 </section>
-<section id="html-elements" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="html-elements"><span class="header-section-number">7.4</span> HTML elements</h2>
-<p>Dropdowns, which others?</p>
+<section id="more-advanced-interactivity" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="more-advanced-interactivity"><span class="header-section-number">7.5</span> More advanced interactivity</h2>
+<p>It is possible to add interactivity in other ways too:</p>
+<blockquote class="blockquote">
+<ul>
+<li><p>Create custom JavaScript visualizations using <a href="https://quarto.org/docs/interactive/ojs/">Observable JS</a></p></li>
+<li><p>Use the <a href="https://quarto.org/docs/interactive/shiny/">Shiny</a> R package to add interactivity to Knitr engine documents.</p></li>
+<li><p>Incorporate <a href="https://quarto.org/docs/interactive/widgets/jupyter.html">Jupyter Widgets</a> or <a href="https://quarto.org/docs/interactive/widgets/htmlwidgets.html">htmlwidgets</a> (for the Jupyter and Knitr engines, respectively) into your document.</p></li>
+</ul>
+</blockquote>
+<p>Please refer to the extensive <a href="https://quarto.org/docs/interactive/">Quarto documentation</a> for information on how to implement these&nbsp;into your Quarto book or website.</p>
 
 
 </section>
@@ -669,6 +819,26 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -990,6 +1160,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Created by Research Data Management Support, Utrecht University, The Netherlands</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/edit/main/interactivity.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

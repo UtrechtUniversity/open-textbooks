@@ -66,6 +66,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <meta name="quarto:offset" content="./">
 <link href="./git.html" rel="next">
 <link href="./get-started.html" rel="prev">
+<link href="./img/favicon.ico" rel="icon">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -132,6 +133,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Open textbooks with Quarto on GitHub Pages</a> 
+        <div class="sidebar-tools-main">
+    <a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -267,7 +271,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#links" id="toc-links" class="nav-link" data-scroll-target="#links"><span class="header-section-number">3.3</span> Links</a></li>
   <li><a href="#tables" id="toc-tables" class="nav-link" data-scroll-target="#tables"><span class="header-section-number">3.4</span> Tables</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/edit/main/markdown.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://uu.nl/rdm/" target="_blank"><i class="bi bi-info"></i>Research Data Management Support (Utrecht University)</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="undefined"><i class="bi bi-link-45deg"></i></a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -294,7 +298,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <blockquote class="blockquote">
 <p>Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. - <a href="https://www.markdownguide.org/getting-started/">Markdown Guide</a></p>
 </blockquote>
-<p>Quarto documents contain content that is formatted with markdown. Where in text editors, you press buttons to make text <strong>bold</strong>, <a href="https://www.markdownguide.org/basic-syntax/#links" target="_blank">create a hyperlink</a>, or create headers, in markdown you explicitly write these elements out in the raw text. This raw markdown can then be converted to other formats, such as HTML, pdf, epub or even Word. In a Quarto book, this is done automatically when you <em>render</em> the book.</p>
+<p>Quarto documents contain content that is formatted with markdown. Where in text editors, you press buttons to make text <strong>bold</strong>, <a href="https://www.markdownguide.org/basic-syntax/#links">create a hyperlink</a>, or create headers, in markdown you explicitly write these elements out in the raw text. This raw markdown can then be converted to other formats, such as HTML, pdf, epub or even Word. In a Quarto book, this is done automatically when you <em>render</em> the book.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -307,8 +311,8 @@ Tip
 <div class="callout-body-container callout-body">
 <p>Some useful resources:</p>
 <ul>
-<li>Learn markdown interactively with the <a href="https://www.markdowntutorial.com/" target="_blank">Markdown tutorial</a>.</li>
-<li>For a longer list of markdown syntax, please refer to the <a href="https://www.markdownguide.org/cheat-sheet/" target="_blank">Markdown Guide Cheatsheet</a> and <a href="https://github.com/lifeparticle/Markdown-Cheatsheet" target="_blank">this GitHub repository with more extensive markdown options</a>.</li>
+<li>Learn markdown interactively with the <a href="https://www.markdowntutorial.com/">Markdown tutorial</a>.</li>
+<li>For a longer list of markdown syntax, please refer to the <a href="https://www.markdownguide.org/cheat-sheet/">Markdown Guide Cheatsheet</a> and <a href="https://github.com/lifeparticle/Markdown-Cheatsheet">this GitHub repository with more extensive markdown options</a>.</li>
 </ul>
 </div>
 </div>
@@ -809,6 +813,26 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
@@ -1130,6 +1154,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Created by Research Data Management Support, Utrecht University, The Netherlands</p>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/edit/main/markdown.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
 
 
 

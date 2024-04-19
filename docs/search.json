@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Open textbooks with Quarto on GitHub Pages",
     "section": "",
-    "text": "Welcome!\nIn this open textbook, we highlight some tips and tricks to set up and maintain an open textbook that is:\n\ncreated with Quarto in Rstudio,\ntracked by git, and\npublished on GitHub Pages\n\nThis book is explicitly not meant to be complete. We include how to get started, and collect useful ways to customize a Quarto book to your liking.\n\n\n\n\n\n\nImportant\n\n\n\nThis website also contains LOADs of tips for Quarto: https://www.productive-r-workflow.com/quarto-tricks",
+    "text": "Welcome!\nIn this open textbook, we highlight some tips and tricks to set up and maintain an open textbook that is:\n\ncreated with Quarto in Rstudio,\ntracked by git, and\npublished on GitHub Pages\n\nThis book is explicitly not meant to be complete. We include how to get started, and collect useful ways to customize a Quarto book to your liking.\nContributions are welcome!",
     "crumbs": [
       "Welcome!"
     ]
@@ -267,29 +267,18 @@
     "href": "interactivity.html#exercises",
     "title": "7  Interactivity",
     "section": "",
-    "text": "7.1.1 Webexercises\nAccording to the webexercises documentation:\n\nwebexercises creates standalone HTML files that require only a JavaScript-enabled browser. It is also extremely simple to use.\n\nTo get started, take the following steps:\n\nInstall and load the package\n\ninstall.packages(\"webexercises\")\nlibrary(webexercises)\n\n\n\n\nAdd the necessary files and setup to include webexercises in the Quarto project\n\nadd_to_quarto()\n\n\n\n\nStart using the exercises!\n\nFill-in-the-blanks:\nFill in any vowel: &lt;input class='webex-solveme nospaces ignorecase' size='1' data-answer='[\"A\",\"E\",\"I\",\"O\",\"U\"]'/&gt;\nFill in any vowel: \nMultiple choice:\nWhich package helps you load data? &lt;select class='webex-select'&gt;&lt;option value='blank'&gt;&lt;/option&gt;&lt;option value=''&gt;tidyr&lt;/option&gt;&lt;option value=''&gt;dplyr&lt;/option&gt;&lt;option value='answer'&gt;readr&lt;/option&gt;&lt;option value=''&gt;ggplot2&lt;/option&gt;&lt;/select&gt;\nWhich package helps you load data? tidyrdplyrreadrggplot2\nSee the webexercises documentation for other options:\n\nTrue or false questions\nLong multiple choice questions\nChecked sections with feedback that can be hidden and unhidden\nHidden solutions and hints\n\n\n\n\n\n7.1.2 learnr\nlearnr is a package that can turn markdown documents into interactive tutorials, including:\n\n\nNarrative, figures, illustrations, and equations.\nCode exercises (R code chunks that users can edit and execute directly).\nQuiz questions.\nVideos (supported services include YouTube and Vimeo).\nInteractive Shiny components.\n\nSource: learnr documentation\n\nlearnr in essence creates a Shiny application which must be hosted on a shiny server or run locally. The learnr documentation includes detailed instructions on how to create a tutorial.\n\n\n\n\n\n\nWarning\n\n\n\nCreating a tutorial with learnr requires you to host your tutorial on a shinyapp server. It is therefore not necessarily a core part of your Quarto book.",
+    "text": "Webexerciseslearnr\n\n\nAccording to the webexercises documentation:\n\nwebexercises creates standalone HTML files that require only a JavaScript-enabled browser. It is also extremely simple to use.\n\nTo get started, take the following steps:\n\nInstall and load the package\n```{r}\n#| echo: false\ninstall.packages(\"webexercises\")\nlibrary(webexercises)\n```\nAdd the necessary files and setup to include webexercises in the Quarto project. You should only do this once so this does not need to be included in the .qmd files!\nadd_to_quarto()\nStart using the exercises!\n\nFill-in-the-blanks:\nFill in any vowel: `r fitb(c(\"A\", \"E\", \"I\", \"O\" , \"U\"), ignore_case = TRUE)` \nFill in any vowel: \nMultiple choice:\nWhich package helps you load data? \n`r mcq(c(\"tidyr\", \"dplyr\", answer = \"readr\", \"ggplot2\"))`\nWhich package helps you load data? tidyrdplyrreadrggplot2\nSee the webexercises documentation for other options:\n\nTrue or false questions\nLong multiple choice questions\nChecked sections with feedback that can be hidden and unhidden\nHidden solutions and hints\n\n\n\n\n\nlearnr is a package that can turn markdown documents into interactive tutorials, including:\n\n\nNarrative, figures, illustrations, and equations.\nCode exercises (R code chunks that users can edit and execute directly).\nQuiz questions.\nVideos (supported services include YouTube and Vimeo).\nInteractive Shiny components.\n\nSource: learnr documentation\n\nlearnr in essence creates a Shiny application which must be hosted on a shiny server or run locally. The learnr documentation includes detailed instructions on how to create a tutorial.\n\n\n\n\n\n\nWarning\n\n\n\nCreating a tutorial with learnr requires you to host your tutorial on a shinyapp server. It is therefore not necessarily a core part of your Quarto book.",
     "crumbs": [
       "Customization",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Interactivity</span>"
     ]
   },
   {
-    "objectID": "interactivity.html#discussions-for-book-chapters",
-    "href": "interactivity.html#discussions-for-book-chapters",
+    "objectID": "interactivity.html#commenting-on-book-content",
+    "href": "interactivity.html#commenting-on-book-content",
     "title": "7  Interactivity",
-    "section": "7.2 Discussions for book chapters",
-    "text": "7.2 Discussions for book chapters\nTODO: giscus, utterances",
-    "crumbs": [
-      "Customization",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Interactivity</span>"
-    ]
-  },
-  {
-    "objectID": "interactivity.html#executable-code",
-    "href": "interactivity.html#executable-code",
-    "title": "7  Interactivity",
-    "section": "7.3 Executable code",
-    "text": "7.3 Executable code\nCode blocks? Requires server?",
+    "section": "7.2 Commenting on book content",
+    "text": "7.2 Commenting on book content\nIt’s possible to allow others to comment on your book content. The comments will then be visible publicly for everyone in the book itself:\n\nHypothes.isUtterancesGiscus\n\n\nThrough Hypothes.is, anyone can comment on content just like in Microsoft Office solutions, by selecting text and writing a comment about that text. People will need a Hypothes.is account in order to be able to comment, and all comments will be publicly visible.\nRequirements: simply add the following on a new line in your _quarto.yml file:\ncomments:\n    hypothesis: true\nOr for further custom options, please refer to the Quarto documentation on Hypothes.is.\n\n\nUtterances enables comments to be added to the bottom of a page. Comments on a page will automatically open as an Issue in the corresponding GitHub repository. People will need a GitHub account in order to be able to comment, and all comments will be publicly visible.\nRequirements:\n\nMake sure the GitHub repository is public (not private or internal).\nInstall the utterances app in the repository.\nMake sure the Issue feature is enabled in the repository.\nAdd and adjust the following at the top of the chapter (.qmd file) where you want people to be able to comment:\n---\nformat:\n    html:\n        comments:\n            utterances:\n                repo: yourusername/yourrepositoryname\n---\nUnderneath repo, you can additionally specify label, theme, and issue-term, see the Quarto documentation.\n\n\n\nGiscus enables comments to be added to the bottom of a page. Comments on a page will automatically open as a GitHub Discussion in the corresponding GitHub repository. People will need a GitHub account in order to be able to comment, and all comments will be publicly visible.\nRequirements:\n\nMake sure the GitHub repository is public (not private or internal).\nInstall the giscus app in the repository.\nMake sure the GitHub Discussions feature is enabled in the repository.\nAdd and adjust the following at the top of the chapter (.qmd file) where you want people to be able to comment:\n---\nformat:\n    html:\n        comments:\n            giscus:\n                repo: yourusername/yourrepositoryname\n---\nUnderneath repo, you can additionally specify category, mapping, theme, language, and more settings, see the Quarto documentation.",
     "crumbs": [
       "Customization",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Interactivity</span>"
@@ -299,8 +288,30 @@
     "objectID": "interactivity.html#html-elements",
     "href": "interactivity.html#html-elements",
     "title": "7  Interactivity",
-    "section": "7.4 HTML elements",
-    "text": "7.4 HTML elements\nDropdowns, which others?",
+    "section": "7.3 HTML elements",
+    "text": "7.3 HTML elements\n\nTabsetsDropdownsOther?\n\n\nTabsets are a nice way to present different options. They are used on this page as well. To create them, use the following:\n::: {.panel-tabset}\n#### Tab number 1\n\nSome content in tab number 1\n\n#### Tab number 2\n\nSome content in tab number 2\n\n:::\nYou can read more about tabsets in the Quarto documentation.\n\n\nDropdown elements are a nice way to hide a lot of optional text. An example:\n\n\nClick for more information\n\n\nHere is some more information\n\n\nDropdowns like this are created with the HTML details tag. For example, the above example was created as follows:\n&lt;details&gt;&lt;summary&gt;Click for more information&lt;/summary&gt;\n&lt;div&gt;Here is some more information&lt;/div&gt;\n&lt;/details&gt;\nEverything about this details tag can be styled. That is too much to go into here, but you can find more information about that on the Mozilla Developer website.\n\n\n… [WIP]",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Interactivity</span>"
+    ]
+  },
+  {
+    "objectID": "interactivity.html#glossary",
+    "href": "interactivity.html#glossary",
+    "title": "7  Interactivity",
+    "section": "7.4 Glossary",
+    "text": "7.4 Glossary\nIn-built support for creating glossaries is currently not available, but on the roadmap for Quarto v1.5 (at the time of writing we are in Quarto v1.4). In the meantime, you can make use of the glossary R package written and maintained by Lisa DeBruine.\n\nInstall and load the package\n```{r}\n#| echo: false\n# Install the package\ninstall.packages(\"glossary\")\n\n# Load the package\nlibrary(glossary)\n```\nAdd a glossary.yml file to your repository, see the documentation for an example. Also make sure the package knows where to find the glossary.yml file by adding:\n```{r}\n#| echo: false\n# Let the glossary package know where the glossary.yml file is\nglossary_path(\"glossary.yml\")\n```\nCheck and update the glossary settings\n```{r}\n#| echo: false\n# Set pop-up style for in-line terms\nglossary_popup(\"hover\") # Can also be \"click\" or \"none\"\n\n# Glossary style: adjust where necessary\nglossary_style(color = \"purple\", \n           text_decoration = \"underline\",\n           def_bg = \"#333\",\n           def_color = \"white\")\n```\nUse the glossary:\n\nIn-line:\nHere I am typing `r glossary(my-glossary-term)` in the plain text.\nAll glossary terms in a table:\n```{r}\n#| echo: false\n# Create glossary table\nglossary_table()\n```\n\n\nFor more extensive information, please refer to the full package documentation.",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Interactivity</span>"
+    ]
+  },
+  {
+    "objectID": "interactivity.html#more-advanced-interactivity",
+    "href": "interactivity.html#more-advanced-interactivity",
+    "title": "7  Interactivity",
+    "section": "7.5 More advanced interactivity",
+    "text": "7.5 More advanced interactivity\nIt is possible to add interactivity in other ways too:\n\n\nCreate custom JavaScript visualizations using Observable JS\nUse the Shiny R package to add interactivity to Knitr engine documents.\nIncorporate Jupyter Widgets or htmlwidgets (for the Jupyter and Knitr engines, respectively) into your document.\n\n\nPlease refer to the extensive Quarto documentation for information on how to implement these into your Quarto book or website.",
     "crumbs": [
       "Customization",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Interactivity</span>"
@@ -311,7 +322,7 @@
     "href": "styling.html",
     "title": "8  Styling",
     "section": "",
-    "text": "This should contain something like:\n\nWhat is a css file (scss?) and how to include custom styling in a Quarto book\nTemplate for css/scss to include, perhaps there is already something out there?\nLogo, footer, header, front image, etc.",
+    "text": "Quarto has many styling options already in-built. Take a look at the HTML themes page and try out some existing themes!\nIt’s also possible to add your own styling, instead of, or additional to a Quarto theme. This can be done by adding a scss or css file to the repository and letting Quarto know to use it in the _quarto.yml:\nformat:\n  html:\n    css: styles.css\nHere is a tutorial that introduces CSS.\nBesides CSS or SCSS style sheets there is a lot that can also be customized in the _quarto.yml. Here you can find a lot of options for Quarto books and here for Quarto websites (which also largely work for Quarto HTML books).\nThis website with Quarto tricks is also very helpful in customizing Quarto content.",
     "crumbs": [
       "Customization",
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>Styling</span>"
