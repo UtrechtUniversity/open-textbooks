@@ -1,9 +1,17 @@
 # Styling
 
-This should contain something like:
+Quarto has many styling options already in-built. Take a look at the [HTML themes page](https://quarto.org/docs/output-formats/html-themes.html) and try out some existing themes!
 
--   What is a css file (scss?) and how to include custom styling in a Quarto book
+It's also possible to add your own styling, instead of, or additional to a Quarto theme. This can be done by adding a scss or css file to the repository and letting Quarto know to use it in the `_quarto.yml`:
 
--   Template for css/scss to include, perhaps there is already something out there?
+```md
+format:
+  html:
+    css: styles.css
+```
 
--   Logo, footer, header, front image, etc.
+[Here is a tutorial](https://www.w3schools.com/css/default.asp) that introduces CSS.
+
+Besides CSS or SCSS style sheets there is a lot that can also be customized in the `_quarto.yml`. [Here you can find a lot of options for Quarto books](https://quarto.org/docs/books/book-output.html) and [here for Quarto websites](https://quarto.org/docs/websites/website-tools.html) (which also largely work for Quarto HTML books).
+
+[This website with Quarto tricks](https://www.productive-r-workflow.com/quarto-tricks) is also very helpful in customizing Quarto content.
