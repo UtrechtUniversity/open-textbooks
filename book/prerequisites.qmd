@@ -48,26 +48,12 @@ I.e. a laptop *with* administrator rights.
 
 ## Quarto
 
-1. In the RStudio console, run the following (use the copy button to copy the code!):
-
-```{r}
-#| echo: true
-#| eval: false
-
-# Install the necessary packages
-install.packages("rmarkdown")
-install.packages("quarto")
-
-# Load the necessary packages
-library(rmarkdown)
-library(quarto)
-```
-
-2. Restart RStudio.
-3. Check whether Quarto is detected: 
-   a. Go to the Terminal (next to the Console), type `quarto --version` and press Enter.
-   A version number should appear.
-   b. Alternatively, go to File > New project > New directory and check whether the Quarto outputs are presented as options (Quarto project, Quarto website, Quarto blog, Quarto book)
+1. Download Quarto from the [Quarto website](https://quarto.org/docs/get-started/). The website will automatically select the correct installation file based on your operating system.
+2. Double click on the installation file to install it on your PC. 
+3. Check that Quarto is installed:
+   - Restart RStudio.
+   - In RStudio, go to the Terminal (next to the Console), type `quarto --version` and press Enter. A version number should appear.
+   - Alternatively, go to File > New project > New directory and check whether the Quarto outputs are presented as options (Quarto project, Quarto website, Quarto blog, Quarto book)
 
 ## GitHub account
 
