@@ -36,7 +36,7 @@
     "href": "prerequisites.html#quarto",
     "title": "1  Installation",
     "section": "1.2 Quarto",
-    "text": "1.2 Quarto\n\nIn the RStudio console, run the following (use the copy button to copy the code!):\n\n\n# Install the necessary packages\ninstall.packages(\"rmarkdown\")\ninstall.packages(\"quarto\")\n\n# Load the necessary packages\nlibrary(rmarkdown)\nlibrary(quarto)\n\n\nRestart RStudio.\nCheck whether Quarto is detected:\n\nGo to the Terminal (next to the Console), type quarto --version and press Enter. A version number should appear.\nAlternatively, go to File &gt; New project &gt; New directory and check whether the Quarto outputs are presented as options (Quarto project, Quarto website, Quarto blog, Quarto book)",
+    "text": "1.2 Quarto\n\nDownload Quarto from the Quarto website. The website will automatically select the correct installation file based on your operating system.\nDouble click on the installation file to install it on your PC.\nCheck that Quarto is installed:\n\nRestart RStudio.\nIn RStudio, go to the Terminal (next to the Console), type quarto --version and press Enter. A version number should appear.\nAlternatively, go to File &gt; New project &gt; New directory and check whether the Quarto outputs are presented as options (Quarto project, Quarto website, Quarto blog, Quarto book)",
     "crumbs": [
       "Basic set-up",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Installation</span>"

@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -352,24 +318,14 @@ Important
 <section id="quarto" class="level2" data-number="1.2">
 <h2 data-number="1.2" class="anchored" data-anchor-id="quarto"><span class="header-section-number">1.2</span> Quarto</h2>
 <ol type="1">
-<li>In the RStudio console, run the following (use the copy button to copy the code!):</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Install the necessary packages</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"rmarkdown"</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"quarto"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the necessary packages</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rmarkdown)</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(quarto)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ol start="2" type="1">
+<li>Download Quarto from the <a href="https://quarto.org/docs/get-started/">Quarto website</a>. The website will automatically select the correct installation file based on your operating system.</li>
+<li>Double click on the installation file to install it on your PC.</li>
+<li>Check that Quarto is installed:
+<ul>
 <li>Restart RStudio.</li>
-<li>Check whether Quarto is detected:
-<ol type="a">
-<li>Go to the Terminal (next to the Console), type <code>quarto --version</code> and press Enter. A version number should appear.</li>
+<li>In RStudio, go to the Terminal (next to the Console), type <code>quarto --version</code> and press Enter. A version number should appear.</li>
 <li>Alternatively, go to File &gt; New project &gt; New directory and check whether the Quarto outputs are presented as options (Quarto project, Quarto website, Quarto blog, Quarto book)</li>
-</ol></li>
+</ul></li>
 </ol>
 </section>
 <section id="github-account" class="level2" data-number="1.3">
