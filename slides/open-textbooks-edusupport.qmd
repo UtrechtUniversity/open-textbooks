@@ -1,0 +1,162 @@
+---
+title: "Open textbooks with Quarto and GitHub"
+subtitle: "Workshop for Education Support colleagues at the UU library"
+title-slide-attributes: 
+  data-background-color: "#FFCD00"
+author: "RDM Support"
+format: 
+        revealjs: 
+                footer: "Open textbooks for EduSupport @ UU"
+                embed-resources: true
+                incremental: true
+                slide-number: true
+                center-title-slide: true
+                progress: true
+
+---
+
+## Content
+
+-   Introducing R, RStudio, and Quarto
+-   Basic set-up and GitHub publication of a Quarto book
+-   ☕ BREAK
+-   Text editing in Markdown
+-   The git workflow
+-   ☕ BREAK
+-   Interactivity options (demo)
+-   Publishing and archiving
+
+## R and RStudio
+
+::: columns
+::: {.column width="50%"}
+![](img/rlogo.png){alt="R logo" width="50%"}
+
+Programming language
+:::
+
+::: {.column width="50%"}
+![](img/rstudiologo.png){alt="RStudio logo"}
+
+Pretty interface to interact with R\
+(and git, and Quarto)
+:::
+:::
+
+## The Rstudio interface
+
+![](img/rstudio-incremental-5.png)
+
+## Quarto
+
+> "An open-source scientific and technical publishing system"
+
+-   Turn text documents (`.qmd`) into html, pdf, epub, docx and more.
+
+    *Today*: 💻 html (documents that can be hosted on the web)
+
+-   Books 📖, but also: slides, blogs, articles, websites, and more.
+
+## Quarto: some history
+
+-   Quarto = more extensive version of **R markdown**.
+
+-   Rmarkdown: make science more reproducible.
+
+-   Document (`.Rmd`) containing both R code (R) and text (markdown).
+
+-   When rendering an R markdown document, all code gets executed as well.
+
+-   Same for Quarto!
+
+    *But: more features + more recent than R markdown*
+
+## Basic set-up of a book
+
+**💪 Let's get to work!**
+
+Follow the steps here:
+
+<https://utrechtuniversity.github.io/open-textbooks/get-started.html>
+
+## What did we just do?
+
+::: columns
+::: {.column width="30%"}
+![*KIOfficialArt, CC BY SA 3.0*](https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0cd82ff4-fa94-4020-9a16-f41089efc593/ddy9ni2-12582af3-e887-4ff9-b755-69f13240fbd1.png/v1/fit/w_828,h_1566/dora__dora_the_explorer__kicreate_by_kiofficialart_ddy9ni2-414w-2x.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjQyMiIsInBhdGgiOiJcL2ZcLzBjZDgyZmY0LWZhOTQtNDAyMC05YTE2LWY0MTA4OWVmYzU5M1wvZGR5OW5pMi0xMjU4MmFmMy1lODg3LTRmZjktYjc1NS02OWYxMzI0MGZiZDEucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.M0r7r1e0UNlagdenqQ8RxCjfRlzxVaxy-h8Sew2U-Xs){#dora fig-alt="Dora the explorer" width="264"}
+:::
+
+::: {.column width="70%"}
+1.  Create a Quarto Book project in RStudio
+
+2.  Render the Book to html
+
+3.  Turn the project folder into a git repository (more later!)
+
+4.  Upload ("push") the project files to GitHub
+
+5.  Turn on GitHub pages to publish the html files online
+:::
+:::
+
+## EX: Make a change and publish it  {.smaller}
+
+For example:
+
+-   Open the `_quarto.yml` file and change the title or authors
+
+-   Change or remove some text from one of the chapters
+
+Remember, to upload a change to GitHub:
+
+1.  `git add yourfilewithchanges` (select which files to make a snapshot of)
+2.  `git commit -m "Make x change"` (create the snapshot with message)
+3.  `git push` (upload to GitHub)
+
+## ☕ BREAK 1 
+
+## Markdown
+
+A Markdown introduction
+
+## EX: Format some text
+
+Bold, headers, bullet points, links
+
+## EX: Embed image, video, pdf
+
+We need to provide the syntax to do this.
+
+## EX: Cite the reference from the bib file
+
+We need to tell them how to do this
+
+## Git and the git workflow
+
+Explain what git is
+
+Do a round of add-commit-push
+
+## Some git terminology
+
+Commit
+
+Pull
+
+Pull request
+
+Merge conflicts
+
+## ☕ BREAK  2 
+
+## Interactivity options
+
+-   H5P
+
+-   webexercises R package
+
+-   other options
+
+## Publishing and archiving
+
+Archive the repository in Zenodo sandbox
