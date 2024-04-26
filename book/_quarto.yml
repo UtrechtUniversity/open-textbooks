@@ -7,6 +7,8 @@ book:
   date: last-modified
   favicon: img/favicon.ico
   search: true
+  sidebar:
+    logo: "https://utrechtuniversity.github.io/workshop-reproducible-manuscripts/images/quarto-hex-logo.png"
   repo-url: https://github.com/UtrechtUniversity/quarto-github-textbooks/
   repo-actions: [edit, issue]
   back-to-top-navigation: true
