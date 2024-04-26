@@ -96,7 +96,10 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
-    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="https://utrechtuniversity.github.io/workshop-reproducible-manuscripts/images/quarto-hex-logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Open textbooks with Quarto on GitHub Pages</a> 
         <div class="sidebar-tools-main">
@@ -228,8 +231,16 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://uu.nl/rdm/" target="_blank"><i class="bi bi-info"></i>Research Data Management Support (Utrecht University)</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="undefined"><i class="bi bi-link-45deg"></i></a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#why-archive-the-book" id="toc-why-archive-the-book" class="nav-link active" data-scroll-target="#why-archive-the-book"><span class="header-section-number">11.1</span> Why archive the book?</a></li>
+  <li><a href="#how-to-obtain-a-doi-by-archiving-in-zenodo" id="toc-how-to-obtain-a-doi-by-archiving-in-zenodo" class="nav-link" data-scroll-target="#how-to-obtain-a-doi-by-archiving-in-zenodo"><span class="header-section-number">11.2</span> How to obtain a DOI by archiving in Zenodo</a></li>
+  <li><a href="#educational-resource-edusources" id="toc-educational-resource-edusources" class="nav-link" data-scroll-target="#educational-resource-edusources"><span class="header-section-number">11.3</span> Educational resource: Edusources</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/edit/main/archiving.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://uu.nl/rdm/" target="_blank"><i class="bi bi-info"></i>Research Data Management Support (Utrecht University)</a></li></ul></div><div class="quarto-code-links"><h2>Code Links</h2><ul><li><a href="undefined"><i class="bi bi-link-45deg"></i></a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -252,13 +263,39 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Finished a (first full version of) your Quarto book? Now it’s time to archive it!</p>
+<section id="why-archive-the-book" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="why-archive-the-book"><span class="header-section-number">11.1</span> Why archive the book?</h2>
+<p>In short, to make your book FAIR!</p>
 <ul>
-<li>Why archiving?</li>
-<li>Connecting with Zenodo for DOIs (or use the Zenodo sandbox)</li>
-<li>Registering in Edusources for increased findability of the OER</li>
+<li>GitHub may be incredibly widely used, it’s still owned by a commercial company (Microsoft) which can change policies or go bankrupt. It is wise to not be fully dependent on Microsoft to keep your book available for the long-term.</li>
+<li>GitHub was originally meant as a collaboration space, and not to keep all content in the air at all times.</li>
+<li>GitHub cannot give your book a persistent identifier, but Zenodo can! That way, your book will always be available at that one persistent link.</li>
+<li>Additionally, by archiving your book in Zenodo, you are publishing structured metadata, which makes your book a lot more findable for humans and machines.</li>
 </ul>
+</section>
+<section id="how-to-obtain-a-doi-by-archiving-in-zenodo" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="how-to-obtain-a-doi-by-archiving-in-zenodo"><span class="header-section-number">11.2</span> How to obtain a DOI by archiving in Zenodo</h2>
+<p>Here is a short checklist. The checklist is more elaborate on the website of the <a href="https://coderefinery.github.io/github-without-command-line/doi/">Code Refinery</a>.</p>
+<ol type="1">
+<li>If you don’t have it already, <a href="https://orcid.org/register">create an ORCID</a>.</li>
+<li>If you don’t have it already, <a href="https://help.zenodo.org/docs/get-started/create-an-account/">create a Zenodo account with ORCID</a>.</li>
+<li>Log into <a href="https://zenodo.org/">Zenodo</a> (or <a href="https://sandbox.zenodo.org/">Zenodo Sandbox</a>).</li>
+<li><a href="https://help.zenodo.org/docs/profile/linking-accounts/">Link your Zenodo account</a> your GitHub account.</li>
+<li>In Zenodo, go to <a href="https://sandbox.zenodo.org/account/settings/github/">Settings &gt; GitHub</a>, and “Flip the switch” of your to-be-archived repository so that it is available for archiving.</li>
+<li>In GitHub, create a <a href="https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository">Release of your repository</a>.</li>
+<li>After some thinking, you get a DOI!</li>
+<li>If needed, you can edit the Zenodo metadata to make it more complete and/or accurate.</li>
+<li>Include the DOI in your GitHub repository ánd in your published textbook (so in one of the <code>.qmd</code> files).</li>
+</ol>
+</section>
+<section id="educational-resource-edusources" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="educational-resource-edusources"><span class="header-section-number">11.3</span> Educational resource: Edusources</h2>
+<p>If your book is an educational resource, we recommend registering it as an Open Educational Resource in <a href="https://edusources.nl/">Edusources</a>. This way, the book is even more findable by others and you contribute to the Open Education movement!</p>
+<p><strong>How?</strong> Edusources uses SURF Sharekit in the background. <a href="https://wiki.surfnet.nl/display/SSK/Handleidingen">Find SURF Sharekit manuals here</a>. Importantly, since you have already published your book, you don’t need to upload files to SURF Sharekit. Instead, you can provide a link (the DOI) to the materials!</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -894,7 +931,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Created by Research Data Management Support, Utrecht University, The Netherlands</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/edit/main/archiving.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/edit/main/archiving.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

@@ -267,7 +267,7 @@
     "href": "interactivity.html#exercises",
     "title": "7  Interactivity",
     "section": "",
-    "text": "Webexerciseslearnr\n\n\nAccording to the webexercises documentation:\n\nwebexercises creates standalone HTML files that require only a JavaScript-enabled browser. It is also extremely simple to use.\n\nTo get started, take the following steps:\n\nInstall and load the package\n```{r}\n#| echo: false\ninstall.packages(\"webexercises\")\nlibrary(webexercises)\n```\nAdd the necessary files and setup to include webexercises in the Quarto project. You should only do this once so this does not need to be included in the .qmd files!\nadd_to_quarto()\nStart using the exercises!\n\nFill-in-the-blanks:\nFill in any vowel: `r fitb(c(\"A\", \"E\", \"I\", \"O\" , \"U\"), ignore_case = TRUE)` \nFill in any vowel: \nMultiple choice:\nWhich package helps you load data? \n`r mcq(c(\"tidyr\", \"dplyr\", answer = \"readr\", \"ggplot2\"))`\nWhich package helps you load data? tidyrdplyrreadrggplot2\nSee the webexercises documentation for other options:\n\nTrue or false questions\nLong multiple choice questions\nChecked sections with feedback that can be hidden and unhidden\nHidden solutions and hints\n\n\n\n\n\nlearnr is a package that can turn markdown documents into interactive tutorials, including:\n\n\nNarrative, figures, illustrations, and equations.\nCode exercises (R code chunks that users can edit and execute directly).\nQuiz questions.\nVideos (supported services include YouTube and Vimeo).\nInteractive Shiny components.\n\nSource: learnr documentation\n\nlearnr in essence creates a Shiny application which must be hosted on a shiny server or run locally. The learnr documentation includes detailed instructions on how to create a tutorial.\n\n\n\n\n\n\nWarning\n\n\n\nCreating a tutorial with learnr requires you to host your tutorial on a shinyapp server. It is therefore not necessarily a core part of your Quarto book.",
+    "text": "WebexerciseslearnrH5P\n\n\nAccording to the webexercises documentation:\n\nwebexercises creates standalone HTML files that require only a JavaScript-enabled browser. It is also extremely simple to use.\n\nTo get started, take the following steps:\n\nInstall and load the package\n```{r}\n#| echo: false\ninstall.packages(\"webexercises\")\nlibrary(webexercises)\n```\nAdd the necessary files and setup to include webexercises in the Quarto project. You should only do this once so this does not need to be included in the .qmd files!\nadd_to_quarto()\nStart using the exercises!\n\nFill-in-the-blanks:\nFill in any vowel: `r fitb(c(\"A\", \"E\", \"I\", \"O\" , \"U\"), ignore_case = TRUE)` \nFill in any vowel: \nMultiple choice:\nWhich package helps you load data? \n`r mcq(c(\"tidyr\", \"dplyr\", answer = \"readr\", \"ggplot2\"))`\nWhich package helps you load data? tidyrdplyrreadrggplot2\nSee the webexercises documentation for other options:\n\nTrue or false questions\nLong multiple choice questions\nChecked sections with feedback that can be hidden and unhidden\nHidden solutions and hints\n\n\n\n\n\nlearnr is a package that can turn markdown documents into interactive tutorials, including:\n\n\nNarrative, figures, illustrations, and equations.\nCode exercises (R code chunks that users can edit and execute directly).\nQuiz questions.\nVideos (supported services include YouTube and Vimeo).\nInteractive Shiny components.\n\nSource: learnr documentation\n\nlearnr in essence creates a Shiny application which must be hosted on a shiny server or run locally. The learnr documentation includes detailed instructions on how to create a tutorial.\n\n\n\n\n\n\nWarning\n\n\n\nCreating a tutorial with learnr requires you to host your tutorial on a shinyapp server. It is therefore not necessarily a core part of your Quarto book.\n\n\n\n\nIf H5P content is hosted on a public website, you can easily re-use it, by clicking “&lt;&gt; Embed” and copy-pasting the HTML code into your Quarto document!\nBelow is an example from the H5P.org website.\n&lt;iframe src=\"https://h5p.org/h5p/embed/6725\" \nwidth=\"1090\" height=\"389\" frameborder=\"0\" \nallowfullscreen=\"allowfullscreen\" \nallow=\"geolocation *; microphone *; camera *; midi *; encrypted-media *\"\ntitle=\"Arithmetic Quiz\"&gt;&lt;/iframe&gt;&lt;script src=\"https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js\" charset=\"UTF-8\"&gt;&lt;/script&gt;",
     "crumbs": [
       "Customization",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Interactivity</span>"
@@ -355,7 +355,40 @@
     "href": "archiving.html",
     "title": "11  Archiving",
     "section": "",
-    "text": "Why archiving?\nConnecting with Zenodo for DOIs (or use the Zenodo sandbox)\nRegistering in Edusources for increased findability of the OER",
+    "text": "11.1 Why archive the book?\nIn short, to make your book FAIR!",
+    "crumbs": [
+      "Publishing",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Archiving</span>"
+    ]
+  },
+  {
+    "objectID": "archiving.html#why-archive-the-book",
+    "href": "archiving.html#why-archive-the-book",
+    "title": "11  Archiving",
+    "section": "",
+    "text": "GitHub may be incredibly widely used, it’s still owned by a commercial company (Microsoft) which can change policies or go bankrupt. It is wise to not be fully dependent on Microsoft to keep your book available for the long-term.\nGitHub was originally meant as a collaboration space, and not to keep all content in the air at all times.\nGitHub cannot give your book a persistent identifier, but Zenodo can! That way, your book will always be available at that one persistent link.\nAdditionally, by archiving your book in Zenodo, you are publishing structured metadata, which makes your book a lot more findable for humans and machines.",
+    "crumbs": [
+      "Publishing",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Archiving</span>"
+    ]
+  },
+  {
+    "objectID": "archiving.html#how-to-obtain-a-doi-by-archiving-in-zenodo",
+    "href": "archiving.html#how-to-obtain-a-doi-by-archiving-in-zenodo",
+    "title": "11  Archiving",
+    "section": "11.2 How to obtain a DOI by archiving in Zenodo",
+    "text": "11.2 How to obtain a DOI by archiving in Zenodo\nHere is a short checklist. The checklist is more elaborate on the website of the Code Refinery.\n\nIf you don’t have it already, create an ORCID.\nIf you don’t have it already, create a Zenodo account with ORCID.\nLog into Zenodo (or Zenodo Sandbox).\nLink your Zenodo account your GitHub account.\nIn Zenodo, go to Settings &gt; GitHub, and “Flip the switch” of your to-be-archived repository so that it is available for archiving.\nIn GitHub, create a Release of your repository.\nAfter some thinking, you get a DOI!\nIf needed, you can edit the Zenodo metadata to make it more complete and/or accurate.\nInclude the DOI in your GitHub repository ánd in your published textbook (so in one of the .qmd files).",
+    "crumbs": [
+      "Publishing",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Archiving</span>"
+    ]
+  },
+  {
+    "objectID": "archiving.html#educational-resource-edusources",
+    "href": "archiving.html#educational-resource-edusources",
+    "title": "11  Archiving",
+    "section": "11.3 Educational resource: Edusources",
+    "text": "11.3 Educational resource: Edusources\nIf your book is an educational resource, we recommend registering it as an Open Educational Resource in Edusources. This way, the book is even more findable by others and you contribute to the Open Education movement!\nHow? Edusources uses SURF Sharekit in the background. Find SURF Sharekit manuals here. Importantly, since you have already published your book, you don’t need to upload files to SURF Sharekit. Instead, you can provide a link (the DOI) to the materials!",
     "crumbs": [
       "Publishing",
       "<span class='chapter-number'>11</span>  <span class='chapter-title'>Archiving</span>"
