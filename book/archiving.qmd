@@ -1,5 +1,32 @@
 # Archiving
 
--   Why archiving?
--   Connecting with Zenodo for DOIs (or use the Zenodo sandbox)
--   Registering in Edusources for increased findability of the OER
+Finished a (first full version of) your Quarto book? Now it's time to archive it!
+
+## Why archive the book?
+
+In short, to make your book FAIR!
+
+- GitHub may be incredibly widely used, it's still owned by a commercial company (Microsoft) which can change policies or go bankrupt. It is wise to not be fully dependent on Microsoft to keep your book available for the long-term.
+- GitHub was originally meant as a collaboration space, and not to keep all content in the air at all times.
+- GitHub cannot give your book a persistent identifier, but Zenodo can! That way, your book will always be available at that one persistent link.
+- Additionally, by archiving your book in Zenodo, you are publishing structured metadata, which makes your book a lot more findable for humans and machines.
+
+## How to obtain a DOI by archiving in Zenodo
+
+Here is a short checklist. The checklist is more elaborate on the website of the [Code Refinery](https://coderefinery.github.io/github-without-command-line/doi/).
+
+1. If you don't have it already, [create an ORCID](https://orcid.org/register).
+2. If you don't have it already, [create a Zenodo account with ORCID](https://help.zenodo.org/docs/get-started/create-an-account/).
+3. Log into [Zenodo](https://zenodo.org/) (or [Zenodo Sandbox](https://sandbox.zenodo.org/)).
+3. [Link your Zenodo account](https://help.zenodo.org/docs/profile/linking-accounts/) your GitHub account.
+4. In Zenodo, go to [Settings > GitHub](https://sandbox.zenodo.org/account/settings/github/), and "Flip the switch" of your to-be-archived repository so that it is available for archiving.
+5. In GitHub, create a [Release of your repository](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
+6. After some thinking, you get a DOI! 
+7. If needed, you can edit the Zenodo metadata to make it more complete and/or accurate.
+8. Include the DOI in your GitHub repository ánd in your published textbook (so in one of the `.qmd` files).
+
+## Educational resource: Edusources
+
+If your book is an educational resource, we recommend registering it as an Open Educational Resource in [Edusources](https://edusources.nl/). This way, the book is even more findable by others and you contribute to the Open Education movement!
+
+**How?** Edusources uses SURF Sharekit in the background. [Find SURF Sharekit manuals here](https://wiki.surfnet.nl/display/SSK/Handleidingen). Importantly, since you have already published your book, you don't need to upload files to SURF Sharekit. Instead, you can provide a link (the DOI) to the materials!
