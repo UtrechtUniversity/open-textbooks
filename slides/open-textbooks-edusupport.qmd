@@ -12,7 +12,6 @@ format:
                 slide-number: true
                 center-title-slide: true
                 progress: true
-
 ---
 
 ## Content
@@ -25,6 +24,8 @@ format:
 -   ☕ BREAK
 -   Interactivity options (demo)
 -   Publishing and archiving
+
+# R, RStudio and Quarto
 
 ## R and RStudio
 
@@ -99,7 +100,7 @@ Follow the steps here:
 :::
 :::
 
-## EX: Make a change and publish it  {.smaller}
+## EX: Make a change and publish it {.smaller}
 
 For example:
 
@@ -113,50 +114,284 @@ Remember, to upload a change to GitHub:
 2.  `git commit -m "Make x change"` (create the snapshot with message)
 3.  `git push` (upload to GitHub)
 
-## ☕ BREAK 1 
+# ☕ BREAK 1 {background-image="https://upload.wikimedia.org/wikipedia/commons/1/10/Ireland_%28Unsplash_TD4DBagg2wE%29.jpg"}
+
+# Markdown and git
 
 ## Markdown
 
-A Markdown introduction
+> Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. - [*Markdown Guide*](https://www.markdownguide.org/getting-started/)
 
-## EX: Format some text
+. . .
 
-Bold, headers, bullet points, links
+-   Agnostic way of formatting text.
+-   Can be automatically converted to specific outputs, such as html, pdf, etc.
+-   Type literally, or use [Visual Editor mode](https://quarto.org/docs/visual-editor/)!
 
-## EX: Embed image, video, pdf
+## A few examples {.smaller}
 
-We need to provide the syntax to do this.
++-----------------------------------+-------------------------------+
+| Markdown Syntax                   | Output                        |
++===================================+===============================+
+| ```                               | *italics* and **bold**        |
+| *italics* and **bold**            |                               |
+| ```                               |                               |
++-----------------------------------+-------------------------------+
+| ```                               | superscript^2^ / subscript~2~ |
+| superscript^2^ / subscript~2~     |                               |
+| ```                               |                               |
++-----------------------------------+-------------------------------+
+| ```                               | `verbatim code`               |
+| `verbatim code`                   |                               |
+| ```                               |                               |
++-----------------------------------+-------------------------------+
+| ```                               | # First-level header          |
+| # First-level header              |                               |
+| ```                               |                               |
++-----------------------------------+-------------------------------+
+| ```                               | ## Second-level header        |
+| ## Second-level header            |                               |
+| ```                               |                               |
++-----------------------------------+-------------------------------+
 
-## EX: Cite the reference from the bib file
+## Lists and links {.smaller}
 
-We need to tell them how to do this
+::: nonincremental
+::: columns
+::: {.column width="50%"}
+``` markdown
+* unordered list
+  + sub-item 1
+    - sub-sub-item 1
+  + sub-item 2
+```
+:::
 
-## Git and the git workflow
+::: {.column width="50%"}
+-   unordered list
+    -   sub-item 1
+        -   sub-sub-item 1
+    -   sub-item 2
+:::
+:::
+:::
 
-Explain what git is
+. . .
 
-Do a round of add-commit-push
+::: nonincremental
+::: columns
+::: {.column width="50%"}
+``` markdown
+1. ordered list
+2. item 2
+   i. sub-item 1
+      A.  sub-sub-item 1
+```
+:::
 
-## Some git terminology
+::: {.column width="50%"}
+1.  ordered list
+2.  item 2
+    i.  sub-item 1
+        A.  sub-sub-item 1
+:::
+:::
+:::
 
-Commit
+. . .
 
-Pull
+::: nonincremental
+::: columns
+::: {.column width="50%"}
+``` markdown
 
-Pull request
+Here's a 
+[named hyperlink](https://quarto.org/)
+```
+:::
 
-Merge conflicts
+::: {.column width="50%"}
+Here's a [named hyperlink](https://quarto.org/)
+:::
+:::
+:::
 
-## ☕ BREAK  2 
+. . .
 
-## Interactivity options
+::: nonincremental
+::: columns
+::: {.column width="50%"}
+``` markdown
 
--   H5P
+Clickable url: <https://quarto.org/>
+```
+:::
 
--   webexercises R package
+::: {.column width="50%"}
+Clickable url: <https://quarto.org/>
+:::
+:::
+:::
 
--   other options
+## EX: Markdown tutorial
+
+Do the first 3 exercises of the Markdown tutorial on\
+<https://www.markdowntutorial.com/>\
+(italics/bold, headers, hyperlinks)
+
+## Embed multimedia {.smaller}
+
+::: columns
+::: {.column width="50%"}
+``` markdown
+Embed an image: 
+![penguins](https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png)
+```
+:::
+
+::: {.column width="50%"}
+Embed an image: <br> ![penguins](https://allisonhorst.github.io/palmerpenguins/reference/figures/lter_penguins.png)
+:::
+:::
+
+. . .
+
+::: columns
+::: {.column width="50%"}
+``` {.markdown shortcodes="false"}
+Embed a video in Quarto:
+{{< video https://www.youtube.com/embed/wo9vZccmqwc >}}
+```
+
+See also [Quarto documentation for videos](https://quarto.org/docs/authoring/videos.html)
+:::
+
+::: {.column width="50%"}
+Embed a video in Quarto: <br> {{< video https://www.youtube.com/embed/wo9vZccmqwc >}}
+:::
+:::
+
+## EX: Embed an image or video
+
+Find an image or video and embed it in one of the chapters of your book! 📖
+
+## Git and GitHub {.smaller}
+
+::: columns
+::: {.column width="50%"}
+![](https://git-scm.com/images/logos/downloads/Git-Logo-2Color.png){fig-alt="Git logo" height="120"}
+
+-   Version control software
+-   Versions of a file are stored as "commits" that can be reverted
+-   Not necessarily online, can be on your personal laptop
+:::
+
+::: {.column width="50%"}
+![](https://cdn-icons-png.flaticon.com/512/25/25231.png){fig-alt="GitHub logo" height="120"}
+
+-   Website to store git-tracked files
+-   Collaborate on files and make suggestions for improvement
+-   Also allows hosting html files online (GitHub Pages)
+:::
+:::
+
+## Git workflow (in your terminal)
+
+1.  **Pull**: Get latest changes from GitHub:
+
+    ``` bash
+    git pull
+    ```
+
+2.  Make change in file on your PC
+
+3.  **Stage**: Tell git that you are planning to incorporate the file in your next snapshot:
+
+    ``` bash
+    git add "your-file-to-stage"
+    ```
+
+4.  **Commit**: Tell git to take the snapshot:
+
+    ``` bash
+    git commit -m "Make change x"
+    ```
+
+5.  **Push**: Upload the changes to GitHub:
+
+    ``` bash
+    git push
+    ```
+
+## Status, history, reverting
+
+"What has been edited and staged?"
+
+``` bash
+git status
+```
+
+. . .
+
+"What has been previously committed?"
+
+``` bash
+git log
+```
+
+. . .
+
+"UNDO, UNDO, UNDO!"
+
+``` bash
+# Undo staging
+git reset yourstagedfile
+
+# Undo last commit
+git revert HEAD
+```
+
+# ☕ BREAK 2 {background-image="https://upload.wikimedia.org/wikipedia/commons/1/10/Ireland_%28Unsplash_TD4DBagg2wE%29.jpg"}
+
+## Interactivity: embed H5P
+
+1.  Find H5P content
+2.  Click "Embed \<\>"
+3.  Copy-paste code into qmd file
+4.  Render!
+
+## Interactivity: webexercises
+
+With the `{webexercises}` R package!
+
+1.  Install + load R package
+
+    ````         
+     ```{{r}}
+     install.packages("webexercises")
+     library(webexercises)
+     ```
+    ````
+
+2.  Add to Quarto
+
+    ``` r
+     add_to_quarto()
+    ```
+
+3.  [Use exercises](https://psyteachr.github.io/webexercises/articles/webexercises.html#fill-in-the-blanks)
 
 ## Publishing and archiving
 
-Archive the repository in Zenodo sandbox
+Finished (a full version of) the book? **Archive it!**
+
+1. [Create an ORCID](https://orcid.org/register)
+2. Log into Zenodo (or [Zenodo Sandbox](https://sandbox.zenodo.org/))
+3. [Link your Zenodo account](https://help.zenodo.org/docs/profile/linking-accounts/) to ORCID ánd GitHub account
+4. In Zenodo, go to [Settings > GitHub](https://sandbox.zenodo.org/account/settings/github/), and "Flip the switch" of your to-be-archived repository.
+5. In GitHub, create a [Release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
+6. Published! If needed, edit the Zenodo metadata.
+
+Steps are outlined [here with screenshots](https://coderefinery.github.io/github-without-command-line/doi/)
+
+# Thanks!
