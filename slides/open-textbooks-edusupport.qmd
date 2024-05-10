@@ -1,26 +1,33 @@
 ---
 title: "Open textbooks with Quarto and GitHub"
-subtitle: "Workshop for Education Support colleagues at the UU library"
+description: "Workshop for Education Support colleagues at the UU library"
 title-slide-attributes: 
   data-background-color: "#FFCD00"
-author: "RDM Support"
+author:
+  - Dorien Huijser
+  - Neha Moopen
+  - Kim Deckers
+date: 2024-05-16
 format: 
         revealjs: 
+                logo:  https://utrechtuniversity.github.io/dataprivacyhandbook/img/UU_logo_2021_EN_RGB.png
                 footer: "Open textbooks for EduSupport @ UU"
+                theme: uu.scss
                 embed-resources: true
-                incremental: true
                 slide-number: true
                 center-title-slide: true
                 progress: true
+                mermaid: 
+                  security-level: loose
 ---
 
 ## Content
 
 -   Introducing R, RStudio, and Quarto
--   Basic set-up and GitHub publication of a Quarto book
+-   Our very first Quarto book
 -   ☕ BREAK
--   Text editing in Markdown
 -   The git workflow
+-   Host book on GitHub pages
 -   ☕ BREAK
 -   Interactivity options (demo)
 -   Publishing and archiving
@@ -39,7 +46,7 @@ Programming language
 ::: {.column width="50%"}
 ![](img/rstudiologo.png){alt="RStudio logo"}
 
-Pretty interface to interact with R\
+Pretty interface to interact with R
 (and git, and Quarto)
 :::
 :::
@@ -48,196 +55,63 @@ Pretty interface to interact with R\
 
 ![](img/rstudio-incremental-5.png)
 
+::: notes
+Why do we use R and RStudio? It is perfectly possible to create a Quarto book with another text editor. We choose Rstudio here because:
+
+-   It has a nice interface, with a visual editing mode.
+-   It integrates nicely with git, and allows working with git with buttons instead of only lines of code.
+-   We are most familiar with R ourselves, as are many researchers.
+:::
+
 ## Quarto
 
 > "An open-source scientific and technical publishing system"
 
--   Turn text documents (`.qmd`) into html, pdf, epub, docx and more.
+-   Documents with text **and** code (R, Python, bash, etc.).
+
+-   Turn text documents (`.qmd`) into html, pdf, epub, docx and more. Code is automatically executed.
 
     *Today*: 💻 html (documents that can be hosted on the web)
 
--   Books 📖, but also: slides, blogs, articles, websites, and more.
+-   Many output types: book, slides, blog, article, website, etc.
 
-## Quarto: some history
+    *Today*: 📖 book
 
--   Quarto = more extensive version of **R markdown**.
-
--   Rmarkdown: make science more reproducible.
-
--   Document (`.Rmd`) containing both R code (R) and text (markdown).
-
--   When rendering an R markdown document, all code gets executed as well.
-
--   Same for Quarto!
-
-    *But: more features + more recent than R markdown*
-
-## Basic set-up of a book
-
-**💪 Let's get to work!**
-
-Follow the steps here:
-
-<https://utrechtuniversity.github.io/open-textbooks/get-started.html>
-
-## What did we just do?
+## Our first Quarto book
 
 ::: columns
-::: {.column width="30%"}
+::: {.column width="20%"}
 ![*KIOfficialArt, CC BY SA 3.0*](https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/0cd82ff4-fa94-4020-9a16-f41089efc593/ddy9ni2-12582af3-e887-4ff9-b755-69f13240fbd1.png/v1/fit/w_828,h_1566/dora__dora_the_explorer__kicreate_by_kiofficialart_ddy9ni2-414w-2x.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MjQyMiIsInBhdGgiOiJcL2ZcLzBjZDgyZmY0LWZhOTQtNDAyMC05YTE2LWY0MTA4OWVmYzU5M1wvZGR5OW5pMi0xMjU4MmFmMy1lODg3LTRmZjktYjc1NS02OWYxMzI0MGZiZDEucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.M0r7r1e0UNlagdenqQ8RxCjfRlzxVaxy-h8Sew2U-Xs){#dora fig-alt="Dora the explorer" width="264"}
 :::
 
 ::: {.column width="70%"}
-1.  Create a Quarto Book project in RStudio
+Follow the steps here:
 
-2.  Render the Book to html
-
-3.  Turn the project folder into a git repository (more later!)
-
-4.  Upload ("push") the project files to GitHub
-
-5.  Turn on GitHub pages to publish the html files online
+<https://quarto.org/docs/books/#quick-start>
 :::
 :::
 
-## EX: Make a change and publish it {.smaller}
+## Files
 
-For example:
-
--   Open the `_quarto.yml` file and change the title or authors
-
--   Change or remove some text from one of the chapters
-
-Remember, to upload a change to GitHub:
-
-1.  `git add yourfilewithchanges` (select which files to make a snapshot of)
-2.  `git commit -m "Make x change"` (create the snapshot with message)
-3.  `git push` (upload to GitHub)
-
-# ☕ BREAK 1 {background-image="https://upload.wikimedia.org/wikipedia/commons/1/10/Ireland_%28Unsplash_TD4DBagg2wE%29.jpg"}
-
-# Markdown and git
+-   `_quarto.yml`: settings
+-   `index.qmd`: title page/homepage
+-   `[chapters].qmd`: other book chapters
+-   `references.bib`: references to be used in the book
+-   `cover.png`: book cover image
 
 ## Markdown
+
+In your chapters, you write in **Markdown**
 
 > Markdown is a lightweight markup language that you can use to add formatting elements to plaintext text documents. - [*Markdown Guide*](https://www.markdownguide.org/getting-started/)
 
 . . .
 
--   Agnostic way of formatting text.
--   Can be automatically converted to specific outputs, such as html, pdf, etc.
--   Type literally, or use [Visual Editor mode](https://quarto.org/docs/visual-editor/)!
+- Agnostic way of formatting text.
+- Can be automatically converted to specific outputs, such as html, pdf, etc.
+- Type literally, or use [Visual Editor mode](https://quarto.org/docs/visual-editor/)!
 
-## A few examples {.smaller}
-
-+-----------------------------------+-------------------------------+
-| Markdown Syntax                   | Output                        |
-+===================================+===============================+
-| ```                               | *italics* and **bold**        |
-| *italics* and **bold**            |                               |
-| ```                               |                               |
-+-----------------------------------+-------------------------------+
-| ```                               | superscript^2^ / subscript~2~ |
-| superscript^2^ / subscript~2~     |                               |
-| ```                               |                               |
-+-----------------------------------+-------------------------------+
-| ```                               | `verbatim code`               |
-| `verbatim code`                   |                               |
-| ```                               |                               |
-+-----------------------------------+-------------------------------+
-| ```                               | # First-level header          |
-| # First-level header              |                               |
-| ```                               |                               |
-+-----------------------------------+-------------------------------+
-| ```                               | ## Second-level header        |
-| ## Second-level header            |                               |
-| ```                               |                               |
-+-----------------------------------+-------------------------------+
-
-## Lists and links {.smaller}
-
-::: nonincremental
-::: columns
-::: {.column width="50%"}
-``` markdown
-* unordered list
-  + sub-item 1
-    - sub-sub-item 1
-  + sub-item 2
-```
-:::
-
-::: {.column width="50%"}
--   unordered list
-    -   sub-item 1
-        -   sub-sub-item 1
-    -   sub-item 2
-:::
-:::
-:::
-
-. . .
-
-::: nonincremental
-::: columns
-::: {.column width="50%"}
-``` markdown
-1. ordered list
-2. item 2
-   i. sub-item 1
-      A.  sub-sub-item 1
-```
-:::
-
-::: {.column width="50%"}
-1.  ordered list
-2.  item 2
-    i.  sub-item 1
-        A.  sub-sub-item 1
-:::
-:::
-:::
-
-. . .
-
-::: nonincremental
-::: columns
-::: {.column width="50%"}
-``` markdown
-
-Here's a 
-[named hyperlink](https://quarto.org/)
-```
-:::
-
-::: {.column width="50%"}
-Here's a [named hyperlink](https://quarto.org/)
-:::
-:::
-:::
-
-. . .
-
-::: nonincremental
-::: columns
-::: {.column width="50%"}
-``` markdown
-
-Clickable url: <https://quarto.org/>
-```
-:::
-
-::: {.column width="50%"}
-Clickable url: <https://quarto.org/>
-:::
-:::
-:::
-
-## EX: Markdown tutorial
-
-Do the first 3 exercises of the Markdown tutorial on\
-<https://www.markdowntutorial.com/>\
-(italics/bold, headers, hyperlinks)
+See <https://www.markdownguide.org/cheat-sheet/>
 
 ## Embed multimedia {.smaller}
 
@@ -271,9 +145,26 @@ Embed a video in Quarto: <br> {{< video https://www.youtube.com/embed/wo9vZccmqw
 :::
 :::
 
-## EX: Embed an image or video
+## ✍️ Make a change in your book
 
-Find an image or video and embed it in one of the chapters of your book! 📖
+1. **In the `_quarto.yml` file:**
+    a. Change the title and authors 
+    b. Add to the `_quarto.yml`:
+      
+      ```{.yaml code-line-numbers="3"}
+      project:
+        type: book
+        output-dir: docs
+      ```
+      
+2. **In one of your chapters:**
+    a. Format some text
+    b. Embed an image or video of your choice
+3. **Render your book!**
+
+# ☕ BREAK 1 {background-image="https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg" background-color="black"}
+
+# The git workflow
 
 ## Git and GitHub {.smaller}
 
@@ -295,40 +186,83 @@ Find an image or video and embed it in one of the chapters of your book! 📖
 :::
 :::
 
-## Git workflow (in your terminal)
+## Git workflow
 
-1.  **Pull**: Get latest changes from GitHub:
+```{mermaid}
+flowchart LR
+  A(fa:fa-pencil <b>Make change</b><br><i>Collect to be sent items</i><br><img src="https://images.pexels.com/photos/6068969/pexels-photo-6068969.jpeg"/>) --> B
+  B(fa:fa-archive <b>Stage</b><br><i>Put in package</i><br><img src="https://live.staticflickr.com/1560/25069988352_98dd8f1c8d_b.jpg"/><br><code>git add your-edited-file</code>) --> C
+  C(fa:fa-tag <b>Commit</b><br><i>Add packaging label</i><br><img src="https://live.staticflickr.com/65535/52177106715_98e603fdf5_b.jpg"/><br><code>git commit -m 'made x update'</code>) --> D
+  D(fa:fa-paper-plane <b>Push</b><br><i>Send package</i><br><img src="https://upload.wikimedia.org/wikipedia/commons/2/22/PostNL_Pakket-_en_briefautomaat%2C_Almere_%282020%29_04.jpg"/><br><code>git push</code>)
+```
 
-    ``` bash
-    git pull
+## ✍️ Practice the git workflow
+
+Do this once (together):
+
+1. In RStudio Terminal, type `git init` > ENTER
+2. Commit all changes:
+    
+    ```bash
+    git add -A .
+    git commit -m "Initialize Quarto book"
     ```
 
-2.  Make change in file on your PC
+. . .
 
-3.  **Stage**: Tell git that you are planning to incorporate the file in your next snapshot:
+Now practice (by yourself):
 
-    ``` bash
-    git add "your-file-to-stage"
-    ```
+1. Make a change in one of your chapters
+2. Add + commit the change
 
-4.  **Commit**: Tell git to take the snapshot:
+## ✍️ Put the Quarto book on GitHub {.smaller}
 
-    ``` bash
-    git commit -m "Make change x"
-    ```
-
-5.  **Push**: Upload the changes to GitHub:
-
-    ``` bash
+1. Go to <https://github.com/> and log into your account
+2. Create a new GitHub repository 
+    a. Use same name as your local Quarto book
+    b. Initialize *without* README
+3. Connect your local git repository to the GitHub repository
+    a. On GitHub, look for "...or push an existing repository from the command line"
+    b. Copy the code into your RStudio Terminal > ENTER
+4. In RStudio, push all changes to GitHub:
+    
+    ```bash
     git push
     ```
+    
+5. Refresh GitHub page: your files are now here!
 
-## Status, history, reverting
+See also <https://utrechtuniversity.github.io/open-textbooks/get-started.html#make-your-project-a-git-repository>
+
+## ✍️ Put the book on GitHub pages {.smaller}
+
+In the GitHub repository, go to:
+
+1. Settings
+2. "Code and automation" > "Pages".
+3. "Build and deployment”
+    a. Source: Deploy from a branch
+    b. Branch: main
+    c. Select folder: /docs
+4. Wait for a bit
+5. Navigate to <https://yourusername.github.io/yourrepositoryname>
+
+Now, every time you push to GitHub, your edits will come on the website!
+
+## Bonus: Status, history, reverting
 
 "What has been edited and staged?"
 
 ``` bash
 git status
+```
+
+. . .
+
+"What has been changed in this file?"
+
+```bash
+git diff your-file
 ```
 
 . . .
@@ -351,47 +285,44 @@ git reset yourstagedfile
 git revert HEAD
 ```
 
-# ☕ BREAK 2 {background-image="https://upload.wikimedia.org/wikipedia/commons/1/10/Ireland_%28Unsplash_TD4DBagg2wE%29.jpg"}
+# ☕ BREAK 2 {background-image="https://images.pexels.com/photos/1695052/pexels-photo-1695052.jpeg" background-color="black"}
 
-## Interactivity: embed H5P
+## Interactivity
 
-1.  Find H5P content
-2.  Click "Embed \<\>"
-3.  Copy-paste code into qmd file
-4.  Render!
+[Possibilities discovered so far](https://utrechtuniversity.github.io/open-textbooks/interactivity.html):
 
-## Interactivity: webexercises
+- Images, videos, diagrams
+- Embed (public) H5P content
+- Simple exercises with `{webexercises}` R package
+- Tabsets to split content
+- Dropdowns to hide content (html)
+- Glossary with `{glossary}` R package
+- Discussions for book chapters
 
-With the `{webexercises}` R package!
+## ✍️ Documenting the book
 
-1.  Install + load R package
+Add in the GitHub repository:
 
-    ````         
-     ```{{r}}
-     install.packages("webexercises")
-     library(webexercises)
-     ```
-    ````
+- README.md
+- LICENSE.md (e.g., CC BY 4.0): [instructions Code Refinery](https://coderefinery.github.io/github-without-command-line/creating-using-web/#step-7-optional-adding-a-license-to-an-existing-repository)
+- Citation file (CFF): <https://citation-file-format.github.io/cff-initializer-javascript/>
 
-2.  Add to Quarto
+If you add these directly in GitHub, also Pull your changes to your local folder!
 
-    ``` r
-     add_to_quarto()
-    ```
+```bash
+git pull
+```
 
-3.  [Use exercises](https://psyteachr.github.io/webexercises/articles/webexercises.html#fill-in-the-blanks)
+## ✍️ Archiving the book
 
-## Publishing and archiving
-
-Finished (a full version of) the book? **Archive it!**
-
-1. [Create an ORCID](https://orcid.org/register)
-2. Log into Zenodo (or [Zenodo Sandbox](https://sandbox.zenodo.org/))
-3. [Link your Zenodo account](https://help.zenodo.org/docs/profile/linking-accounts/) to ORCID ánd GitHub account
-4. In Zenodo, go to [Settings > GitHub](https://sandbox.zenodo.org/account/settings/github/), and "Flip the switch" of your to-be-archived repository.
-5. In GitHub, create a [Release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
-6. Published! If needed, edit the Zenodo metadata.
+1.  Log into Zenodo (or [Zenodo Sandbox](https://sandbox.zenodo.org/))
+2.  [Link your Zenodo account](https://help.zenodo.org/docs/profile/linking-accounts/) to ORCID ánd GitHub account
+3.  In Zenodo, go to [Settings > GitHub](https://sandbox.zenodo.org/account/settings/github/), and "Flip the switch" of your to-be-archived repository.
+4.  In GitHub, create a [Release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
+5.  Published! 
+    a. If needed, edit the Zenodo metadata.
+    b. Add the DOI badge to the GitHub repository and the book.
 
 Steps are outlined [here with screenshots](https://coderefinery.github.io/github-without-command-line/doi/)
 
-# Thanks!
+# YOU MADE IT! {background-image="https://cdn12.picryl.com/photo/2016/12/31/balloons-ballons-colorful-7cca2a-1024.jpg"}
