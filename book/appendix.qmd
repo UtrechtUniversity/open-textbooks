@@ -1,0 +1,6 @@
+# Appendix {.appendix .unnumbered}
+
+```{r embed-xaringan-2, echo=FALSE}
+xaringanExtra::embed_xaringan(url = "slides/open-textbooks-edusupport.html", 
+                              ratio = "4:3")
+```
