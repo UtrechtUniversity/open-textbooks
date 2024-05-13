@@ -75,5 +75,5 @@ Especially the latter part is sometimes difficult, but it will pay off!
 If the installation went correctly, you will be able to "download" information from,
 or "upload" information to, GitHub to your local PC without having to open a web browser!
 
-Please follow all the steps laid out [on this page](https://utrechtuniversity.github.io/workshop-computational-reproducibility/git-and-github.html). 
+Please follow all the steps laid out [on this page](https://utrechtuniversity.github.io/workshop-computational-reproducibility/chapters/git-and-github.html). 
 
