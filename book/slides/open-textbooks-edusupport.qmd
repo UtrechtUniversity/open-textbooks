@@ -12,7 +12,6 @@ format:
         revealjs: 
                 logo:  https://utrechtuniversity.github.io/dataprivacyhandbook/img/UU_logo_2021_EN_RGB.png
                 footer: "Open textbooks for EduSupport @ UU"
-                theme: uu.scss
                 embed-resources: true
                 slide-number: true
                 center-title-slide: true
