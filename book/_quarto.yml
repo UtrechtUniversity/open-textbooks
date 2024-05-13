@@ -34,6 +34,7 @@ book:
     - rendering.qmd
     - archiving.qmd
   - references.qmd
+  - appendix.qmd
 bibliography: references.bib
 engine: knitr
 format:
