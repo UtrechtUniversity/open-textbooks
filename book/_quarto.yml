@@ -44,10 +44,11 @@ format:
     include-after-body: include/webex.js
     link-external-icon: true
     link-external-newwindow: true
+    comments: 
+      utterances: 
+        repo: UtrechtUniversity/open-textbooks
     other-links:
       - text: "Research Data Management Support (Utrecht University)"
         icon: info
         href: https://uu.nl/rdm/
         target: "_blank"
-    code-links:
-      - repo: "https://github.com/UtrechtUniversity/quarto-github-textbooks/"
