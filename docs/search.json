@@ -223,7 +223,7 @@
     "href": "multimedia.html#video",
     "title": "6  Adding multimedia",
     "section": "6.2 Video",
-    "text": "6.2 Video\nIn Quarto, the basic syntax for embedding a video is as follows:\n\nThe video can be located locally (in that case the link is the full path to the video file), or online (in that case the link is a URL to the video).\nFor video options such as height, width, start time, etc. please check out Quarto’s documentation about videos.",
+    "text": "6.2 Video\nIn Quarto, the basic syntax for embedding a video is as follows:\n{{&lt; video link/to/video &gt;}}\nThe video can be located locally (in that case the link is the full path to the video file), or online (in that case the link is a URL to the video).\nFor video options such as height, width, start time, etc. please check out Quarto’s documentation about videos.",
     "crumbs": [
       "Customization",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Adding multimedia</span>"
@@ -234,7 +234,7 @@
     "href": "multimedia.html#diagram",
     "title": "6  Adding multimedia",
     "section": "6.3 Diagram",
-    "text": "6.3 Diagram\nIt’s possible to create diagrams with markdown through the use of mermaid and other packages that are in-built in Quarto. See the Quarto documentation and the mermaid website for how to make this work.",
+    "text": "6.3 Diagram\nIt’s possible to create diagrams with markdown through the use of mermaid and other packages that are in-built in Quarto. See the Quarto documentation and the mermaid website for how to make this work.\nHere is a simple diagram\n\n\n\n\n\nflowchart LR\n  A(Point A) --&gt; B[Point B]\n\n\n\n\n\n\nthat was created as follows:\n```{mermaid}\nflowchart LR\n  A(Point A) --&gt; B[Point B]\n```",
     "crumbs": [
       "Customization",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Adding multimedia</span>"

@@ -76,8 +76,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<script src="site_libs/quarto-contrib/videojs/video.min.js"></script>
-<link href="site_libs/quarto-contrib/videojs/video-js.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -105,6 +103,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="include/webex.css">
@@ -316,13 +317,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="video" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="video"><span class="header-section-number">6.2</span> Video</h2>
 <p>In Quarto, the basic syntax for embedding a video is as follows:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>{{&lt; video link/to/video &gt;}}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>The video can be located locally (in that case the link is the full path to the video file), or online (in that case the link is a URL to the video).</p>
 <p>For video options such as height, width, start time, etc. please check out <a href="https://quarto.org/docs/authoring/videos.html">Quarto’s documentation about videos</a>.</p>
 </section>
 <section id="diagram" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="diagram"><span class="header-section-number">6.3</span> Diagram</h2>
 <p>It’s possible to create diagrams with markdown through the use of <code>mermaid</code> and other packages that are in-built in Quarto. See the <a href="https://quarto.org/docs/authoring/diagrams.html">Quarto documentation</a> and the <a href="http://mermaid.js.org/intro/">mermaid website</a> for how to make this work.</p>
+<p>Here is a simple diagram</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p></p><figure class="figure"><p></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+  A(Point A) --&gt; B[Point B]
+</pre>
+</div>
+<p></p></figure><p></p>
+</div>
+</div>
+</div>
+<p>that was created as follows:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{mermaid}</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="in">flowchart LR</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="in">  A(Point A) --&gt; B[Point B]</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="audio" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="audio"><span class="header-section-number">6.4</span> Audio</h2>
@@ -973,7 +993,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>videojs(video_shortcode_videojs_video1);</script>
 
 
 
