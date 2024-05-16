@@ -16,7 +16,7 @@ For image positioning, styling, and more options, please check out [Quarto's doc
 
 In Quarto, the basic syntax for embedding a video is as follows:
 
-```md
+``` {.markdown shortcodes="false"}
 {{< video link/to/video >}}
 ```
 
@@ -27,6 +27,24 @@ For video options such as height, width, start time, etc. please check out [Quar
 ## Diagram
 
 It's possible to create diagrams with markdown through the use of `mermaid` and other packages that are in-built in Quarto. See the [Quarto documentation](https://quarto.org/docs/authoring/diagrams.html) and the [mermaid website](http://mermaid.js.org/intro/) for how to make this work.
+
+Here is a simple diagram
+
+```{mermaid}
+flowchart LR
+  A(Point A) --> B[Point B]
+```
+
+
+that was created as follows:
+
+````md
+```{mermaid}
+flowchart LR
+  A(Point A) --> B[Point B]
+```
+````
+
 
 ## Audio
 
