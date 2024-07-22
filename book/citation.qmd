@@ -1,3 +1,77 @@
-# Citation
+# Citations
 
-Working with Zotero and other reference managers to include citations.
+## Reference keys
+
+Adding reproducible references happens with BibTex keys. 
+A typical BibTex key might look as follows:
+
+```md
+@misc{RMarkdownWritingReproducible,
+    title = {{RMarkdown} for writing reproducible scientific papers},
+    url = {https://libscie.github.io/rmarkdown-workshop/handout.html},
+    urldate = {2023-04-18},
+    file = {RMarkdown for writing reproducible scientific papers:C\:\\Users\\Moope001\\Zotero\\storage\\SJITSZZI\\handout.html:text/html},
+}
+```
+
+BibTex keys can be stored in a `.bib` file, for example a file named `references.bib`.
+Such a file can be stored in the folder of your Quarto book, and the references from that file can be used as citations or in a bibliography. 
+
+## Workflow with Zotero
+
+Here we discuss a workflow with the reference manager Zotero. 
+Other reference managers can also produce .bib files.
+We've chosen Zotero, because 1) it is open source and 2) it allows automatic updating of the .bib file as you find more references during the writing of your book.
+
+### Installation
+
+1. Install Zotero. 
+   a. If you work on a Utrecht University-managed laptop, you can install Zotero from the Software Center.
+   b. If you work on a private device, follow the [installation instructions](https://www.zotero.org/support/installation) on the Zotero installation page.
+2. Install the Zotero connector [for your browser](https://www.zotero.org/download/). This connector makes sure you can directly save a reference to Zotero from your browser.
+3. [Install the Better BibTex extension](https://retorque.re/zotero-better-bibtex/installation/) for Zotero. This makes sure your references are saved in a format that Quarto can work with.
+
+### Set-up
+
+1. Open Zotero Desktop
+   a. Log into your account
+   b. Create a new collection for your project, for example: `name-of-your-quarto-book`
+2. Open your web browser
+   a. Double-check that you can find the Zotero Connector in your browser
+   b. Search for a resource (article, web page, book, etc.) that you want to cite in your Quarto book
+   c. Use the Zotero Connector to save the reference to your collection
+   d. Check that the resource has indeed appeared in your `name-of-your-quarto-book` collection in Zotero
+   e. If needed, adjust or complement the Zotero metadata if something is wrong or missing
+3. In Zotero Desktop
+   a. Right-click your collection and select _Export Collection_
+   b. For the Format, select _Better BibTex_
+   c. Click the option to _Keep updated_
+   d. Provide the file name as `references.bib` and **save it in the same folder as your Quarto book**
+4. In RStudio
+   a. Make sure that the `_quarto.yml` file contains the correct path to the references.bib file, for example:
+
+        ```
+        bibliography: references.bib
+        ```
+
+### Workflow
+
+Now that you've set up a connection between Zotero and your local Quarto book, you can start adding references to your Zotero collection and citing them in your book.
+Every time you save a reference to your Zotero library, Zotero automatically updates your .bib file through syncing with Zotero desktop and updating the .bib file.
+
+To insert a citation:
+
+- Open the .bib file. 
+- Look for the citation reference, it is listed after the `@` sign.
+- Cite the reference: 
+   - In-text citations: `@knuth84`
+   - Bracketed citations: `[@knuth84]`
+
+To insert a bibliography, add the following to the page where you want the bibliography to show up:
+
+```md
+::: {#refs}
+:::
+```
+
+For more information about citations, please check out the [Quarto documentation](https://quarto.org/docs/authoring/footnotes-and-citations.html).
