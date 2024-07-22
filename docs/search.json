@@ -331,12 +331,34 @@
   {
     "objectID": "citation.html",
     "href": "citation.html",
-    "title": "9  Citation",
+    "title": "9  Citations",
     "section": "",
-    "text": "Working with Zotero and other reference managers to include citations.",
+    "text": "9.1 Reference keys\nAdding reproducible references happens with BibTex keys. A typical BibTex key might look as follows:\nBibTex keys can be stored in a .bib file, for example a file named references.bib. Such a file can be stored in the folder of your Quarto book, and the references from that file can be used as citations or in a bibliography.",
     "crumbs": [
       "Customization",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Citation</span>"
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Citations</span>"
+    ]
+  },
+  {
+    "objectID": "citation.html#reference-keys",
+    "href": "citation.html#reference-keys",
+    "title": "9  Citations",
+    "section": "",
+    "text": "@misc{RMarkdownWritingReproducible,\n    title = {{RMarkdown} for writing reproducible scientific papers},\n    url = {https://libscie.github.io/rmarkdown-workshop/handout.html},\n    urldate = {2023-04-18},\n    file = {RMarkdown for writing reproducible scientific papers:C\\:\\\\Users\\\\Moope001\\\\Zotero\\\\storage\\\\SJITSZZI\\\\handout.html:text/html},\n}",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Citations</span>"
+    ]
+  },
+  {
+    "objectID": "citation.html#workflow-with-zotero",
+    "href": "citation.html#workflow-with-zotero",
+    "title": "9  Citations",
+    "section": "9.2 Workflow with Zotero",
+    "text": "9.2 Workflow with Zotero\nHere we discuss a workflow with the reference manager Zotero. Other reference managers can also produce .bib files. We’ve chosen Zotero, because 1) it is open source and 2) it allows automatic updating of the .bib file as you find more references during the writing of your book.\n\n9.2.1 Installation\n\nInstall Zotero.\n\nIf you work on a Utrecht University-managed laptop, you can install Zotero from the Software Center.\nIf you work on a private device, follow the installation instructions on the Zotero installation page.\n\nInstall the Zotero connector for your browser. This connector makes sure you can directly save a reference to Zotero from your browser.\nInstall the Better BibTex extension for Zotero. This makes sure your references are saved in a format that Quarto can work with.\n\n\n\n9.2.2 Set-up\n\nOpen Zotero Desktop\n\nLog into your account\nCreate a new collection for your project, for example: name-of-your-quarto-book\n\nOpen your web browser\n\nDouble-check that you can find the Zotero Connector in your browser\nSearch for a resource (article, web page, book, etc.) that you want to cite in your Quarto book\nUse the Zotero Connector to save the reference to your collection\nCheck that the resource has indeed appeared in your name-of-your-quarto-book collection in Zotero\nIf needed, adjust or complement the Zotero metadata if something is wrong or missing\n\nIn Zotero Desktop\n\nRight-click your collection and select Export Collection\nFor the Format, select Better BibTex\nClick the option to Keep updated\nProvide the file name as references.bib and save it in the same folder as your Quarto book\n\nIn RStudio\n\nMake sure that the _quarto.yml file contains the correct path to the references.bib file, for example:\nbibliography: references.bib\n\n\n\n\n9.2.3 Workflow\nNow that you’ve set up a connection between Zotero and your local Quarto book, you can start adding references to your Zotero collection and citing them in your book. Every time you save a reference to your Zotero library, Zotero automatically updates your .bib file through syncing with Zotero desktop and updating the .bib file.\nTo insert a citation:\n\nOpen the .bib file.\nLook for the citation reference, it is listed after the @ sign.\nCite the reference:\n\nIn-text citations: @knuth84\nBracketed citations: [@knuth84]\n\n\nTo insert a bibliography, add the following to the page where you want the bibliography to show up:\n::: {#refs}\n:::\nFor more information about citations, please check out the Quarto documentation.",
+    "crumbs": [
+      "Customization",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Citations</span>"
     ]
   },
   {

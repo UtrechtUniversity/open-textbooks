@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Open textbooks with Quarto on GitHub Pages - 9&nbsp; Citation</title>
+<title>Open textbooks with Quarto on GitHub Pages - 9&nbsp; Citations</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -83,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto-settings.html">Customization</a></li><li class="breadcrumb-item"><a href="./citation.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Citation</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto-settings.html">Customization</a></li><li class="breadcrumb-item"><a href="./citation.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Citations</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -191,7 +225,7 @@ ul.task-list li input[type="checkbox"] {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./citation.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Citation</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Citations</span></span></a>
   </div>
 </li>
       </ul>
@@ -237,14 +271,26 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://uu.nl/rdm/" target="_blank"><i class="bi bi-info"></i>Research Data Management Support (Utrecht University)</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#reference-keys" id="toc-reference-keys" class="nav-link active" data-scroll-target="#reference-keys"><span class="header-section-number">9.1</span> Reference keys</a></li>
+  <li><a href="#workflow-with-zotero" id="toc-workflow-with-zotero" class="nav-link" data-scroll-target="#workflow-with-zotero"><span class="header-section-number">9.2</span> Workflow with Zotero</a>
+  <ul class="collapse">
+  <li><a href="#installation" id="toc-installation" class="nav-link" data-scroll-target="#installation"><span class="header-section-number">9.2.1</span> Installation</a></li>
+  <li><a href="#set-up" id="toc-set-up" class="nav-link" data-scroll-target="#set-up"><span class="header-section-number">9.2.2</span> Set-up</a></li>
+  <li><a href="#workflow" id="toc-workflow" class="nav-link" data-scroll-target="#workflow"><span class="header-section-number">9.2.3</span> Workflow</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/edit/main/citation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://uu.nl/rdm/" target="_blank"><i class="bi bi-info"></i>Research Data Management Support (Utrecht University)</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto-settings.html">Customization</a></li><li class="breadcrumb-item"><a href="./citation.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Citation</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quarto-settings.html">Customization</a></li><li class="breadcrumb-item"><a href="./citation.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Citations</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Citation</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Citations</span></h1>
 </div>
 
 
@@ -261,9 +307,83 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Working with Zotero and other reference managers to include citations.</p>
+<section id="reference-keys" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="reference-keys"><span class="header-section-number">9.1</span> Reference keys</h2>
+<p>Adding reproducible references happens with BibTex keys. A typical BibTex key might look as follows:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>@misc{RMarkdownWritingReproducible,</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    title = {{RMarkdown} for writing reproducible scientific papers},</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    url = {https://libscie.github.io/rmarkdown-workshop/handout.html},</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    urldate = {2023-04-18},</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    file = {RMarkdown for writing reproducible scientific papers:C\:<span class="sc">\\</span>Users<span class="sc">\\</span>Moope001<span class="sc">\\</span>Zotero<span class="sc">\\</span>storage<span class="sc">\\</span>SJITSZZI<span class="sc">\\</span>handout.html:text/html},</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>BibTex keys can be stored in a <code>.bib</code> file, for example a file named <code>references.bib</code>. Such a file can be stored in the folder of your Quarto book, and the references from that file can be used as citations or in a bibliography.</p>
+</section>
+<section id="workflow-with-zotero" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="workflow-with-zotero"><span class="header-section-number">9.2</span> Workflow with Zotero</h2>
+<p>Here we discuss a workflow with the reference manager Zotero. Other reference managers can also produce .bib files. We’ve chosen Zotero, because 1) it is open source and 2) it allows automatic updating of the .bib file as you find more references during the writing of your book.</p>
+<section id="installation" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="installation"><span class="header-section-number">9.2.1</span> Installation</h3>
+<ol type="1">
+<li>Install Zotero.
+<ol type="a">
+<li>If you work on a Utrecht University-managed laptop, you can install Zotero from the Software Center.</li>
+<li>If you work on a private device, follow the <a href="https://www.zotero.org/support/installation">installation instructions</a> on the Zotero installation page.</li>
+</ol></li>
+<li>Install the Zotero connector <a href="https://www.zotero.org/download/">for your browser</a>. This connector makes sure you can directly save a reference to Zotero from your browser.</li>
+<li><a href="https://retorque.re/zotero-better-bibtex/installation/">Install the Better BibTex extension</a> for Zotero. This makes sure your references are saved in a format that Quarto can work with.</li>
+</ol>
+</section>
+<section id="set-up" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="set-up"><span class="header-section-number">9.2.2</span> Set-up</h3>
+<ol type="1">
+<li>Open Zotero Desktop
+<ol type="a">
+<li>Log into your account</li>
+<li>Create a new collection for your project, for example: <code>name-of-your-quarto-book</code></li>
+</ol></li>
+<li>Open your web browser
+<ol type="a">
+<li>Double-check that you can find the Zotero Connector in your browser</li>
+<li>Search for a resource (article, web page, book, etc.) that you want to cite in your Quarto book</li>
+<li>Use the Zotero Connector to save the reference to your collection</li>
+<li>Check that the resource has indeed appeared in your <code>name-of-your-quarto-book</code> collection in Zotero</li>
+<li>If needed, adjust or complement the Zotero metadata if something is wrong or missing</li>
+</ol></li>
+<li>In Zotero Desktop
+<ol type="a">
+<li>Right-click your collection and select <em>Export Collection</em></li>
+<li>For the Format, select <em>Better BibTex</em></li>
+<li>Click the option to <em>Keep updated</em></li>
+<li>Provide the file name as <code>references.bib</code> and <strong>save it in the same folder as your Quarto book</strong></li>
+</ol></li>
+<li>In RStudio
+<ol type="a">
+<li><p>Make sure that the <code>_quarto.yml</code> file contains the correct path to the references.bib file, for example:</p>
+<pre><code>bibliography: references.bib</code></pre></li>
+</ol></li>
+</ol>
+</section>
+<section id="workflow" class="level3" data-number="9.2.3">
+<h3 data-number="9.2.3" class="anchored" data-anchor-id="workflow"><span class="header-section-number">9.2.3</span> Workflow</h3>
+<p>Now that you’ve set up a connection between Zotero and your local Quarto book, you can start adding references to your Zotero collection and citing them in your book. Every time you save a reference to your Zotero library, Zotero automatically updates your .bib file through syncing with Zotero desktop and updating the .bib file.</p>
+<p>To insert a citation:</p>
+<ul>
+<li>Open the .bib file.</li>
+<li>Look for the citation reference, it is listed after the <code>@</code> sign.</li>
+<li>Cite the reference:
+<ul>
+<li>In-text citations: <code>@knuth84</code></li>
+<li>Bracketed citations: <code>[@knuth84]</code></li>
+</ul></li>
+</ul>
+<p>To insert a bibliography, add the following to the page where you want the bibliography to show up:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>For more information about citations, please check out the <a href="https://quarto.org/docs/authoring/footnotes-and-citations.html">Quarto documentation</a>.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -901,7 +1021,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Created by Research Data Management Support, Utrecht University, The Netherlands</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/edit/main/citation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/edit/main/citation.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>
