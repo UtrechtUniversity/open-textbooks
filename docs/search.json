@@ -166,12 +166,111 @@
   {
     "objectID": "git.html",
     "href": "git.html",
-    "title": "4  Working with git",
+    "title": "4  Working with git and GitHub",
     "section": "",
-    "text": "The basic git workflow looks as follows:\n\n\n\n\n\nflowchart LR\n   a[make change] --&gt; b[git add] --&gt; c[git commit] --&gt; d[git push]\n\n\n\n\n\n\n\nMake an edit. For example in one of your chapters. Save the edit (CNTR + S)\nTake a look whether git has recorded that you have made a change:\n\nTerminal:\n\ngit status will list all the files which have been edited, but not committed.\ngit diff YOURFILENAME will display what content of your file has been changed.\n\nRStudio:\n\nClick the Git tab on the top right of your screen. There, you will see which files have been edited, but not committed.\nSelect a file from the list in the Git tab, and click Diff to see what content of the file has been changed.\n\n\nCommit the change [WIP]",
+    "text": "4.1 What are git & github?\nWhile originally used to collaborate and track versions of code, you can use git and GitHub for other types of files as well, such as documentation.",
     "crumbs": [
       "Basic set-up",
-      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with git</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with git and GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "git.html#what-are-git-github",
+    "href": "git.html#what-are-git-github",
+    "title": "4  Working with git and GitHub",
+    "section": "",
+    "text": "Git is open source software that can track whether (and sometimes which) changes are made to files, by whom, and when. You can save new versions of files without having to create copies of that file. This allows you to revert to a previous of these files.\nGitHub is a website where files that are version-controlled by git can be hosted, and where you can collaborate with other GitHub users. There are also some integrations with other apps.",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with git and GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "git.html#terminology",
+    "href": "git.html#terminology",
+    "title": "4  Working with git and GitHub",
+    "section": "4.2 Terminology",
+    "text": "4.2 Terminology\nGit and GitHub come with a lot of confusing terminology. Here is a simplified and by no means complete and objective list of terms:\n\nGit termsGitHub terms\n\n\n\ngit repo / git repository\n\na folder with files (and potentially subfolders) that are tracked by git\n\nstaging\n\ntelling git that you want to create a new version of the changes\n\ncommit\n\nsnapshot of the files in the repo. The snapshot gets a self-typed message (commit message), and a hash that can be used to revert the repo to the previous state\n\nclone\n\ncreate a copy of a git repo on your local device\n\nremote\n\nan online version of the git repo (for example on GitHub)\n\npush\n\nupload all commits to the remote\n\npull\n\ndownload all updates done in the remote to your local device\n\nbranch\n\na copy of the git repo\n\ncheckout\n\nswitch to another branch\n\n\n\n\n\nfork\n\na copy of a GitHub repository from someone else to your own account\n\npull request\n\na request to merge your changes in an existing GitHub repository\n\nissues\n\nposts from GitHub users that highlight things that need to be fixed or done in the GitHub repository\n\nGitHub discussion\n\na place to discuss with fellow GitHub users about the content of a GitHub repository",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with git and GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "git.html#the-git-workflow",
+    "href": "git.html#the-git-workflow",
+    "title": "4  Working with git and GitHub",
+    "section": "4.3 The git workflow",
+    "text": "4.3 The git workflow\nWhen working on a git project, you will always perform the following steps:\n\n\n\n\n\nflowchart LR\n   a[make change] --&gt; b[git add] --&gt; c[git commit] --&gt; d[git push]\n\n\n\n\n\n\nThe workflow can be compared with wrapping and sending a package:\n\nMake change: Collect the stuff you want to send: Make an edit in a file and save the edit as normal (CNTR + S).\nStage change: Put the stuff in a box: select which files you want to make a snapshot of.\nCommit the change: Put a label on the box: make a snapshot of the changes made so far. A commit (snapshot) is always accompanied by a commit message explaining what changes were made.\nPush the changes to GitHub: Send the package: upload the commit(s) done locally to GitHub.\n\nEvery time you make an edit that you may want to go back to, you will have to go through this workflow.",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with git and GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "git.html#where-should-i-use-git-commands",
+    "href": "git.html#where-should-i-use-git-commands",
+    "title": "4  Working with git and GitHub",
+    "section": "4.4 Where should I use git commands?",
+    "text": "4.4 Where should I use git commands?\nThere are many programs that you can use to work with git:\n\nUser interfaces: here is an overview of programs that use user interfaces. RStudio is one of these!\nCommand-line tools: use any Terminal you want, for example:\n\ngit bash (comes with the git installation)\nCommand prompt in Windows\nterminal in RStudio or Jupyter Lab\n… etc.\n\n\n\n\n\n\n\n\nNote\n\n\n\nOn this page we only list a selection of git commands, which should be used in a command-line tool. This is because every user interface is a little bit different, whereas the command-line commands are all the same.",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with git and GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "git.html#staging-and-committing",
+    "href": "git.html#staging-and-committing",
+    "title": "4  Working with git and GitHub",
+    "section": "4.5 Staging and committing",
+    "text": "4.5 Staging and committing\nAfter you’ve made a change to one or more file and saved them, you should tell git to make a snapshot of one or more of those files. First, you stage the files you want to create a snapshot of (git add) and then you create the snapshot (git commit -m \"Your commit message\").\n\nChecking:\n\nList the files that have been changed, but not committed: git status\nCheck which edits where made in a (textual) file: git diff filename\n\nStaging:\n\nStage a file (tip: use the tab to use autocompletion): git add filename\nStage multiple files: git add filename1 filename2 filename3\nStage all files in the workspace: git add .\n\nCommitting:\n\nCommit the change(s) you staged: git commit -m \"Change x and y to z\"\nCommit all (staged and unstaged) change(s) made in the workspace: git commit -a -m \"Change x and y and z\"",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with git and GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "git.html#pushing-to-and-pulling-from-github",
+    "href": "git.html#pushing-to-and-pulling-from-github",
+    "title": "4  Working with git and GitHub",
+    "section": "4.6 Pushing to and pulling from GitHub",
+    "text": "4.6 Pushing to and pulling from GitHub\nIf you work on a GitHub repository by yourself, you can freely upload all changes that you made on your local device to GitHub (git push). However, it often happens that the online version of the repository has some changes (commits) that you do not have locally. For example because you made an edit directly on GitHub, or a collaborator has pushed commits (uploaded changes) to the same repository. When you make similar edits and then want to push those to GitHub, there will be a merge conflict and you will first have to resolve that before you can work any further.\n\n\n\n\n\n\nTip\n\n\n\nBefore you start making edits in a git repository on your local device, you should update it with the online changes:\ngit pull\n\n\n\n\n\n\n\n\nRemotes\n\n\n\n\n\nGit knows two types of online versions (remotes) of a repository: origin and upstream. You can read about the difference between origin and upstream remotes in this Stackoverflow answer. When pushing to or pulling from GitHub, it is possible to specify from/to which remote and branch you want to push or pull:\ngit push origin branch-name\nor\ngit pull upstream branch-name",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with git and GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "git.html#branches",
+    "href": "git.html#branches",
+    "title": "4  Working with git and GitHub",
+    "section": "4.7 Branches",
+    "text": "4.7 Branches\nA git repository can exist in multiple “versions” which are called branches. There is always a “main” or “master” branch, which you should consider the clean branch. Besides that, you can create other branches that are meant to make your own changes, or try something different without dirtying the clean (main) version. After you have made changes in your own branch and you think they should be incorporated in the main branch, you can then merge your branch with the main branch.\n\n4.7.0.1 Some branch-related commands\n\nCheck which branch you are working on now (and list which branches there are): git branch -v\nSwitch to another branch: git checkout branchname\nCreate a new branch: git checkout -b newbranchname\nDelete a branch: git branch -d branchname",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with git and GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "git.html#workflow-on-github",
+    "href": "git.html#workflow-on-github",
+    "title": "4  Working with git and GitHub",
+    "section": "4.8 Workflow on github",
+    "text": "4.8 Workflow on github\nOn Github, the workflow is a bit more extensive, because often you are collaborating and do not want others to just start editing the main branch right away. There are multiple methods to collaborate on a project, but we recommend the following, assuming that there is already a repository for the project and you want to contribute:\n\nOn the repository page on Github, fork the repository: this creates a copy of the repository on your own Github account that you have full access to.\nIn your forked (copied) Github repository, create a new branch for the changes you are about to make with a short but comprehensible name, e.g., “new-chapter”.\nIf you want to edit files locally, clone your repository to your local PC. This will create a copy of the repository in your file explorer (the contents of which can change according to which branch you are on!)\ngit clone git@github.com:username/repositoryname.git\nEdit the files you want to edit and commit the changes (making a snapshot; include a comprehensible commit message!)\nYou have now committed changes locally, but they are not yet visible in your remote repository, i.e., the online github repository on your account. In order to get the commits you made locally to be visible online, you need to push them to your remote repository on Github.\ngit push\nNow the changes are visible in your own account, but not in the original repository. In order to get your changes into the main repository, you need to do a pull request on Github. This is a request to the owners of the original repository to merge your branch with (one of) theirs. Once merged by the owners, you are often prompted to remove your own branch (which is not necessary if you are planning to make more changes later).",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with git and GitHub</span>"
+    ]
+  },
+  {
+    "objectID": "git.html#resources",
+    "href": "git.html#resources",
+    "title": "4  Working with git and GitHub",
+    "section": "4.9 Resources",
+    "text": "4.9 Resources\n\nComprehensive git guide by The Turing Way\nMore info on the Git workflow\nGithub guide: git handbook (duration ca. 1 hour)\nUsing Git(hub) with Rstudio: https://happygitwithr.com/",
+    "crumbs": [
+      "Basic set-up",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Working with git and GitHub</span>"
     ]
   },
   {
