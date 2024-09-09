@@ -1,20 +1,180 @@
-# Working with git
+# Working with git and GitHub
 
-The basic git workflow looks as follows:
+## What are git & github?
+
+-	**Git** is open source software that can track whether (and sometimes *which*) changes are made to files, by whom, and when. You can save new versions of files without having to create copies of that file. This allows you to revert to a previous of these files. 
+- **GitHub** is a website where files that are version-controlled by git can be hosted, and where you can collaborate with other GitHub users. There are also some integrations with other apps.
+
+While originally used to collaborate and track versions of code, you can use git and GitHub for other types of files as well, such as documentation.
+
+## Terminology
+
+Git and GitHub come with a lot of confusing terminology. Here is a simplified and by no means complete and objective list of terms:
+
+::: {.panel-tabset}
+### Git terms
+
+git repo / git repository
+: a folder with files (and potentially subfolders) that are tracked by git
+
+staging
+: telling git that you want to create a new version of the changes
+
+commit
+: snapshot of the files in the repo. The snapshot gets a self-typed message (commit message), and a hash that can be used to revert the repo to the previous state
+
+clone
+: create a copy of a git repo on your local device
+
+remote
+: an online version of the git repo (for example on GitHub)
+
+push
+: upload all commits to the remote
+
+pull
+: download all updates done in the remote to your local device
+
+branch
+: a copy of the git repo
+
+checkout
+: switch to another branch
+
+### GitHub terms
+
+fork
+: a copy of a GitHub repository from someone else to your own account
+
+pull request
+: a request to merge your changes in an existing GitHub repository
+
+issues
+: posts from GitHub users that highlight things that need to be fixed or done in the GitHub repository
+
+GitHub discussion
+: a place to discuss with fellow GitHub users about the content of a GitHub repository
+
+:::
+
+
+## The git workflow
+
+When working on a git project, you will always perform the following steps:
 
 ```{mermaid}
 flowchart LR
    a[make change] --> b[git add] --> c[git commit] --> d[git push]
 ```
 
-1. Make an edit. For example in one of your chapters. Save the edit (`CNTR + S`)
-2. Take a look whether git has recorded that you have made a change:
-   a. Terminal:
-         i. `git status` will list all the files which have been edited, but not committed.
-         ii. `git diff YOURFILENAME` will display what content of your file has been changed.
-   b. RStudio: 
-      i. Click the Git tab on the top right of your screen. There, you will see which files have been edited, but not committed.
-      ii. Select a file from the list in the Git tab, and click Diff to see what content of the file has been changed.
-3. Commit the change
-[WIP]
+The workflow can be compared with wrapping and sending a package:
 
+1. Make change: **Collect the stuff you want to send**: Make an edit in a file and save the edit as normal (`CNTR + S`).
+2. Stage change: **Put the stuff in a box**: select which files you want to make a snapshot of.
+3. Commit the change: **Put a label on the box**: make a snapshot of the changes made so far. A commit (snapshot) is always accompanied by a *commit message* explaining what changes were made.
+4. Push the changes to GitHub: **Send the package**: upload the commit(s) done locally to GitHub.
+
+Every time you make an edit that you may want to go back to, you will have to go through this workflow.
+
+## Where should I use git commands?
+
+There are many programs that you can use to work with git:
+
+- User interfaces: [here is an overview of programs that use user interfaces](https://git-scm.com/downloads/guis). RStudio is one of these!
+- Command-line tools: use any Terminal you want, for example:
+   - git bash (comes with the git installation)
+   - Command prompt in Windows
+   - terminal in RStudio or Jupyter Lab
+   - ... etc.
+   
+::: {.callout-note}
+On this page we only list a selection of git commands, which should be used in a command-line tool.
+This is because every user interface is a little bit different, whereas the command-line commands are all the same.
+:::
+
+## Staging and committing
+
+After you've made a change to one or more file and saved them, you should tell git to make a snapshot of one or more of those files.
+First, you stage the files you want to create a snapshot of (`git add`) and then you create the snapshot (`git commit -m "Your commit message"`).
+
+- Checking:
+   - List the files that have been changed, but not committed: `git status`
+   - Check which edits where made in a (textual) file: `git diff filename`
+- Staging:
+   - Stage a file (tip: use the tab to use autocompletion): `git add filename` 
+   - Stage multiple files: `git add filename1 filename2 filename3`
+   - Stage all files in the workspace: `git add .` 
+- Committing:
+   - Commit the change(s) you staged: `git commit -m "Change x and y to z"`
+   - Commit all (staged and unstaged) change(s) made in the workspace: `git commit -a -m "Change x and y and z"`
+
+## Pushing to and pulling from GitHub
+
+If you work on a GitHub repository by yourself, you can freely upload all changes that you made on your local device to GitHub (`git push`). 
+However, it often happens that the online version of the repository has some changes (commits) that you do not have locally. 
+For example because you made an edit directly on GitHub, or a collaborator has pushed commits (uploaded changes) to the same repository.
+When you make similar edits and then want to push those to GitHub, there will be a **merge conflict** and you will first have to resolve that before you can work any further. 
+
+::: {.callout-tip}
+Before you start making edits in a git repository on your local device, you should update it with the online changes:
+
+```bash
+git pull
+```
+
+:::
+
+::: {.callout-note collapse=true}
+### Remotes
+Git knows two types of online versions (remotes) of a repository: origin and upstream. You can read about the difference between origin and upstream remotes [in this Stackoverflow answer](https://stackoverflow.com/a/9257901).
+When pushing to or pulling from GitHub, it is possible to specify from/to which remote and branch you want to push or pull:
+
+```bash
+git push origin branch-name
+```
+or
+```bash
+git pull upstream branch-name
+```
+:::
+
+## Branches
+
+A git repository can exist in multiple “versions” which are called **branches**. 
+There is always a "main" or “master” branch, which you should consider the *clean* branch. 
+Besides that, you can create other branches that are meant to make your own changes, or try something different without dirtying the clean (main) version. 
+After you have made changes in your own branch and you think they should be incorporated in the main branch, you can then **merge** your branch with the main branch. 
+
+#### Some branch-related commands
+
+- Check which branch you are working on now (and list which branches there are): `git branch -v`
+- Switch to another branch: `git checkout branchname`
+- Create a new branch: `git checkout -b newbranchname`
+- Delete a branch: `git branch -d branchname`
+
+## Workflow on github
+
+On Github, the workflow is a bit more extensive, because often you are **collaborating** and do not want others to just start editing the main branch right away. 
+There are multiple methods to collaborate on a project, but we recommend the following, assuming that there is already a repository for the project and you want to contribute:
+
+- On the repository page on Github, **fork** the repository: this creates a copy of the repository on your own Github account that you have full access to.
+- In your forked (copied) Github repository, create a **new branch** for the changes you are about to make with a short but comprehensible name, e.g., "new-chapter".
+- If you want to edit files locally, **clone** your repository to your local PC. This will create a copy of the repository in your file explorer (the contents of which can change according to which branch you are on!)
+    
+    ```bash
+    git clone git@github.com:username/repositoryname.git
+    ```
+- **Edit** the files you want to edit and **commit the changes** (making a snapshot; include a comprehensible commit message!)
+- You have now committed changes locally, but they are not yet visible in your **remote** repository, i.e., the online github repository on your account. In order to get the commits you made locally to be visible online, you need to **push** them to your remote repository on Github.
+    
+   ```bash
+   git push
+   ```
+- Now the changes are visible in your own account, but not in the original repository. In order to get your changes into the main repository, you need to do a **pull request** on Github. This is a request to the owners of the original repository to **merge your branch with (one of) theirs**. Once merged by the owners, you are often prompted to remove your own branch (which is not necessary if you are planning to make more changes later). 
+
+## Resources
+
+- Comprehensive git guide by [The Turing Way](https://book.the-turing-way.org/reproducible-research/vcs/vcs-git.html)
+- More info on the [Git workflow](https://githowto.com/)
+- Github guide: [git handbook](https://guides.github.com/introduction/git-handbook/) (duration ca. 1 hour)
+- Using Git(hub) with Rstudio: [https://happygitwithr.com/](https://happygitwithr.com/)
