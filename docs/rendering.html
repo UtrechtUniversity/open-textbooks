@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -237,8 +271,16 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://uu.nl/rdm/" target="_blank"><i class="bi bi-info"></i>Research Data Management Support (Utrecht University)</a></li></ul></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#how-to-render" id="toc-how-to-render" class="nav-link active" data-scroll-target="#how-to-render"><span class="header-section-number">10.1</span> How to render</a></li>
+  <li><a href="#previewing" id="toc-previewing" class="nav-link" data-scroll-target="#previewing"><span class="header-section-number">10.2</span> Previewing</a></li>
+  <li><a href="#automated-rendering-on-github" id="toc-automated-rendering-on-github" class="nav-link" data-scroll-target="#automated-rendering-on-github"><span class="header-section-number">10.3</span> Automated rendering on GitHub</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/edit/main/rendering.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://uu.nl/rdm/" target="_blank"><i class="bi bi-info"></i>Research Data Management Support (Utrecht University)</a></li></ul></div></nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
@@ -261,11 +303,48 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Rendering to - html - pdf - epub - word??</p>
-<p>Mostly links to existing documentation, perhaps some tips and tricks</p>
-<p>Also automated rendering in GitHub pages.</p>
+<p>The content of a Quarto book is written in <code>.qmd</code> files or Jupyter notebooks (<code>.ipynb</code>). Quarto was made to convert these files, using the settings (<code>_quarto.yml</code>), into commonly used formats. Quarto can convert documents into HTML files (which can in turn be hosted on a website), PDF, but also Epub, OpenOffice and Microsoft Word.</p>
+<section id="how-to-render" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="how-to-render"><span class="header-section-number">10.1</span> How to render</h2>
+<ol type="1">
+<li><p>You specify to <em>which</em> format you want to convert the files in the <code>_quarto.yml</code> file. An example:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theme</span><span class="kw">:</span><span class="at"> cosmo</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">css</span><span class="kw">:</span><span class="at"> custom-styling.css</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>If you use RStudio, you can simply click the Render button at the top of the page: <img src="https://quarto.org/docs/get-started/hello/images/rstudio-render.png" title="Render button in RStudio" class="img-fluid"><br>
+If you use the terminal, you type:<br>
+</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># render project in current directory</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># or: render project in the directory 'mybook'</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> render mybook</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>By default, quarto will build the files (html, pdf, docx, etc.) in a folder called <code>_book</code>. If you <a href="quarto-settings">updated the <code>_quarto.yml</code> file</a>, that folder will be named <code>docs</code> instead.</p></li>
+</ol>
+</section>
+<section id="previewing" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="previewing"><span class="header-section-number">10.2</span> Previewing</h2>
+<p>You can also preview your book while writing it. In RStudio, you can tick “Render on save” and then the preview will update whenever you save a new change in the document. <img src="https://quarto.org/docs/get-started/hello/images/rstudio-render-on-save.png" title="Render on Save button in RStudio" class="img-fluid"></p>
+<p>Alternatively, you can type in the terminal:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># preview project in current directory</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># preview project in the directory 'mybook'</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> preview mybook</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="automated-rendering-on-github" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="automated-rendering-on-github"><span class="header-section-number">10.3</span> Automated rendering on GitHub</h2>
+<p>It is also possible to have GitHub Actions render the files to the correct format and publish HTML files to a GitHub Pages website.</p>
+<p>Just for your overview, here are the 2 ways to publish with GitHub Pages that we discussed here:</p>
+<ol type="1">
+<li>Render the book to a <code>docs</code> folder and set the GitHub repository so that it uses the docs folder as the basis for the GitHub pages website.</li>
+<li>Add a <code>publish.yml</code> file to the GitHub repository (in the folder <code>.github/workflows/</code>) and set the GitHub repository so that it uses the GitHub Action to publish the GitHub pages website.</li>
+</ol>
+<p>The <a href="https://quarto.org/docs/publishing/github-pages.html#publish-action">Quarto website</a> explains how to make automatic rendering and publishing possible. You may need to play a bit with the paths and branches that the Action uses to render and publish. <a href="https://github.com/UtrechtUniversity/intro-computational-reproducibility/blob/main/.github/workflows/publish.yml">Here is an example of a publish.yml</a> from one of our own workshops.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script>
@@ -1129,7 +1208,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>   
     <div class="nav-footer-center">
 <p>Created by Research Data Management Support, Utrecht University, The Netherlands</p>
-<div class="toc-actions"><ul><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/edit/main/rendering.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+<div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/edit/main/rendering.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
       &nbsp;
     </div>

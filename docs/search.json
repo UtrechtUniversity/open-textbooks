@@ -465,7 +465,40 @@
     "href": "rendering.html",
     "title": "10  Rendering",
     "section": "",
-    "text": "Rendering to - html - pdf - epub - word??\nMostly links to existing documentation, perhaps some tips and tricks\nAlso automated rendering in GitHub pages.",
+    "text": "10.1 How to render",
+    "crumbs": [
+      "Publishing",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Rendering</span>"
+    ]
+  },
+  {
+    "objectID": "rendering.html#how-to-render",
+    "href": "rendering.html#how-to-render",
+    "title": "10  Rendering",
+    "section": "",
+    "text": "You specify to which format you want to convert the files in the _quarto.yml file. An example:\nformat:\n  html:\n    theme: cosmo\n    css: custom-styling.css\nIf you use RStudio, you can simply click the Render button at the top of the page: \nIf you use the terminal, you type:\n\n# render project in current directory\nquarto render\n\n# or: render project in the directory 'mybook'\nquarto render mybook\nBy default, quarto will build the files (html, pdf, docx, etc.) in a folder called _book. If you updated the _quarto.yml file, that folder will be named docs instead.",
+    "crumbs": [
+      "Publishing",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Rendering</span>"
+    ]
+  },
+  {
+    "objectID": "rendering.html#previewing",
+    "href": "rendering.html#previewing",
+    "title": "10  Rendering",
+    "section": "10.2 Previewing",
+    "text": "10.2 Previewing\nYou can also preview your book while writing it. In RStudio, you can tick “Render on save” and then the preview will update whenever you save a new change in the document. \nAlternatively, you can type in the terminal:\n# preview project in current directory\nquarto preview\n\n# preview project in the directory 'mybook'\nquarto preview mybook",
+    "crumbs": [
+      "Publishing",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Rendering</span>"
+    ]
+  },
+  {
+    "objectID": "rendering.html#automated-rendering-on-github",
+    "href": "rendering.html#automated-rendering-on-github",
+    "title": "10  Rendering",
+    "section": "10.3 Automated rendering on GitHub",
+    "text": "10.3 Automated rendering on GitHub\nIt is also possible to have GitHub Actions render the files to the correct format and publish HTML files to a GitHub Pages website.\nJust for your overview, here are the 2 ways to publish with GitHub Pages that we discussed here:\n\nRender the book to a docs folder and set the GitHub repository so that it uses the docs folder as the basis for the GitHub pages website.\nAdd a publish.yml file to the GitHub repository (in the folder .github/workflows/) and set the GitHub repository so that it uses the GitHub Action to publish the GitHub pages website.\n\nThe Quarto website explains how to make automatic rendering and publishing possible. You may need to play a bit with the paths and branches that the Action uses to render and publish. Here is an example of a publish.yml from one of our own workshops.",
     "crumbs": [
       "Publishing",
       "<span class='chapter-number'>10</span>  <span class='chapter-title'>Rendering</span>"
