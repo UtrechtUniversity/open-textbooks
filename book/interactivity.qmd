@@ -1,26 +1,35 @@
 # Interactivity
 
-Interactivity can bring your book alive! There are numerous ways to add interactivity. Below we mention a couple, but keep in mind that this list is not complete, and to only add those elements that make sense for you!
+Interactivity can bring your book alive! There are numerous ways to add
+interactivity. Below we mention a couple, but keep in mind that this
+list is not complete, and to only add those elements that make sense for
+you!
 
-::: {.callout-note}
-Keep in mind that most of the interactive elements mentioned here are only suitable for HTML output, i.e. online books. If you export the Quarto book to pdf, not much will remain of these elements!
+::: callout-note
+Keep in mind that most of the interactive elements mentioned here are
+only suitable for HTML output, i.e. online books. If you export the
+Quarto book to pdf, not much will remain of these elements!
 :::
 
 ## Exercises
 
-Interactive exercises are not part of core Quarto functionality. Luckily, there are smart people who have developed software packages to still include these. Here we go into two R packages: `webexercises` and `learnr`
+Interactive exercises are not part of core Quarto functionality.
+Luckily, there are smart people who have developed software packages to
+still include these.
 
-::: {.panel-tabset}
+::: panel-tabset
 ### Webexercises
 
-According to the [webexercises documentation](https://psyteachr.github.io/webexercises/):
+Webexercises is an R package. According to the [webexercises
+documentation](https://psyteachr.github.io/webexercises/):
 
-> webexercises creates standalone HTML files that require only a JavaScript-enabled browser. It is also extremely simple to use.
+> webexercises creates standalone HTML files that require only a
+> JavaScript-enabled browser. It is also extremely simple to use.
 
 To get started, take the following steps:
 
 1.  Install and load the package
-    
+
     ```{r}
     #| echo: false
     #| output: false
@@ -28,30 +37,31 @@ To get started, take the following steps:
     library(webexercises)
     ```
 
-    ````
-    ```{{r}}
+    ```{{{r}}}
     #| echo: false
     install.packages("webexercises")
     library(webexercises)
     ```
-    ````
 
-2.  Add the necessary files and setup to include webexercises in the Quarto project. You should only do this once so this does not need to be included in the .qmd files!
+2.  Add the necessary files and setup to include webexercises in the
+    Quarto project. You should only do this once so this does not need
+    to be included in the .qmd files!
 
-    ```r
+    ``` r
     add_to_quarto()
     ```
 
-    
 3.  Start using the exercises!
+
     a.  **Fill-in-the-blanks**:
-    
+
         ``` md
         Fill in any vowel: `r knitr::inline_expr('fitb(c("A", "E", "I", "O" , "U"), ignore_case = TRUE)')` 
         ```
-           
-        Fill in any vowel: 
+
+        Fill in any vowel:
         `r fitb(c("A", "E", "I", "O" , "U"), ignore_case = TRUE)`
+
     b.  **Multiple choice**:
 
         ``` md
@@ -59,40 +69,54 @@ To get started, take the following steps:
         `r knitr::inline_expr('mcq(c("tidyr", "dplyr", answer = "readr", "ggplot2"))')`
         ```
 
-        Which package helps you load data? `r mcq(c("tidyr", "dplyr", answer = "readr", "ggplot2"))`
+        Which package helps you load data?
+        `r mcq(c("tidyr", "dplyr", answer = "readr", "ggplot2"))`
 
-    c.  See the [webexercises documentation](https://psyteachr.github.io/webexercises/articles/webexercises.html) for other options:
+    c.  See the [webexercises
+        documentation](https://psyteachr.github.io/webexercises/articles/webexercises.html)
+        for other options:
 
         -   True or false questions
         -   Long multiple choice questions
-        -   Checked sections with feedback that can be hidden and unhidden
+        -   Checked sections with feedback that can be hidden and
+            unhidden
         -   Hidden solutions and hints
 
 ### learnr
 
-`learnr` is a package that can turn markdown documents into interactive tutorials, including:
+`learnr` is an R package that can turn markdown documents into
+interactive tutorials, including:
 
 > -   Narrative, figures, illustrations, and equations.
-> -   Code exercises (R code chunks that users can edit and execute directly).
+> -   Code exercises (R code chunks that users can edit and execute
+>     directly).
 > -   Quiz questions.
 > -   Videos (supported services include YouTube and Vimeo).
 > -   Interactive Shiny components.
 >
 > Source: [learnr documentation](https://rstudio.github.io/learnr/)
 
-learnr in essence creates a Shiny application which must be hosted on a shiny server or run locally. The [learnr documentation](https://rstudio.github.io/learnr/) includes detailed instructions on how to create a tutorial.
+learnr in essence creates a Shiny application which must be hosted on a
+shiny server or run locally. The [learnr
+documentation](https://rstudio.github.io/learnr/) includes detailed
+instructions on how to create a tutorial.
 
 ::: callout-warning
-Creating a tutorial with `learnr` requires you to *host* your tutorial on a shinyapp server. It is therefore not necessarily a core part of your Quarto book.
+Creating a tutorial with `learnr` requires you to *host* your tutorial
+on a shinyapp server. It is therefore not necessarily a core part of
+your Quarto book.
 :::
 
 ### H5P
 
-If H5P content is hosted on a public website, you can easily re-use it, by clicking "<> Embed" and copy-pasting the HTML code into your Quarto document!
+If H5P content is hosted on a public website, you can easily re-use it,
+by clicking "\<\> Embed" and copy-pasting the HTML code into your Quarto
+document!
 
-Below is an example from the [H5P.org website](https://h5p.org/arithmetic-quiz).
+Below is an example from the [H5P.org
+website](https://h5p.org/arithmetic-quiz).
 
-```markdown
+``` markdown
 <iframe src="https://h5p.org/h5p/embed/6725" 
 width="1090" height="389" frameborder="0" 
 allowfullscreen="allowfullscreen" 
@@ -100,41 +124,68 @@ allow="geolocation *; microphone *; camera *; midi *; encrypted-media *"
 title="Arithmetic Quiz"></iframe><script src="https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js" charset="UTF-8"></script>
 ```
 
-<iframe src="https://h5p.org/h5p/embed/6725" width="1090" height="389" frameborder="0" allowfullscreen="allowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *" title="Arithmetic Quiz"></iframe><script src="https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js" charset="UTF-8"></script>
+<iframe src="https://h5p.org/h5p/embed/6725" width="1090" height="389" frameborder="0" allowfullscreen="allowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *" title="Arithmetic Quiz">
 
+</iframe>
+
+```{=html}
+<script src="https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js" charset="UTF-8"></script>
+```
+### Grasple
+
+Similar as with H5P, it is sometimes also possible to embed Grasple
+exercises within a Quarto book, but only if allowed by the organisation
+using it. You can read more in the [Grasple documentation on
+embedding](https://help.grasple.com/en/articles/88138-embedding-your-grasple-exercises).
 :::
 
 ## Commenting on book content
 
-It's possible to allow others to comment on your book content. The comments will then be visible publicly for everyone in the book itself:
+It's possible to allow others to comment on your book content. The
+comments will then be visible publicly for everyone in the book itself:
 
-::: {.panel-tabset}
-
+::: panel-tabset
 ### Hypothes.is
 
-Through [Hypothes.is](https://web.hypothes.is/), anyone can comment on content just like in Microsoft Office solutions, by selecting text and writing a comment about that text. People will need a Hypothes.is account in order to be able to comment, and all comments will be publicly visible.
+Through [Hypothes.is](https://web.hypothes.is/), anyone can comment on
+content just like in Microsoft Office solutions, by selecting text and
+writing a comment about that text. People will need a Hypothes.is
+account in order to be able to comment, and all comments will be
+publicly visible.
 
-Requirements: simply add the following on a new line in your `_quarto.yml` file:
+Requirements: simply add the following on a new line in your
+`_quarto.yml` file:
 
-```yml
+``` yml
 comments:
     hypothesis: true
 ```
 
-Or for further custom options, please refer to the [Quarto documentation on Hypothes.is](https://quarto.org/docs/reference/projects/websites.html#comments).
+Or for further custom options, please refer to the [Quarto documentation
+on
+Hypothes.is](https://quarto.org/docs/reference/projects/websites.html#comments).
 
 ### Utterances
 
-[Utterances](https://utteranc.es/) enables comments to be added to the bottom of a page. Comments on a page will automatically open as an **Issue** in the corresponding GitHub repository. People will need a GitHub account in order to be able to comment, and all comments will be publicly visible.
+[Utterances](https://utteranc.es/) enables comments to be added to the
+bottom of a page. Comments on a page will automatically open as an
+**Issue** in the corresponding GitHub repository. People will need a
+GitHub account in order to be able to comment, and all comments will be
+publicly visible.
 
 Requirements:
 
-- Make sure the GitHub repository is public (not private or internal).
-- Install the [utterances app](https://github.com/apps/utterances) in the repository.
-- Make sure the Issue feature is enabled in the repository.
-- Add and adjust the following at the top of the chapter (.qmd file) where you want people to be able to comment:
-    
-    ```yml
+-   Make sure the GitHub repository is public (not private or internal).
+
+-   Install the [utterances app](https://github.com/apps/utterances) in
+    the repository.
+
+-   Make sure the Issue feature is enabled in the repository.
+
+-   Add and adjust the following at the top of the chapter (.qmd file)
+    where you want people to be able to comment:
+
+    ``` yml
     ---
     format:
         html:
@@ -144,20 +195,32 @@ Requirements:
     ---
     ```
 
-- Underneath `repo`, you can additionally specify `label`, `theme`, and `issue-term`, see the [Quarto documentation](https://quarto.org/docs/reference/projects/websites.html#utterances).
+-   Underneath `repo`, you can additionally specify `label`, `theme`,
+    and `issue-term`, see the [Quarto
+    documentation](https://quarto.org/docs/reference/projects/websites.html#utterances).
 
 ### Giscus
 
-[Giscus](https://giscus.app/) enables comments to be added to the bottom of a page. Comments on a page will automatically open as a **GitHub Discussion** in the corresponding GitHub repository. People will need a GitHub account in order to be able to comment, and all comments will be publicly visible.
+[Giscus](https://giscus.app/) enables comments to be added to the bottom
+of a page. Comments on a page will automatically open as a **GitHub
+Discussion** in the corresponding GitHub repository. People will need a
+GitHub account in order to be able to comment, and all comments will be
+publicly visible.
 
 Requirements:
 
-- Make sure the GitHub repository is public (not private or internal).
-- Install the [giscus app](https://github.com/apps/giscus) in the repository.
-- Make sure the GitHub Discussions feature is enabled in the repository.
-- Add and adjust the following at the top of the chapter (.qmd file) where you want people to be able to comment:
+-   Make sure the GitHub repository is public (not private or internal).
 
-    ```yml
+-   Install the [giscus app](https://github.com/apps/giscus) in the
+    repository.
+
+-   Make sure the GitHub Discussions feature is enabled in the
+    repository.
+
+-   Add and adjust the following at the top of the chapter (.qmd file)
+    where you want people to be able to comment:
+
+    ``` yml
     ---
     format:
         html:
@@ -167,19 +230,20 @@ Requirements:
     ---
     ```
 
-- Underneath `repo`, you can additionally specify `category`, `mapping`, `theme`, `language`, and more settings, see the [Quarto documentation](https://quarto.org/docs/reference/projects/websites.html#giscus).
-
+-   Underneath `repo`, you can additionally specify `category`,
+    `mapping`, `theme`, `language`, and more settings, see the [Quarto
+    documentation](https://quarto.org/docs/reference/projects/websites.html#giscus).
 :::
 
 ## HTML elements
 
-::: {.panel-tabset}
-
+::: panel-tabset
 ### Tabsets
 
-Tabsets are a nice way to present different options. They are used on this page as well. To create them, use the following:
+Tabsets are a nice way to present different options. They are used on
+this page as well. To create them, use the following:
 
-````md
+``` md
 ::: {.panel-tabset}
 #### Tab number 1
 
@@ -190,99 +254,140 @@ Some content in tab number 1
 Some content in tab number 2
 
 :::
-````
+```
 
-You can read more about tabsets in the [Quarto documentation](https://quarto.org/docs/output-formats/html-basics.html#tabsets).
+You can read more about tabsets in the [Quarto
+documentation](https://quarto.org/docs/output-formats/html-basics.html#tabsets).
 
 ### Dropdowns
 
-Dropdown elements are a nice way to hide a lot of optional text.
-An example:
+Dropdown elements are a nice way to hide a lot of optional text. An
+example:
 
+<details>
+
+<summary>Click for more information</summary>
+
+<div>
+
+Here is some more information
+
+</div>
+
+</details>
+
+Dropdowns like this are created with the HTML `details` tag. For
+example, the above example was created as follows:
+
+``` md
 <details><summary>Click for more information</summary>
 <div>Here is some more information</div>
 </details>
+```
 
-Dropdowns like this are created with the HTML `details` tag. For example, the above example was created as follows:
+Everything about this details tag can be styled. That is too much to go
+into here, but you can find more information about that on the [Mozilla
+Developer
+website](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details).
 
-````md
-<details><summary>Click for more information</summary>
-<div>Here is some more information</div>
-</details>
-````
+### Buttons
 
-Everything about this details tag can be styled. That is too much to go into here, but you can find more information about that on the [Mozilla Developer website](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details).
+Buttons in Quarto are not actually Quarto-native. But because of
+Quarto's flexibility it is easy to add one!
 
-### Other?
-... [WIP]
+``` md
+A regular button: 
+[Check out Quarto](https://quarto.org/){.btn .btn-outline-primary .btn role="button"}
 
+A button with a tooltip: 
+[Check out Quarto](https://quarto.org/){.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Here's a tooltip"}
+```
+
+A regular button: [Check out Quarto](https://quarto.org/){.btn
+.btn-outline-primary .btn role="button"}
+
+A button with a tooltip: [Check out Quarto](https://quarto.org/){.btn
+.btn-outline-primary .btn role="button" data-toggle="tooltip"
+title="Here's a tooltip"}
+([source](https://github.com/quarto-dev/quarto-cli/discussions/4920))
+
+### Callout blocks
+
+If you want to make content stand out a bit more, Quarto has 5 default
+callout blocks: note, warning, important, tip and caution. They are
+formatted in different colors and you can make them appear simple, make
+them collapsible, and even referenceable throughout your book!
+
+Example
+
+``` md
+:::{.callout-note collapse="true" title="Title of the note"}
+Here is a note
+:::
+```
+
+::: {.callout-note collapse="true" title="Title of the note"}
+Here is a note
+:::
+
+See for more information [Quarto's callout
+documentation](https://quarto.org/docs/authoring/callouts.html).
 :::
 
 ## Glossary
 
-In-built support for creating glossaries is currently not available, but on the [roadmap for Quarto v1.5](https://github.com/quarto-dev/quarto-cli/issues/1697) (at the time of writing we are in Quarto v1.4). In the meantime, you can make use of the [`glossary` R package](https://debruine.github.io/glossary/) written and maintained by Lisa DeBruine.
+In-built support for creating glossaries is currently not available, but
+Lisa DeBruine has created a Quarto extension that uses the same logic as
+her previous [`glossary` R
+package](https://debruine.github.io/glossary/).
 
-1.  Install and load the package
+To use the glossary extension:
 
-    ``` {{r}}
-    #| echo: false
-    # Install the package
-    install.packages("glossary")
+1.  First install the extension via the terminal:
 
-    # Load the package
-    library(glossary)
+    ``` bash
+    quarto install extension debruine/quarto-glossary
     ```
 
-2.  Add a `glossary.yml` file to your repository, see the [documentation](https://debruine.github.io/glossary/articles/glossary.html#definition-yaml-file) for an example. Also make sure the package knows where to find the `glossary.yml` file by adding:
+2.  Store definitions in a glossary file (YAML)
 
-    ``` {{r}}
-    #| echo: false
-    # Let the glossary package know where the glossary.yml file is
-    glossary_path("glossary.yml")
-    ```
+3.  To the `_quarto.yml`, add glossary metadata that specifies where the
+    YAML file is located and how term definitions should appear.
 
-3.  Check and update the glossary settings
+4.  Use the extension:
 
-    ``` {{r}}
-    #| echo: false
-    # Set pop-up style for in-line terms
-    glossary_popup("hover") # Can also be "click" or "none"
-
-    # Glossary style: adjust where necessary
-    glossary_style(color = "purple", 
-               text_decoration = "underline",
-               def_bg = "#333",
-               def_color = "white")
-    ```
-
-4.  Use the glossary:
-
-    -   [In-line](https://debruine.github.io/glossary/articles/glossary.html#in-text-terms):
-
-        ``` md
-        Here I am typing `r knitr::inline_expr("glossary(my-glossary-term)")` in the plain text.
+    a.  Use terms in your text with the shortcode
+        
+        ```{.markdown shortcodes="false"}
+        {{< glossary your-term >}}
+        ```
+        
+    b.  Display the whole glossary in a table
+        
+        ```{.markdown shortcodes="false"}
+        {{< glossary table = true >}}
         ```
 
-    -   All glossary terms in a table:
-
-        ````         
-        ```{{r}}
-        #| echo: false
-        # Create glossary table
-        glossary_table()
-        ```
-        ````
-
-For more extensive information, please refer to the [full package documentation](https://debruine.github.io/glossary/index.html).
+For more extensive information, please refer to the [full extension
+documentation](https://debruine.github.io/quarto-glossary/).
 
 ## More advanced interactivity
 
 It is possible to add interactivity in other ways too:
 
-> -   Create custom JavaScript visualizations using [Observable JS](https://quarto.org/docs/interactive/ojs/)
+> -   Create custom JavaScript visualizations using [Observable
+>     JS](https://quarto.org/docs/interactive/ojs/)
 >
-> -   Use the [Shiny](https://quarto.org/docs/interactive/shiny/) R package to add interactivity to Knitr engine documents.
+> -   Use the [Shiny](https://quarto.org/docs/interactive/shiny/) R
+>     package to add interactivity to Knitr engine documents.
 >
-> -   Incorporate [Jupyter Widgets](https://quarto.org/docs/interactive/widgets/jupyter.html) or [htmlwidgets](https://quarto.org/docs/interactive/widgets/htmlwidgets.html) (for the Jupyter and Knitr engines, respectively) into your document.
+> -   Incorporate [Jupyter
+>     Widgets](https://quarto.org/docs/interactive/widgets/jupyter.html)
+>     or
+>     [htmlwidgets](https://quarto.org/docs/interactive/widgets/htmlwidgets.html)
+>     (for the Jupyter and Knitr engines, respectively) into your
+>     document.
 
-Please refer to the extensive [Quarto documentation](https://quarto.org/docs/interactive/) for information on how to implement these into your Quarto book or website.
+Please refer to the extensive [Quarto
+documentation](https://quarto.org/docs/interactive/) for information on
+how to implement these into your Quarto book or website.
