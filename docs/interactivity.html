@@ -321,19 +321,19 @@ Note
 </div>
 <section id="exercises" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="exercises"><span class="header-section-number">7.1</span> Exercises</h2>
-<p>Interactive exercises are not part of core Quarto functionality. Luckily, there are smart people who have developed software packages to still include these. Here we go into two R packages: <code>webexercises</code> and <code>learnr</code></p>
+<p>Interactive exercises are not part of core Quarto functionality. Luckily, there are smart people who have developed software packages to still include these.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Webexercises</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">learnr</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">H5P</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" aria-current="page">Webexercises</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">learnr</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">H5P</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Grasple</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>According to the <a href="https://psyteachr.github.io/webexercises/">webexercises documentation</a>:</p>
+<p>Webexercises is an R package. According to the <a href="https://psyteachr.github.io/webexercises/">webexercises documentation</a>:</p>
 <blockquote class="blockquote">
 <p>webexercises creates standalone HTML files that require only a JavaScript-enabled browser. It is also extremely simple to use.</p>
 </blockquote>
 <p>To get started, take the following steps:</p>
 <ol type="1">
 <li><p>Install and load the package</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{{r}}</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="in">install.packages("webexercises")</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="in">library(webexercises)</span></span>
@@ -360,7 +360,7 @@ Note
 </ol>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p><code>learnr</code> is a package that can turn markdown documents into interactive tutorials, including:</p>
+<p><code>learnr</code> is an R package that can turn markdown documents into interactive tutorials, including:</p>
 <blockquote class="blockquote">
 <ul>
 <li>Narrative, figures, illustrations, and equations.</li>
@@ -397,6 +397,9 @@ Warning
 <iframe src="https://h5p.org/h5p/embed/6725" width="1090" height="389" frameborder="0" allowfullscreen="allowfullscreen" allow="geolocation *; microphone *; camera *; midi *; encrypted-media *" title="Arithmetic Quiz">
 </iframe>
 <script src="https://h5p.org/sites/all/modules/h5p/library/js/h5p-resizer.js" charset="UTF-8"></script>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<p>Similar as with H5P, it is sometimes also possible to embed Grasple exercises within a Quarto book, but only if allowed by the organisation using it. You can read more in the <a href="https://help.grasple.com/en/articles/88138-embedding-your-grasple-exercises">Grasple documentation on embedding</a>.</p>
 </div>
 </div>
 </div>
@@ -456,7 +459,7 @@ Warning
 <section id="html-elements" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="html-elements"><span class="header-section-number">7.3</span> HTML elements</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Tabsets</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Dropdowns</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Other?</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Tabsets</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Dropdowns</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Buttons</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false">Callout blocks</a></li></ul>
 <div class="tab-content">
 <div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <p>Tabsets are a nice way to present different options. They are used on this page as well. To create them, use the following:</p>
@@ -479,7 +482,7 @@ Warning
 Click for more information
 </summary>
 <div>
-Here is some more information
+<p>Here is some more information</p>
 </div>
 </details>
 <p>Dropdowns like this are created with the HTML <code>details</code> tag. For example, the above example was created as follows:</p>
@@ -489,55 +492,80 @@ Here is some more information
 <p>Everything about this details tag can be styled. That is too much to go into here, but you can find more information about that on the <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details">Mozilla Developer website</a>.</p>
 </div>
 <div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
-<p>… [WIP]</p>
+<p>Buttons in Quarto are not actually Quarto-native. But because of Quarto’s flexibility it is easy to add one!</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="an">A regular button:</span><span class="co"> </span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Check out Quarto</span><span class="co">](https://quarto.org/)</span>{.btn .btn-outline-primary .btn role="button"}</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>A button with a tooltip: </span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Check out Quarto</span><span class="co">](https://quarto.org/)</span>{.btn .btn-outline-primary .btn role="button" data-toggle="tooltip" title="Here's a tooltip"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A regular button: <a href="https://quarto.org/" class="btn btn-outline-primary" role="button">Check out Quarto</a></p>
+<p>A button with a tooltip: <a href="https://quarto.org/" class="btn btn-outline-primary" role="button" data-toggle="tooltip" title="Here's a tooltip">Check out Quarto</a> (<a href="https://github.com/quarto-dev/quarto-cli/discussions/4920">source</a>)</p>
+</div>
+<div id="tabset-3-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-4-tab">
+<p>If you want to make content stand out a bit more, Quarto has 5 default callout blocks: note, warning, important, tip and caution. They are formatted in different colors and you can make them appear simple, make them collapsible, and even referenceable throughout your book!</p>
+<p>Example</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>:::{.callout-note collapse="true" title="Title of the note"}</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>Here is a note</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note callout-titled" title="Title of the note">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Title of the note
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Here is a note</p>
+</div>
+</div>
+</div>
+<p>See for more information <a href="https://quarto.org/docs/authoring/callouts.html">Quarto’s callout documentation</a>.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="glossary" class="level2" data-number="7.4">
 <h2 data-number="7.4" class="anchored" data-anchor-id="glossary"><span class="header-section-number">7.4</span> Glossary</h2>
-<p>In-built support for creating glossaries is currently not available, but on the <a href="https://github.com/quarto-dev/quarto-cli/issues/1697">roadmap for Quarto v1.5</a> (at the time of writing we are in Quarto v1.4). In the meantime, you can make use of the <a href="https://debruine.github.io/glossary/"><code>glossary</code> R package</a> written and maintained by Lisa DeBruine.</p>
+<p>In-built support for creating glossaries is currently not available, but Lisa DeBruine has created a Quarto extension that uses the same logic as her previous <a href="https://debruine.github.io/glossary/"><code>glossary</code> R package</a>.</p>
+<p>To use the glossary extension:</p>
 <ol type="1">
-<li><p>Install and load the package</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="in"># Install the package</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="in">install.packages("glossary")</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="in"># Load the package</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="in">library(glossary)</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Add a <code>glossary.yml</code> file to your repository, see the <a href="https://debruine.github.io/glossary/articles/glossary.html#definition-yaml-file">documentation</a> for an example. Also make sure the package knows where to find the <code>glossary.yml</code> file by adding:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="in"># Let the glossary package know where the glossary.yml file is</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="in">glossary_path("glossary.yml")</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Check and update the glossary settings</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="in"># Set pop-up style for in-line terms</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="in">glossary_popup("hover") # Can also be "click" or "none"</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="in"># Glossary style: adjust where necessary</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="in">glossary_style(color = "purple", </span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="in">           text_decoration = "underline",</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="in">           def_bg = "#333",</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="in">           def_color = "white")</span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Use the glossary:</p>
-<ul>
-<li><p><a href="https://debruine.github.io/glossary/articles/glossary.html#in-text-terms">In-line</a>:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>Here I am typing <span class="in">`r glossary(my-glossary-term)`</span> in the plain text.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>All glossary terms in a table:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="in">#| echo: false</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="in"># Create glossary table</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="in">glossary_table()</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-</ul></li>
+<li><p>First install the extension via the terminal:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> install extension debruine/quarto-glossary</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Store definitions in a glossary file (YAML)</p></li>
+<li><p>To the <code>_quarto.yml</code>, add glossary metadata that specifies where the YAML file is located and how term definitions should appear.</p></li>
+<li><p>Use the extension:</p>
+<ol type="a">
+<li><p>Use terms in your text with the shortcode</p>
+<div class="sourceCode" id="cb14" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>{{&lt; glossary your-term &gt;}}</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>Display the whole glossary in a table</p>
+<div class="sourceCode" id="cb15" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>{{&lt; glossary table = true &gt;}}</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol></li>
 </ol>
-<p>For more extensive information, please refer to the <a href="https://debruine.github.io/glossary/index.html">full package documentation</a>.</p>
+<p>For more extensive information, please refer to the <a href="https://debruine.github.io/quarto-glossary/">full extension documentation</a>.</p>
 </section>
 <section id="more-advanced-interactivity" class="level2" data-number="7.5">
 <h2 data-number="7.5" class="anchored" data-anchor-id="more-advanced-interactivity"><span class="header-section-number">7.5</span> More advanced interactivity</h2>

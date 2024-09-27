@@ -107,6 +107,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="include/webex.css">
 </head>
@@ -282,6 +311,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#video" id="toc-video" class="nav-link" data-scroll-target="#video"><span class="header-section-number">6.2</span> Video</a></li>
   <li><a href="#diagram" id="toc-diagram" class="nav-link" data-scroll-target="#diagram"><span class="header-section-number">6.3</span> Diagram</a></li>
   <li><a href="#audio" id="toc-audio" class="nav-link" data-scroll-target="#audio"><span class="header-section-number">6.4</span> Audio</a></li>
+  <li><a href="#maths-equation" id="toc-maths-equation" class="nav-link" data-scroll-target="#maths-equation"><span class="header-section-number">6.5</span> Maths equation</a></li>
+  <li><a href="#graphplot" id="toc-graphplot" class="nav-link" data-scroll-target="#graphplot"><span class="header-section-number">6.6</span> Graph/plot</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/edit/main/multimedia.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/UtrechtUniversity/quarto-github-textbooks/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://uu.nl/rdm/" target="_blank"><i class="bi bi-info"></i>Research Data Management Support (Utrecht University)</a></li></ul></div></nav>
     </div>
@@ -347,6 +378,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="audio" class="level2" data-number="6.4">
 <h2 data-number="6.4" class="anchored" data-anchor-id="audio"><span class="header-section-number">6.4</span> Audio</h2>
 <p>To be figured out. Audio players do not seem to be supported, this guy found some sort of workaround: <a href="https://forum.posit.co/t/embed-sound-player-in-quarto-book/164739/7" class="uri">https://forum.posit.co/t/embed-sound-player-in-quarto-book/164739/7</a></p>
+</section>
+<section id="maths-equation" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="maths-equation"><span class="header-section-number">6.5</span> Maths equation</h2>
+<p>For equations, please refer to the <a href="https://quarto.org/docs/authoring/markdown-basics.html#equations">Quarto markdown documentation</a>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="an">inline math:</span><span class="co"> $E = mc^{2}$</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>inline math: <span class="math inline">\(E = mc^{2}\)</span></p>
+</section>
+<section id="graphplot" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="graphplot"><span class="header-section-number">6.6</span> Graph/plot</h2>
+<p>In Quarto you can also generate graphs using a programming language. Quarto can work with R, Python, Julia, Bash, and more. A plot created with code will actually be inserted as an image in Quarto, but you can provide some image metadata (like the caption and the layout) in the code chunk itself.</p>
+<p>You can see examples and explanation in the <a href="https://quarto.org/docs/authoring/figures.html#computations">Quarto Figures documentation</a>.</p>
 
 
 </section>
