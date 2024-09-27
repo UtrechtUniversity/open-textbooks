@@ -7,6 +7,8 @@ Where in text editors, you press buttons to make text **bold**, [create a hyperl
 This raw markdown can then be converted to other formats, such as HTML, pdf, epub or even Word. 
 In a Quarto book, this is done automatically when you *render* the book.
 
+[See the full Quarto markdown documentation](https://quarto.org/docs/authoring/markdown-basics.html){.btn .btn-outline-primary .btn role="button"}
+
 :::{.callout-tip}
 Some useful resources:
 
