@@ -49,3 +49,19 @@ flowchart LR
 ## Audio
 
 To be figured out. Audio players do not seem to be supported, this guy found some sort of workaround: <https://forum.posit.co/t/embed-sound-player-in-quarto-book/164739/7>
+
+## Maths equation
+
+For equations, please refer to the [Quarto markdown documentation](https://quarto.org/docs/authoring/markdown-basics.html#equations).
+
+```md
+inline math: $E = mc^{2}$
+```
+
+inline math: $E = mc^{2}$
+
+## Graph/plot
+
+In Quarto you can also generate graphs using a programming language. Quarto can work with R, Python, Julia, Bash, and more. A plot created with code will actually be inserted as an image in Quarto, but you can provide some image metadata (like the caption and the layout) in the code chunk itself.
+
+You can see examples and explanation in the [Quarto Figures documentation](https://quarto.org/docs/authoring/figures.html#computations).
