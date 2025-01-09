@@ -1,12 +1,12 @@
 # Quarto settings
 
-## Basic settings
+The settings of the Quarto book are compiled in a `_quarto.yml` file.
+This file needs to be formatted very specifically; yaml files are very sensitive to incorrect indentation![^1]
+Below is a template that you can use to get started with your Quarto book.
 
-Open the `_quarto.yml` file. Make sure it at least contains something like this:
+[^1]: Search online for "yaml validator" to check where your `_quarto.yml` is invalid if Quarto gives you an error in this file.
 
-::: callout-caution
-This yaml is not complete nor validated. WIP!
-:::
+This `_quarto.yml` file is far from complete: the Quarto website has a full overview of [book options for the _quarto.yml](https://quarto.org/docs/reference/projects/books.html), information about the [book structure](https://quarto.org/docs/books/book-structure.html) and fields for [customizing book output](https://quarto.org/docs/books/book-output.html).
 
 ``` yaml
 project:
@@ -14,32 +14,36 @@ project:
   output-dir: ../docs           # When rendering, the html files will be 
                                 # placed in the docs folder. The folder needs
                                 # to be named docs in order for GitHub pages to work!
-
+                                
 book:                           # Some general information about your book
-  title: "[YOUR BOOK'S TITLE]"
+  title: Your book title
   authors:                      # Book authors: add a new row for each new author
   - "NAME AUTHOR 1"
   - "NAME AUTHOR 2"
-  
-  date: "YYYY/MM/DD"            # Date of the book, you can also use 
+  date: YYYY-MM-DD              # Date of the book, you can also use 
                                 # last-modified, or today (without quotes)
-  
+  favicon: img/favicon.ico      # Path or URL to the favicon of your book
+  sidebar:
+    logo: "path/to/logo.png"    # Path or URL to the logo that will appear on the left upper side of the book
+  repo-url: https://github.com/your-organization/your-repository/ 
+  repo-actions: [edit, issue]
+  back-to-top-navigation: true
+  page-footer: 
+    center: "This text will appear in the footer of your book"
   chapters:                     # Table of contents
-    - index.qmd                 # This is your landing page / homepage
-    - YOUR-CHAPTER-1.qmd        # Make sure each chapter has its own .qmd file
-    - part: NAME-PART           # Use part: if you want to add subchapters
-      chapters:
-        - YOUR-CHAPTER2.qmd
-        - YOUR-CHAPTER3.qmd
-    - YOUR-CHAPTER-4.qmd
-    # etc.
-    
-    repo-url: https://github.com/YOUR-ORGANIZATION/YOUR-REPO-NAME
-    repo-actions: [edit]            # TODO
-    
-    sidebar:                                    # TODO
-        logo: path/to/your/logo.png
-
+  - index.qmd                   # This is your landing page / homepage
+  - YOUR-CHAPTER-1.qmd          # Make sure each chapter has its own .qmd file
+  - part: NAME-PART             # Use 'part:' if you want to add subchapters
+    chapters:
+    - chapter2/part-2a.qmd      # Your qmd files can also be located in subfolders
+    - chapter2/part-2b.qmd      # Provide the relative path to the chapter from the  _quarto.yml location
+  - part: YOUR-CHAPTER-3.qmd    # A part can also be an actual page instead of just a title
+    chapters:
+    - chapter3/part-3a.qmd
+    - ANOTHER-CHAPTER.qmd
+  - a-last-chapter.qmd
+  #- etc.
+  
 bibliography: references.bib    # If you use a reference manager, you can export
                                 # a .bib file and include automatically formatted 
                                 # references. Include the path to the .bib file here.
@@ -50,11 +54,22 @@ nocite: |                       # This means: even if you don't actively use all
 
 format:
   html:
-    theme: cosmo
-  pdf:
+    theme: cosmo                # The default Bootswatch theme to use for HTML output, see https://quarto.org/docs/output-formats/html-themes.html
+    css: assets/styles.css      # Path to custom CSS on top of the Bootswatch theme
+    link-external-icon: true    # If your link is an external link to outside the book, an "external link" icon will appear automatically
+    link-external-newwindow: true   # Open external links in a new window
+    comments:                   # Include utterances, see chapter on Interactivity
+      utterances: 
+        repo: your-gh-organization/your-gh-repository
+    other-links:
+      - text: "Text for other link"
+        icon: info
+        href: https://yourlink.org/
+        target: "_blank"
+  pdf:                          # Styling of pdf output
     documentclass: scrreport
-  epub:
+  epub:                         # Styling of epub output
     cover-image: cover.png
 
-callout-appearance: simple
+callout-appearance: simple      # How do callouts appear by default?
 ```
