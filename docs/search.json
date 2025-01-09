@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Open textbooks with Quarto on GitHub Pages",
     "section": "",
-    "text": "Welcome!\nIn this open textbook, we highlight some tips and tricks to set up and maintain an open textbook that is:\n\ncreated with Quarto in Rstudio,\ntracked by git, and\npublished on GitHub Pages\n\nThis book is explicitly not meant to be complete. We include how to get started, and collect useful ways to customize a Quarto book to your liking.\nContributions are welcome!",
+    "text": "Welcome!\nIn this open textbook, we highlight some tips and tricks to set up and maintain an open textbook that is:\n\ncreated with Quarto in Rstudio,\ntracked by git, and\npublished on GitHub Pages\n\nThis book is not, nor will it ever be, complete. We include how to get started, and collect useful ways to customize a Quarto book to your liking. Contributions are welcome!\nIf you want to make a book hosted on GitHub with Jupyter Books (not with Quarto), the Delft University of Technology has made great materials available to make those: https://interactivetextbooks.tudelft.nl/how-to-manual/ and https://teachbooks.io/manual/.",
     "crumbs": [
       "Welcome!"
     ]
@@ -274,22 +274,11 @@
     ]
   },
   {
-    "objectID": "quarto-settings.html",
-    "href": "quarto-settings.html",
+    "objectID": "quarto-settings.html#footnotes",
+    "href": "quarto-settings.html#footnotes",
     "title": "5  Quarto settings",
     "section": "",
-    "text": "5.1 Basic settings\nOpen the _quarto.yml file. Make sure it at least contains something like this:",
-    "crumbs": [
-      "Customization",
-      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Quarto settings</span>"
-    ]
-  },
-  {
-    "objectID": "quarto-settings.html#basic-settings",
-    "href": "quarto-settings.html#basic-settings",
-    "title": "5  Quarto settings",
-    "section": "",
-    "text": "Caution\n\n\n\nThis yaml is not complete nor validated. WIP!\n\n\nproject:\n  type: book\n  output-dir: ../docs           # When rendering, the html files will be \n                                # placed in the docs folder. The folder needs\n                                # to be named docs in order for GitHub pages to work!\n\nbook:                           # Some general information about your book\n  title: \"[YOUR BOOK'S TITLE]\"\n  authors:                      # Book authors: add a new row for each new author\n  - \"NAME AUTHOR 1\"\n  - \"NAME AUTHOR 2\"\n  \n  date: \"YYYY/MM/DD\"            # Date of the book, you can also use \n                                # last-modified, or today (without quotes)\n  \n  chapters:                     # Table of contents\n    - index.qmd                 # This is your landing page / homepage\n    - YOUR-CHAPTER-1.qmd        # Make sure each chapter has its own .qmd file\n    - part: NAME-PART           # Use part: if you want to add subchapters\n      chapters:\n        - YOUR-CHAPTER2.qmd\n        - YOUR-CHAPTER3.qmd\n    - YOUR-CHAPTER-4.qmd\n    # etc.\n    \n    repo-url: https://github.com/YOUR-ORGANIZATION/YOUR-REPO-NAME\n    repo-actions: [edit]            # TODO\n    \n    sidebar:                                    # TODO\n        logo: path/to/your/logo.png\n\nbibliography: references.bib    # If you use a reference manager, you can export\n                                # a .bib file and include automatically formatted \n                                # references. Include the path to the .bib file here.\nbibliostyle: apalike            # Citation style of bibliography\nnocite: |                       # This means: even if you don't actively use all \n  @*                            # references in your book text, all entries in the \n                                # .bib file will be included in the bibliography.\n\nformat:\n  html:\n    theme: cosmo\n  pdf:\n    documentclass: scrreport\n  epub:\n    cover-image: cover.png\n\ncallout-appearance: simple",
+    "text": "Search online for “yaml validator” to check where your _quarto.yml is invalid if Quarto gives you an error in this file.↩︎",
     "crumbs": [
       "Customization",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Quarto settings</span>"
@@ -432,7 +421,7 @@
     "href": "interactivity.html#more-advanced-interactivity",
     "title": "7  Interactivity",
     "section": "7.5 More advanced interactivity",
-    "text": "7.5 More advanced interactivity\nIt is possible to add interactivity in other ways too:\n\n\nCreate custom JavaScript visualizations using Observable JS\nUse the Shiny R package to add interactivity to Knitr engine documents.\nIncorporate Jupyter Widgets or htmlwidgets (for the Jupyter and Knitr engines, respectively) into your document.\n\n\nPlease refer to the extensive Quarto documentation for information on how to implement these into your Quarto book or website.",
+    "text": "7.5 More advanced interactivity\nIt is possible to add interactivity in other ways too:\n\n\nCreate custom JavaScript visualizations using Observable JS\nUse the Shiny R package to add interactivity to Knitr engine documents.\nIncorporate Jupyter Widgets or htmlwidgets (for the Jupyter and Knitr engines, respectively) into your document.\n\n\nPlease refer to the extensive Quarto documentation for information on how to implement these into your Quarto book or website.\nThere is now also Shinylive which allows you to run Shiny Python applications in a web browser.",
     "crumbs": [
       "Customization",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Interactivity</span>"
