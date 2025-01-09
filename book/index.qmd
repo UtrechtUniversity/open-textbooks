@@ -6,6 +6,6 @@ In this open textbook, we highlight some tips and tricks to set up and maintain 
 -   tracked by git, and
 -   published on GitHub Pages
 
-This book is explicitly **not** meant to be complete. We include how to get started, and collect useful ways to customize a Quarto book to your liking.
+This book is not, nor will it ever be, complete. We include how to get started, and collect useful ways to customize a Quarto book to your liking. Contributions are welcome!
 
-Contributions are welcome!
+If you want to make a book hosted on GitHub with Jupyter Books (not with Quarto), the Delft University of Technology has made great materials available to make those: <https://interactivetextbooks.tudelft.nl/how-to-manual/> and <https://teachbooks.io/manual/>.
