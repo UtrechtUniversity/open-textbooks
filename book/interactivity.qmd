@@ -377,10 +377,8 @@ It is possible to add interactivity in other ways too:
 
 > -   Create custom JavaScript visualizations using [Observable
 >     JS](https://quarto.org/docs/interactive/ojs/)
->
 > -   Use the [Shiny](https://quarto.org/docs/interactive/shiny/) R
 >     package to add interactivity to Knitr engine documents.
->
 > -   Incorporate [Jupyter
 >     Widgets](https://quarto.org/docs/interactive/widgets/jupyter.html)
 >     or
@@ -390,4 +388,6 @@ It is possible to add interactivity in other ways too:
 
 Please refer to the extensive [Quarto
 documentation](https://quarto.org/docs/interactive/) for information on
-how to implement these into your Quarto book or website.
+how to implement these into your Quarto book or website.
+
+There is now also [Shinylive](https://shiny.posit.co/py/docs/shinylive.html) which allows you to run Shiny Python applications in a web browser.
